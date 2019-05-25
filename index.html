@@ -11,35 +11,35 @@
 <script>
 $('nav a').on('click', function() {
 
-    var scrollAnchor = $(this).attr('data-scroll'),
-        scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+  var scrollAnchor = $(this).attr('data-scroll'),
+  scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
 
-    $('body,html').animate({
-        scrollTop: scrollPoint
-    }, 500);
+  $('body,html').animate({
+    scrollTop: scrollPoint
+  }, 500);
 
-    return false;
+  return false;
 
 })
 
 
 $(window).scroll(function() {
-    var windscroll = $(window).scrollTop();
-    if (windscroll >= 100) {
-        $('nav').addClass('fixed');
-        $('.wrapper section').each(function(i) {
-            if ($(this).position().top <= windscroll - 20) {
-                $('nav a.active').removeClass('active');
-                $('nav a').eq(i).addClass('active');
-            }
-        });
-
-    } else {
-
-        $('nav').removeClass('fixed');
+  var windscroll = $(window).scrollTop();
+  if (windscroll >= 100) {
+    $('nav').addClass('fixed');
+    $('.wrapper section').each(function(i) {
+      if ($(this).position().top <= windscroll - 20) {
         $('nav a.active').removeClass('active');
-        $('nav a:first').addClass('active');
-    }
+        $('nav a').eq(i).addClass('active');
+      }
+    });
+
+  } else {
+
+    $('nav').removeClass('fixed');
+    $('nav a.active').removeClass('active');
+    $('nav a:first').addClass('active');
+  }
 
 }).scroll();
 </script>
@@ -172,57 +172,64 @@ $(window).scroll(function() {
               </li>
             </ul>
           </div>
+
           <!-- End Grid/Pricing tables -->
         </div>
       </section>
 
-      </div>
-    </section>
 
-    <section id=whatWeDo data-anchor="whatWeDo">
-      <iframe width="560" height="315" src="https://youtube.com/embed/zMH6ntA35Yg" frameborder="0" gesture="media" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contactSection" data-anchor="contactSection">
-      <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-        <h2 class="w3-text-light-grey">Contact Us</h2>
+  <!-- What We Do Section -->
+  <section id="whatWeDoSection">
+    <div class="w3-padding-64 w3-content w3-text-grey" id="whatWeDo">
+      <h2 class="w3-text-light-grey">What We Do</h2>
         <hr style="width:200px" class="w3-opacity">
+      <iframe width="1120" height="630" src="https://youtube.com/embed/zMH6ntA35Yg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </section>
 
-        <div class="w3-section">
-          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Richmond, TX</p>
-          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: fosterrobotics@gmail.com</p>
-        </div><br>
-        <p>Lets get in touch. Send me a message:</p>
+  <!-- Contact Section -->
+  <section id="contactSection" data-anchor="contactSection">
+    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+      <h2 class="w3-text-light-grey">Contact Us</h2>
+      <hr style="width:200px" class="w3-opacity">
 
-        <form action="/action_page.php" target="_blank">
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-          <p>
-            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-              <i class="fa fa-paper-plane"></i> SEND MESSAGE
-            </button>
-          </p>
-        </form>
-        <!-- End Contact Section -->
-      </div>
-    </section>
-    <!-- Footer -->
-    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-      <!-- End footer -->
-    </footer>
+      <div class="w3-section">
+        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Richmond, TX</p>
+        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: fosterrobotics@gmail.com</p>
+      </div><br>
+      <p>Lets get in touch. Send me a message:</p>
 
-    <!-- END PAGE CONTENT -->
-  </div>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+      <!-- End Contact Section -->
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <!-- End footer -->
+  </footer>
+
+  <!-- END PAGE CONTENT -->
+</div>
 
 </body>
 </html>
