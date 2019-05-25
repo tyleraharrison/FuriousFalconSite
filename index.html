@@ -7,6 +7,42 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$('nav a').on('click', function() {
+
+    var scrollAnchor = $(this).attr('data-scroll'),
+        scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+
+    $('body,html').animate({
+        scrollTop: scrollPoint
+    }, 500);
+
+    return false;
+
+})
+
+
+$(window).scroll(function() {
+    var windscroll = $(window).scrollTop();
+    if (windscroll >= 100) {
+        $('nav').addClass('fixed');
+        $('.wrapper section').each(function(i) {
+            if ($(this).position().top <= windscroll - 20) {
+                $('nav a.active').removeClass('active');
+                $('nav a').eq(i).addClass('active');
+            }
+        });
+
+    } else {
+
+        $('nav').removeClass('fixed');
+        $('nav a.active').removeClass('active');
+        $('nav a:first').addClass('active');
+    }
+
+}).scroll();
+</script>
 
 <body class="w3-black">
 
@@ -139,49 +175,41 @@
           <!-- End Grid/Pricing tables -->
         </div>
       </section>
-      <!-- Portfolio Section -->
-      <section id="photosSection" data-anchor="photosSection">
-        <div class="w3-padding-64 w3-content" id="photos">
-          <h2 class="w3-text-light-grey">Our Team Photos</h2>
-          <hr style="width:200px" class="w3-opacity">
 
-          <!-- Grid for photos -->
-          <div class="w3-row-padding" style="margin:0 -16px">
-            <blockquote class="imgur-embed-pub" lang="en" data-id="a/vkk1lFl" data-context="false" ><a href="//imgur.com/a/vkk1lFl"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-          </div>
-
-
-          <!-- End photo grid -->
-        </div>
-        <!-- End Portfolio Section -->
       </div>
     </section>
+
+    <section id=whatWeDo data-anchor="whatWeDo">
+      <iframe width="560" height="315" src="https://youtube.com/embed/zMH6ntA35Yg" frameborder="0" gesture="media" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </section>
+
     <!-- Contact Section -->
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-      <h2 class="w3-text-light-grey">Contact Us</h2>
-      <hr style="width:200px" class="w3-opacity">
+    <section id="contactSection" data-anchor="contactSection">
+      <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+        <h2 class="w3-text-light-grey">Contact Us</h2>
+        <hr style="width:200px" class="w3-opacity">
 
-      <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Richmond, TX</p>
-        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: fosterrobotics@gmail.com</p>
-      </div><br>
-      <p>Lets get in touch. Send me a message:</p>
+        <div class="w3-section">
+          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Richmond, TX</p>
+          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: fosterrobotics@gmail.com</p>
+        </div><br>
+        <p>Lets get in touch. Send me a message:</p>
 
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-        <p>
-          <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-            <i class="fa fa-paper-plane"></i> SEND MESSAGE
-          </button>
-        </p>
-      </form>
-      <!-- End Contact Section -->
-    </div>
-
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+          <p>
+            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+          </p>
+        </form>
+        <!-- End Contact Section -->
+      </div>
+    </section>
     <!-- Footer -->
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
       <i class="fa fa-facebook-official w3-hover-opacity"></i>
