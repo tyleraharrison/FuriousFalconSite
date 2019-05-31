@@ -83,6 +83,7 @@ nav a.active {
   vertical-align: middle;
   max-width: 100px;
   max-height: 50px;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 600px) {
