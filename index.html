@@ -230,6 +230,8 @@
           <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Richmond, TX</p>
           <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: fosterrobotics@gmail.com</p>
         </div><br>
+
+        <p style="display:none;" id="contactSuccessText">Thanks for getting in touch! We'll get back to you as soon as we can!</p>
         <div id="contactForm">
           <p>Lets get in touch. Send us a message:</p>
 
@@ -261,8 +263,22 @@
   <!-- END PAGE CONTENT -->
 </div>
 <script>
-$('.navlink').on('click', function() {
 
+if (window.location.search == "?contactSuccess") {
+  $('#contactForm').css('display', 'none');
+  $('#contactSuccessText').css('display', 'block');
+  goToContactForm();
+}
+
+function goToContactForm() {
+  var scrollPoint = $('section[data-anchor="contactSection"]').offset().top + 700;
+
+  $('body,html').animate({
+    scrollTop: scrollPoint
+  }, 500);
+}
+
+$('.navlink').on('click', function() {
   var scrollAnchor = $(this).attr('data-scroll');
   var scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top + 20;
 
@@ -279,8 +295,6 @@ $(window).scroll(function() {
   var windscroll = $(window).scrollTop();
   if (windscroll >= 100) {
     $('.scrollSection').each(function(i) {
-      console.log("F: " + $(this).position().top);
-      console.log("S: " + windscroll + 20);
       if ($(this).position().top <= windscroll + 20) {
         $('nav a.w3-black').addClass('w3-hover-black');
         $('nav a.w3-black').removeClass('w3-black');
