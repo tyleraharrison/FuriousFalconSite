@@ -111,12 +111,12 @@ nav a.active {
   }
 
   #Sponsors ul {
+    display:none;
     width: 100%;
   }
-
   .tech-slideshow {
     height: 50px;
-    width: 100%;
+    max-width: 1754px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -125,8 +125,8 @@ nav a.active {
 
   .tech-slideshow > div {
     height: 50px;
-    width: 2526px;
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg);
+    width: 1754px;
+    background: url("images/Sponsors/mobileBanner.jpg");
     position: absolute;
     top: 0;
     left: 0;
@@ -134,20 +134,21 @@ nav a.active {
     transform: translate3d(0, 0, 0);
   }
   .tech-slideshow .mover-1 {
-    animation: moveSlideshow 24s linear infinite;
+    animation: moveSlideshow 12s linear infinite;
   }
   .tech-slideshow .mover-2 {
     opacity: 0;
     transition: opacity 0.5s ease-out;
-    background-position: 0 200px;
-    animation: moveSlideshow 24s linear infinite;
+    background-position: 0 1754px;
+    animation: moveSlideshow 15s linear infinite;
   }
 
   @keyframes moveSlideshow {
     100% {
-      transform: translateX(-66.6666%);
+      transform: translateX(-50%);
     }
   }
+
 
   #homeSetion {
     padding-bottom: 200px;
