@@ -8,63 +8,62 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 @media only screen and (max-width: 600px) {#wrapper {margin-left: 0}}
 
 body {
-    padding: 0;
-    margin: 0
+  padding: 0;
+  margin: 0
 }
 
 header {
-    background: transparent url('http://adventure.nationalgeographic.com/2008/11/ecotourism/lodge-jungle.jpg') 0 0;
-    height: 100px;
+  height: 100px;
 }
 
 h4 {
-   font-weight: bold;
+  font-weight: bold;
 
 }
 
 p {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .wrapper {
-    width: 400px;
-    margin: 0 auto;
-    position: relative;
-    padding: 28px 0 0 0;
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  padding: 28px 0 0 0;
 }
 
 nav {
-    position: absolute;
-    left: 0;
-    right; 0;
-    top: 0px;
-    background: green;
-    display: block;
-    width: 100%;
-    padding: 4px 0;
-    height: 30px;
-    z-index: 100;
+  position: absolute;
+  left: 0;
+  right; 0;
+  top: 0px;
+  background: green;
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  height: 30px;
+  z-index: 100;
 }
 
 nav a {
-    font-family: helvetica;
-    color: #ffffff;
-    padding: 2px; 4px;
-    display: block;
-    float: left;
-    text-decoration: none;
-    margin-right: 4px;
+  font-family: helvetica;
+  color: #ffffff;
+  padding: 2px; 4px;
+  display: block;
+  float: left;
+  text-decoration: none;
+  margin-right: 4px;
 }
 
 nav a:hover,
 nav a.active {
-    background: white;
-    color: green
+  background: white;
+  color: green
 }
 
 .fixed {
-    position: fixed;
-    top: 0
+  position: fixed;
+  top: 0
 }
 
 #Sponsors {
@@ -77,15 +76,14 @@ nav a.active {
 }
 
 #Sponsors li {
-  padding-right: 30px;
-  display: inline;
+  padding: 15px;
+  display: inline-block;
 }
 
 #Sponsors li img {
   vertical-align: middle;
   max-width: 100px;
   max-height: 50px;
-  padding-bottom: 10px;
 }
 
 #homeSetion {
@@ -106,49 +104,32 @@ nav a.active {
 
 @media screen and (max-width: 600px) {
   #Sponsors {
-    margin-left: 0;
-    margin-top: 50px;
-  }
-
-  #Sponsors ul {
-    display:none;
-    width: 100%;
-  }
-  .tech-slideshow {
-    height: 50px;
-    max-width: 1754px;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
     overflow: hidden;
-    transform: translate3d(0, 0, 0);
   }
 
-  .tech-slideshow > div {
-    height: 50px;
-    width: 1754px;
-    background: url("images/Sponsors/mobileBanner.jpg");
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    transform: translate3d(0, 0, 0);
-  }
-  .tech-slideshow .mover-1 {
-    animation: moveSlideshow 12s linear infinite;
-  }
-  .tech-slideshow .mover-2 {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-    background-position: 0 1754px;
-    animation: moveSlideshow 15s linear infinite;
-  }
-
-  @keyframes moveSlideshow {
+  @keyframes scroll {
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-75%);
     }
   }
 
+  #Sponsors ul {
+    padding-left: 100%;
+    padding-right: 100%;
+    margin-top: 60px;
+    width: calc(1040px + 200%);
+    height: 50px;
+    transform: translate3d(0, 0, 0);
+    animation: scroll 15s linear 1s infinite;
+    z-index: 20;
+  }
+
+  #Sponsors ul li {
+    float: left;
+    vertical-align: middle;
+  }
 
   #homeSetion {
     padding-bottom: 200px;
