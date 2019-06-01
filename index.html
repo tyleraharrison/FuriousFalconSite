@@ -8,11 +8,287 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script>
-$('nav a').on('click', function() {
 
-  var scrollAnchor = $(this).attr('data-scroll'),
-  scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+
+<body class="w3-black">
+  <!-- Icon Bar (Sidebar - hidden on small screens) -->
+  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <!-- Avatar image in top left corner -->
+    <img src="FalconsLogoOnly.png" style="width:100%">
+    <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-black navlink">
+      <i class="fa fa-home w3-xxlarge"></i>
+      <p>HOME</p>
+    </a>
+    <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+      <i class="fa fa-user w3-xxlarge"></i>
+      <p>ABOUT</p>
+    </a>
+    <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+      <i class="fa fa-eye w3-xxlarge"></i>
+      <p>PHOTOS</p>
+    </a>
+    <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+      <i class="fa fa-envelope w3-xxlarge"></i>
+      <p>CONTACT</p>
+    </a>
+  </nav>
+
+  <!-- Navbar on small screens (Hidden on medium and large screens) -->
+
+  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+      <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:25% !important">HOME</a>
+      <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:25% !important">ABOUT</a>
+      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:25% !important">PHOTOS</a>
+      <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button navlink" style="width:25% !important">CONTACT</a>
+    </div>
+  </div>
+  <!-- Page Content -->
+  <div class="w3-padding-large" id="wrapper">
+    <!-- Sponsors -->
+    <div id="Sponsors">
+      <ul>
+        <li><img src="Sponsors/Sponsor_FIRST.png"></li>
+        <li><img src="Sponsors/Sponsor_SnapOn.png"></li>
+        <li><img src="Sponsors/Sponsor_GitHub.png"></li>
+        <li><img src="Sponsors/Sponsor_Hampco.png"></li>
+        <li><img src="Sponsors/Sponsor_Gtech.png"></li>
+        <li><img src="Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li><img src="Sponsors/Sponsor_SolidWorks.png"></li>
+      </ul>
+    </div>
+
+    <!-- Header/Home -->
+    <section class="scrollSection" id="homeSetion" data-anchor="homeSection" style="padding-bottom: 400px;">
+      <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <img src="FalconsLogo.png" alt="boy" class="w3-image" width="800">
+        <h2>FIRST Robotics Team 4328</h2>
+      </header>
+    </section>
+
+    <!-- About Section -->
+    <section class="scrollSection" id="aboutSection" data-anchor="aboutSection">
+      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <h2 class="w3-text-light-grey">Our Team</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <h3 class="w3-padding-16 w3-text-light-grey">The Skills We Teach</h3>
+        <h5 class="w3-wide" style="font-weight: bold;">Mechanical</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p><p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <h5 class="w3-wide" style="font-weight: bold;">Electrical</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <h5 class="w3-wide" style="font-weight: bold;">Programming</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p><p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <br>
+
+      <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">20+</span><br>
+          Robots Designed
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">40+</span><br>
+          Team Members
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">10+</span><br>
+          Proud Sponsors
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">100+</span><br>
+          Future Competitions Won
+        </div>
+      </div>
+
+      <!--
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download 2019 Game Manual
+    </button>
+  -->
+
+  <!-- Grid for pricing tables -->
+  <h3 class="w3-padding-16 w3-text-light-grey">Sponsorships</h3>
+  <div class="w3-row-padding" style="margin:0 -16px">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Silver Tier</li>
+        <li class="w3-padding-16">Your company/business logo on our website</li>
+        <li class="w3-padding-16">_</li>
+        <li class="w3-padding-16">_</li>
+        <li class="w3-padding-16">_</li>
+        <li class="w3-padding-16">
+          <h2>$ 100</h2>
+          <span class="w3-opacity">Sponsored Amount</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Gold Tier</li>
+        <li class="w3-padding-16">Your company/business logo on our website</li>
+        <li class="w3-padding-16">Your company/business logo on our t-shirt</li>
+        <li class="w3-padding-16">_</li>
+        <li class="w3-padding-16">_</li>
+        <li class="w3-padding-16">
+          <h2>$ 500+</h2>
+          <span class="w3-opacity">Sponsored Amount</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Platinum Tier</li>
+          <li class="w3-padding-16">Your company/business logo on our website</li>
+          <li class="w3-padding-16">Your company/business logo on our t-shirt</li>
+          <li class="w3-padding-16">Your company/business logo on our competition robot</li>
+          <li class="w3-padding-16">_</li>
+          <li class="w3-padding-16">
+            <h2>$ 2,000+</h2>
+            <span class="w3-opacity">Sponsored Amount</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Diamond Tier</li>
+          <li class="w3-padding-16">Your company/business logo on our website</li>
+          <li class="w3-padding-16">Your company/business logo on our t-shirt</li>
+          <li class="w3-padding-16">Your company/business logo on our competition robot</li>
+          <li class="w3-padding-16">Your company/business logo on one our major community outreach programs</li>
+          <li class="w3-padding-16">
+            <h2>$ 5,000+</h2>
+            <span class="w3-opacity">Sponsored Amount</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- End Grid/Pricing tables -->
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+  <!-- <section id="whatWeDoSection">
+  <div class="w3-padding-64 w3-content w3-text-grey" id="whatWeDo">
+  <h2 class="w3-text-light-grey">What We Do</h2>
+  <hr style="200px"></hr>
+  <iframe width="1120" height="630" src="https://youtube.com/embed/zMH6ntA35Yg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</section> -->
+
+<!-- Portfolio Section -->
+<section class="scrollSection" id="photosSection" data-anchor="photosSection">
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">Our Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="images/image4.jpg" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="images/image1.jpg" style="width:100%">
+        <img src="images/image3.jpg" style="width:100%">
+        <!--<img src="images/image3.jpg" style="width:100%">-->
+      </div>
+      <!-- End photo grid -->
+    </section>
+    <!-- Contact Section -->
+    <section class="scrollSection" id="contactSection" data-anchor="contactSection">
+      <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+        <h2 class="w3-text-light-grey">Contact Us</h2>
+        <hr style="width:200px" class="w3-opacity">
+
+        <div class="w3-section">
+          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Richmond, TX</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: fosterrobotics@gmail.com</p>
+        </div><br>
+
+        <p style="display:none;" id="contactSuccessText">Thanks for getting in touch! We'll get back to you as soon as we can!</p>
+        <div id="contactForm">
+          <p>Lets get in touch. Send us a message:</p>
+
+          <form action="/contactus.php" method="post">
+            <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+            <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+            <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+            <p style="height: 200px;"><textarea class="w3-input" type="paragraph" placeholder="Message" required name="Message" style="height: 100%;"></textarea></p>
+            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+          </p>
+        </form>
+      </div>
+      <!-- End Contact Section -->
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+
+    <h3>Useful Links</h3>
+    <p style="font-size: 16px;"><a href="https://discord.gg/e3GC7a">Join the Discord</a></p>
+    <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
+
+    <!--
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <i class="fa fa-discord w3-hover-opacity"></i>
+  -->
+    <!-- End footer -->
+  </footer>
+
+  <!-- END PAGE CONTENT -->
+</div>
+<script>
+
+if (window.location.search == "?contactSuccess") {
+  $('#contactForm').css('display', 'none');
+  $('#contactSuccessText').css('display', 'block');
+  goToContactForm();
+}
+
+function goToContactForm() {
+  var scrollPoint = $('section[data-anchor="contactSection"]').offset().top + 700;
+
+  $('body,html').animate({
+    scrollTop: scrollPoint
+  }, 500);
+}
+
+$('.navlink').on('click', function() {
+  var scrollAnchor = $(this).attr('data-scroll');
+  var scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top + 20;
 
   $('body,html').animate({
     scrollTop: scrollPoint
@@ -26,228 +302,23 @@ $('nav a').on('click', function() {
 $(window).scroll(function() {
   var windscroll = $(window).scrollTop();
   if (windscroll >= 100) {
-    $('nav').addClass('fixed');
-    $('.wrapper section').each(function(i) {
-      if ($(this).position().top <= windscroll - 20) {
-        $('nav a.active').removeClass('active');
-        $('nav a').eq(i).addClass('active');
+    $('.scrollSection').each(function(i) {
+      if ($(this).position().top <= windscroll + 20) {
+        $('nav a.w3-black').addClass('w3-hover-black');
+        $('nav a.w3-black').removeClass('w3-black');
+        $('nav a').eq(i).addClass('w3-black');
+        $('nav a').eq(i).removeClass('w3-hover-black');
       }
     });
 
   } else {
-
-    $('nav').removeClass('fixed');
-    $('nav a.active').removeClass('active');
-    $('nav a:first').addClass('active');
+    $('nav a.w3-black').addClass('w3-hover-black')
+    $('nav a.w3-black').removeClass('w3-black');
+    $('nav a:first').addClass('w3-black');
+    $('nav a:first').removeClass('w3-hover-black');
   }
 
 }).scroll();
 </script>
-
-<body class="w3-black">
-
-  <!-- Icon Bar (Sidebar - hidden on small screens) -->
-  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-    <!-- Avatar image in top left corner -->
-    <img src="FalconsLogoOnly.png" style="width:100%">
-    <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-black">
-      <i class="fa fa-home w3-xxlarge"></i>
-      <p>HOME</p>
-    </a>
-    <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-user w3-xxlarge"></i>
-      <p>ABOUT</p>
-    </a>
-    <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-eye w3-xxlarge"></i>
-      <p>PHOTOS</p>
-    </a>
-    <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-envelope w3-xxlarge"></i>
-      <p>CONTACT</p>
-    </a>
-  </nav>
-
-  <!-- Navbar on small screens (Hidden on medium and large screens) -->
-  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-      <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-      <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-    </div>
-  </div>
-
-  <!-- Page Content -->
-  <div class="w3-padding-large" id="main">
-    <!-- Header/Home -->
-    <section id="home" data-anchor="home">
-      <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-        <img src="FalconsLogo.png" alt="boy" class="w3-image" width="800">
-        <h2>FIRST Robotics Team 4328</h2>
-      </header>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" data-anchor="about">
-      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-        <h2 class="w3-text-light-grey">Our Team</h2>
-        <hr style="width:200px" class="w3-opacity">
-        <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <h3 class="w3-padding-16 w3-text-light-grey">Our Skills</h3>
-        <p class="w3-wide">Getting Nothing Done</p>
-        <div class="w3-white">
-          <div class="w3-dark-grey" style="height:28px;width:95%"></div>
-        </div>
-        <p class="w3-wide">Cramming Everything at the Last Minute</p>
-        <div class="w3-white">
-          <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-        </div>
-        <p class="w3-wide">T-Shirt Desgining</p>
-        <div class="w3-white">
-          <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-        </div><br>
-
-        <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">11+</span><br>
-            Robots Designed
-          </div>
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">30+</span><br>
-            Team Members
-          </div>
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">0</span><br>
-            Competitions won
-          </div>
-          <div class="w3-quarter w3-section">
-            <span class="w3-xlarge">150+</span><br>
-            Useless Meetings
-          </div>
-        </div>
-
-        <button class="w3-button w3-light-grey w3-padding-large w3-section">
-          <i class="fa fa-download"></i> Download 2019 Game Manual
-        </button>
-
-        <!-- Grid for pricing tables -->
-        <h3 class="w3-padding-16 w3-text-light-grey">Sponsorships</h3>
-        <div class="w3-row-padding" style="margin:0 -16px">
-          <div class="w3-half w3-margin-bottom">
-            <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-              <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic Boi</li>
-              <li class="w3-padding-16">Your logo on our website</li>
-              <li class="w3-padding-16">Your logo on our t-shirt</li>
-              <li class="w3-padding-16">Feel good</li>
-              <li class="w3-padding-16">_</li>
-              <li class="w3-padding-16">_</li>
-              <li class="w3-padding-16">
-                <h2>$ 100</h2>
-                <span class="w3-opacity">donation</span>
-              </li>
-              <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose tier</button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="w3-half">
-            <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-              <li class="w3-dark-grey w3-xlarge w3-padding-32">True Sponsor</li>
-              <li class="w3-padding-16">Your logo on our website</li>
-              <li class="w3-padding-16">Your logo on our t-shirt</li>
-              <li class="w3-padding-16">Feel good</li>
-              <li class="w3-padding-16">A shoutout at every meeting??</li>
-              <li class="w3-padding-16">Probably a rad bracelet idk</li>
-              <li class="w3-padding-16">
-                <h2>$ 250+</h2>
-                <span class="w3-opacity">donation</span>
-              </li>
-              <li class="w3-light-grey w3-padding-24">
-                <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose tier</button>
-              </li>
-            </ul>
-          </div>
-
-          <!-- End Grid/Pricing tables -->
-        </div>
-      </section>
-
-
-    </div>
-  </section>
-
-  <!-- What We Do Section -->
-  <!-- <section id="whatWeDoSection">
-    <div class="w3-padding-64 w3-content w3-text-grey" id="whatWeDo">
-      <h2 class="w3-text-light-grey">What We Do</h2>
-      <hr style="200px"></hr>
-      <iframe width="1120" height="630" src="https://youtube.com/embed/zMH6ntA35Yg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-  </section> -->
-
-  <!-- Portfolio Section -->
-   <div class="w3-padding-64 w3-content" id="photos">
-     <h2 class="w3-text-light-grey">Our Team Photos</h2>
-     <hr style="width:200px" class="w3-opacity">
-
-  <!-- Grid for photos -->
-   <div class="w3-row-padding" style="margin:0 -16px">
-     <div class="w3-half">
-       <img src="image2.jpg" style="width:100%">
-     </div>
-
-     <div class="w3-half">
-       <img src="image3.jpg" style="width:100%">
-       <img src="image1.jpg" style="width:100%">
-       <img src="image4.jpg" style="width:100%">
-     </div>
-   <!-- End photo grid -->
-
-  <!-- Contact Section -->
-  <section id="contactSection" data-anchor="contactSection">
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-      <h2 class="w3-text-light-grey">Contact Us</h2>
-      <hr style="width:200px" class="w3-opacity">
-
-      <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Richmond, TX</p>
-        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: fosterrobotics@gmail.com</p>
-      </div><br>
-      <p>Lets get in touch. Send me a message:</p>
-
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-        <p>
-          <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-            <i class="fa fa-paper-plane"></i> SEND MESSAGE
-          </button>
-        </p>
-      </form>
-      <!-- End Contact Section -->
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <!-- End footer -->
-  </footer>
-
-  <!-- END PAGE CONTENT -->
-</div>
-
 </body>
 </html>
