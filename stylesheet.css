@@ -68,8 +68,12 @@ nav a.active {
 }
 
 #Sponsors {
-  margin-left: -30px;
+  margin-left: 120px;
   text-align: center;
+}
+
+#Sponsors ul {
+  width: calc(100% - 200px);
 }
 
 #Sponsors li {
@@ -88,11 +92,33 @@ nav a.active {
   padding-bottom: 400px;
 }
 
+#SignIn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  left: auto;
+  width: 150px;
+  height: 55px;
+  z-index: 15;
+  border-radius: 5px;
+  border: 2px solid #f9c41c;
+}
+
 @media screen and (max-width: 600px) {
   #Sponsors {
+    margin-left: 0;
     margin-top: 50px;
   }
+
+  #Sponsors ul {
+    width: 100%;
+  }
+
   #homeSetion {
     padding-bottom: 200px;
+  }
+
+  #SignIn {
+    display: none;
   }
 }
