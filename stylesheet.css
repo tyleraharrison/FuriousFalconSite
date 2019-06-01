@@ -227,3 +227,12 @@ nav a.active {
 .demo:hover {
   opacity: 1;
 }
+
+#CampPageTitle {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#CampPageTitle h1 {
+  font-weight: bold;
+}
