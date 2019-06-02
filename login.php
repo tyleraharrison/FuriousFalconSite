@@ -1,40 +1,5 @@
 <?php
 session_start();
-
-if(isset($_POST["username"])) {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-  $DBservername = "sql223.main-hosting.eu";
-  $DBusername = "u995699429_robot";
-  $DBpassword = "5YkT;>;lZxlgh`e9~";
-  $DBname = "u995699429_robot";
-
-  $DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
-
-  if ($DBconn->connect_error) {
-    die("Connection failed :(");
-  }
-
-  $passwordEnc = base64_encode($password);
-
-  $query = "SELECT * FROM `Users`";
-  $RSusers = $DBconn->query($query);
-
-  if ($RSusers->num_rows > 0) {
-    while ($row = $RSusers->fetch_assoc()) {
-      if ($row["username"] == $username) {
-        if ($row["password"] == $passwordEnc) {
-          $_SESSION["isLoggedIn"] = True;
-          $_SESSION["userInfo"] = array("id" => $row["ID"], "user" => $row["username"], "fName" => $row["First Name"], "lName" => $row["Last Name"], "grade" => $row["Grade"], "shirt" => $row["T-Shirt Size"], "email" => $row["Email"], "phone" => $row["Phone Number"], "interests" => $row["Interest"], "birthday" => $row["Birthday"], "roles" => $row["Roles"]);
-          header("Location: /dashboard.php");
-        }
-      }
-    }
-  }
-
-  $DBconn->close();
-}
-
 ?>
 <html>
 <title>Furious Falcons - Login</title>
@@ -69,7 +34,7 @@ if(isset($_POST["username"])) {
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important">RETURN</a>
+      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important"><i class="fa fa-home w3-xlarge"></i><br />RETURN</a>
     </div>
   </div>
   <!-- Page Content -->
@@ -93,7 +58,7 @@ if(isset($_POST["username"])) {
     </div>
 
     <h1 style="text-align: center; font-weight: bold; font-size: 50px;">Login</h1>
-
+    <p class="error"></p>
     <form action="login.php" method="post" class="halfAndCenter">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Username" required name="username"></p>
       <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="password"></p>
@@ -106,6 +71,47 @@ if(isset($_POST["username"])) {
     </div>
     <!-- END PAGE CONTENT -->
   </div>
-
+  <script src="FormFunctions.js"></script>
 </body>
 </html>
+<?php
+
+if(isset($_POST["username"])) {
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  $DBservername = "sql223.main-hosting.eu";
+  $DBusername = "u995699429_robot";
+  $DBpassword = "5YkT;>;lZxlgh`e9~";
+  $DBname = "u995699429_robot";
+
+  $DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+
+  if ($DBconn->connect_error) {
+    die("Connection failed :(");
+  }
+
+  $passwordEnc = base64_encode($password);
+
+  $query = "SELECT * FROM `Users`";
+  $RSusers = $DBconn->query($query);
+
+  if ($RSusers->num_rows > 0) {
+    while ($row = $RSusers->fetch_assoc()) {
+      if ($row["username"] == $username) {
+        if ($row["password"] == $passwordEnc) {
+          $_SESSION["isLoggedIn"] = True;
+          $_SESSION["userInfo"] = array("id" => $row["ID"], "user" => $row["username"], "fName" => $row["First Name"], "lName" => $row["Last Name"], "grade" => $row["Grade"], "shirt" => $row["T-Shirt Size"], "email" => $row["Email"], "phone" => $row["Phone Number"], "interests" => $row["Interest"], "birthday" => $row["Birthday"], "roles" => $row["Roles"]);
+          header("Location: /dashboard.php");
+        }
+      }
+    }
+    if (!$_SESSION["isLoggedIn"]) {
+      echo '<script type="text/javascript">
+      updateError("Invalid username or password");
+      </script>';
+    }
+  }
+
+  $DBconn->close();
+}
+?>

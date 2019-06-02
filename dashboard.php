@@ -36,7 +36,7 @@ if(isset($_SESSION["isLoggedIn"])) {
     <!-- Avatar image in top left corner -->
     <img src="images/FalconsLogoOnly.png" style="width:100%">
     <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
-      <i class="fa fa-home w3-xxlarge"></i>
+      <i class="fa fa-sign-out fa-rotate-180 w3-xxlarge"></i>
       <p>RETURN & LOGOUT</p>
     </a>
   </nav>
@@ -45,7 +45,7 @@ if(isset($_SESSION["isLoggedIn"])) {
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:25% !important">RETURN & LOGOUT</a>
+      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />RETURN & LOGOUT</a>
     </div>
   </div>
   <!-- Page Content -->
@@ -68,7 +68,10 @@ if(isset($_SESSION["isLoggedIn"])) {
       </ul>
     </div>
 
-    <h1 style="font-weight: bold;" class="w3-content">Welcome to Your Dashboard, Fellow Falcon!</h1>
+    <div class="w3-content" style="text-align: center;">
+      <h1 style="font-weight: bold;">Welcome to your Robotics Automated Dashboard, Fellow Falcon!</h1>
+      <h3>What can I do for you, <?php echo $userInfo["fName"]; ?>?</h3>
+    </div>
 
     <!-- END PAGE CONTENT -->
   </div>

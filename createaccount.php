@@ -32,7 +32,7 @@
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important">RETURN</a>
+      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important"><i class="fa fa-home w3-xlarge"></i><br />RETURN</a>
     </div>
   </div>
   <!-- Page Content -->
@@ -205,7 +205,7 @@
     transform: rotate(45deg);
   }
   </style>
-
+  <script src="FormFunctions.js"></script>
   <script type="text/javascript">
   var birthDay = document.getElementsByClassName("birthdayForm")[1];
   var birthYear = document.getElementsByClassName("birthdayForm")[2];
@@ -232,9 +232,6 @@
   }
   birthYear.innerHTML = years;
 
-  function updateError(str) {
-    document.getElementsByClassName("error")[0].innerHTML = str;
-  }
   </script>
 
 </body>

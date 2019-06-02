@@ -1,6 +1,7 @@
 <?php
-session_unset();
-session_destroy();
+  session_start();
+  session_unset();
+  session_destroy();
 ?>
 <html>
 <title>Furious Falcons</title>
@@ -47,11 +48,11 @@ session_destroy();
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:20% !important">HOME</a>
-      <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:20% !important">ABOUT</a>
-      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important">PHOTOS</a>
-      <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button navlink" style="width:20% !important">CONTACT</a>
-      <a href="/dashboard.php" class="w3-bar-item w3-button navlink" style="width:20% !important">LOGIN</a>
+      <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-home w3-xlarge"></i><br />HOME</a>
+      <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-user w3-xlarge"></i><br />ABOUT</a>
+      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-eye w3-xlarge"></i><br />PHOTOS</a>
+      <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-envelope w3-xlarge"></i><br />CONTACT</a>
+      <a href="/dashboard.php" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-lock w3-xlarge"></i><br />LOGIN</a>
     </div>
   </div>
 
@@ -95,32 +96,23 @@ session_destroy();
       <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
         <h2 class="w3-text-light-grey">Our Team</h2>
         <hr style="width:200px" class="w3-opacity">
-        <p>As a FIRST Robotics Team, it is our mission to insure that our members will walk away from this organization with not only the benefits of a good experience but also with applicable skills that they may use later in life to further their desired career path. We address the majority of the careers and oppertunities that are found in the STEM (Science Technology Engineering & Mathematics) fields. More specifically, we endorse majors such as Mechanical Engineering, Computer Science, Electrical Engineering, Fluid-Power Engineering and even Control Engineering.  As much as we want to guide and educate our members on these valuable skills, we must also strive for an experience that is both memorable and fulfilling.
-        </p>
+        <p></p>
         <h3 class="w3-padding-16 w3-text-light-grey">The Skills We Teach</h3>
         <h5 class="w3-wide" style="font-weight: bold;">Mechanical Engineering</h5>
         <hr style="width:200px" class="w3-opacity">
-        <p><p>Members of our mechanical team are taught to comprehend and utilize the basic principles of physics, mathematics, and Problem Solving in the construction of our robot each year. This team is responsible for the primary assembly, maintainence and overall functionality of the robot. Most of the time, these memebers are continuouslly researching, redesigning and exploring potential solutions to inovate the overall building experience.
-        </p>
+        <p></p>
         <h5 class="w3-wide" style="font-weight: bold;">Electrical Engineering</h5>
         <hr style="width:200px" class="w3-opacity">
-        <p><p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+        <p></p>
         <h5 class="w3-wide" style="font-weight: bold;">Computer Science</h5>
         <hr style="width:200px" class="w3-opacity">
-        <p><p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+        <p></p>
         <h5 class="w3-wide" style="font-weight: bold;">Fluid-Power Engineering</h5>
         <hr style="width:200px" class="w3-opacity">
-        <p><p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+        <p></p>
         <h5 class="w3-wide" style="font-weight: bold;">Control Engineering</h5>
         <hr style="width:200px" class="w3-opacity">
-        <p><p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+        <p></p>
       </div>
       <br>
 
