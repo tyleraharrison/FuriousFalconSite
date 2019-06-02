@@ -1,31 +1,27 @@
 <?php
-if(isset($_POST["reference"])) {
+if(isset($_SESSION["reference"])) {
   $reference = $_POST["reference"];
 }
 
 if(isset($_POST["username"])) {
   $username = $_POST["username"];
-}
-
-if(isset($_POST["password"])) {
   $password = $_POST["password"];
+  $DBservername = "sql223.main-hosting.eu";
+  $DBusername = "u995699429_robot";
+  $DBpassword = "5YkT;>;lZxlgh`e9~";
+  $DBname = "u995699429_robot";
+
+  $DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+
+  if ($DBconn->connect_error) {
+    die("Connection failed :(");
+  }
+
+  $query = "SELECT * FROM `Users`";
+  $RSusers = $DBconn->query($query);
+
+  $DBconn->close();
 }
-
-$DBservername = "sql223.main-hosting.eu";
-$DBusername = "u995699429_robot";
-$DBpassword = "5YkT;>;lZxlgh`e9~";
-$DBname = "u995699429_robot";
-
-// Create connection
-$DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
-
-// Check connection
-if ($DBconn->connect_error) {
-  die("Connection failed :(");
-}
-
-$query = "SELECT * FROM `Users`";
-$RSusers = $DBconn->query($query);
 
 ?>
 <html>
@@ -53,7 +49,7 @@ $RSusers = $DBconn->query($query);
     <img src="images/FalconsLogoOnly.png" style="width:100%">
     <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-home w3-xxlarge"></i>
-      <p>RETURN & LOGOUT</p>
+      <p>RETURN</p>
     </a>
   </nav>
 
@@ -61,7 +57,7 @@ $RSusers = $DBconn->query($query);
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important">RETURN & LOGOUT</a>
+      <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important">RETURN</a>
     </div>
   </div>
   <!-- Page Content -->
@@ -92,7 +88,9 @@ $RSusers = $DBconn->query($query);
       <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-lock" style="padding-right: 10px;"></i> LOGIN</button>
     </form>
     <div class="halfAndCenter">
-      <button class="w3-button w3-light-grey w3-padding-large" id="createAccountButton"><i class="fa fa-user" style="padding-right: 10px;"></i> CREATE ACCOUNT</button>
+      <a href="/createaccount.php">
+        <button class="w3-button w3-light-grey w3-padding-large" id="createAccountButton"><i class="fa fa-user" style="padding-right: 10px;"></i> CREATE ACCOUNT</button>
+      </a>
     </div>
     <!-- END PAGE CONTENT -->
   </div>

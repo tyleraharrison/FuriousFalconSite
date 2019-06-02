@@ -118,9 +118,25 @@ nav a.active {
   float: right;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.birthdayForm {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: calc(33% - 2px);
+
+}
+
 @media screen and (max-width: 600px) {
 
-  .loginForm {
+  .halfAndCenter {
     width: 90%;
   }
 

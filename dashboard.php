@@ -1,10 +1,10 @@
 <?php
-if(isset($_POST["isLoggedIn"])) {
-  $isLoggedIn = $_POST["isLoggedIn"];
+if(isset($_SESSION["isLoggedIn"])) {
+  $isLoggedIn = $_SESSION["isLoggedIn"];
 } else {
   $isLoggedIn = false;
-  $_POST["isLoggedIn"] = $isLoggedIn;
-  $_POST["reference"] = "dashboard.php";
+  $_SESSION["isLoggedIn"] = $isLoggedIn;
+  $_SESSION["reference"] = "dashboard.php";
   header("Location: /login.php");
 }
 ?>
@@ -34,7 +34,7 @@ if(isset($_POST["isLoggedIn"])) {
     <img src="images/FalconsLogoOnly.png" style="width:100%">
     <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-home w3-xxlarge"></i>
-      <p>RETURN</p>
+      <p>RETURN & LOGOUT</p>
     </a>
   </nav>
 
@@ -42,7 +42,7 @@ if(isset($_POST["isLoggedIn"])) {
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:25% !important">RETURN</a>
+      <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:25% !important">RETURN & LOGOUT</a>
     </div>
   </div>
   <!-- Page Content -->
