@@ -72,7 +72,14 @@ nav a.active {
 
 #Sponsors li {
   padding: 15px;
+}
+
+.forDesktop {
   display: inline-block;
+}
+
+.forMobile {
+  display: none;
 }
 
 #Sponsors li img {
@@ -98,6 +105,10 @@ nav a.active {
 }
 
 @media screen and (max-width: 600px) {
+  .forMobile {
+    display: inline-block;
+  }
+
   #Sponsors {
     margin: 0;
     position: relative;
