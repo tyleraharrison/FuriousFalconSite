@@ -1,5 +1,12 @@
 <?php
+if(isset($_POST["isLoggedIn"])) {
   $isLoggedIn = $_POST["isLoggedIn"];
+} else {
+  $isLoggedIn = false;
+  $_POST["isLoggedIn"] = $isLoggedIn;
+  $_POST["reference"] = "dashboard.php";
+  header("Location: /login.php");
+}
 ?>
 
 <html>
@@ -58,8 +65,8 @@
       </ul>
     </div>
 
-<!-- END PAGE CONTENT -->
-</div>
+    <!-- END PAGE CONTENT -->
+  </div>
 
 </body>
 </html>

@@ -103,7 +103,27 @@ nav a.active {
   border: 2px solid #f9c41c;
 }
 
+.halfAndCenter {
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginButton {
+  float:left;
+}
+
+#createAccountButton {
+  float: right;
+}
+
 @media screen and (max-width: 600px) {
+
+  .loginForm {
+    width: 90%;
+  }
+
   .forMobile {
     display: inline-block;
   }
@@ -239,10 +259,4 @@ nav a.active {
 
 #CampPageTitle h1 {
   font-weight: bold;
-}
-
-#youtubeVid {
-  padding-top: 100px;
-  width: 100%;
-  height: calc(100vw / 1.778);
 }
