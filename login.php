@@ -1,7 +1,5 @@
 <?php
-if(isset($_SESSION["reference"])) {
-  $reference = $_POST["reference"];
-}
+session_start();
 
 if(isset($_POST["username"])) {
   $username = $_POST["username"];
@@ -17,8 +15,22 @@ if(isset($_POST["username"])) {
     die("Connection failed :(");
   }
 
+  $passwordEnc = base64_encode($password);
+
   $query = "SELECT * FROM `Users`";
   $RSusers = $DBconn->query($query);
+
+  if ($RSusers->num_rows > 0) {
+    while ($row = $RSusers->fetch_assoc()) {
+      if ($row["username"] == $username) {
+        if ($row["password"] == $passwordEnc) {
+          $_SESSION["isLoggedIn"] = True;
+          $_SESSION["userInfo"] = array("id" => $row["ID"], "user" => $row["username"], "fName" => $row["First Name"], "lName" => $row["Last Name"], "grade" => $row["Grade"], "shirt" => $row["T-Shirt Size"], "email" => $row["Email"], "phone" => $row["Phone Number"], "interests" => $row["Interest"], "birthday" => $row["Birthday"], "roles" => $row["Roles"]);
+          header("Location: /dashboard.php");
+        }
+      }
+    }
+  }
 
   $DBconn->close();
 }
@@ -47,7 +59,7 @@ if(isset($_POST["username"])) {
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
     <img src="images/FalconsLogoOnly.png" style="width:100%">
-    <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+    <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-home w3-xxlarge"></i>
       <p>RETURN</p>
     </a>
@@ -57,7 +69,7 @@ if(isset($_POST["username"])) {
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.html" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important">RETURN</a>
+      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important">RETURN</a>
     </div>
   </div>
   <!-- Page Content -->

@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_unset();
+session_destroy();
+?>
 <html>
 <title>Furious Falcons</title>
 <meta charset="UTF-8">
@@ -297,9 +300,9 @@
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
     <h3>Useful Links</h3>
-    <p style="font-size: 16px;"><a href="https://discord.gg/e3GC7a">Join the Discord</a></p>
+    <p style="font-size: 16px;"><a href="https://discord.gg/9RZmfFE">Join the Discord</a></p>
     <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
-    <p style="font-size: 16px;"><a href="/camp.html">Look at our Summer Camp</a></p>
+    <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
 
     <!--
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
