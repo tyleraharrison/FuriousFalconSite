@@ -76,11 +76,11 @@
         </select></p>
         <p><select class="w3-input w3-padding-16" name="shirt">
           <option value="default" selected disabled>T-Shirt Size</option>
-          <option value="9">Small</option>
-          <option value="10">Medium</option>
-          <option value="11">Large</option>
-          <option value="12">X-Large</option>
-          <option value="12">XX-Large</option>
+          <option value="S">Small</option>
+          <option value="M">Medium</option>
+          <option value="L">Large</option>
+          <option value="XL">X-Large</option>
+          <option value="XXL">XX-Large</option>
         </select></p>
         <p>
           <select class="birthdayForm w3-padding-16" name="birthM" >
