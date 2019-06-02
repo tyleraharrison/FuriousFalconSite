@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+  $isLoggedIn = $_POST["isLoggedIn"];
+?>
+
 <html>
 <title>Furious Falcons - Student Dashboard</title>
 <meta charset="UTF-8">
@@ -40,14 +43,18 @@
     <!-- Sponsors -->
     <div id="Sponsors">
       <ul>
-        <li><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
-        <li><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li><img src="images/Sponsors/Sponsor_Hampco.png"></li>
-        <li><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-        <li><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
-        <li><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
 
