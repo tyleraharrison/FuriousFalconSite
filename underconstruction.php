@@ -1,19 +1,6 @@
-<?php
-session_start();
-
-if(isset($_SESSION["isLoggedIn"])) {
-  $isLoggedIn = $_SESSION["isLoggedIn"];
-  if ($isLoggedIn) {
-    $userInfo = $_SESSION["userInfo"];
-  }
-} else {
-  $_SESSION["isLoggedIn"] = False;
-  header("Location: /login.php");
-}
-?>
-
+<!DOCTYPE html>
 <html>
-<title>Furious Falcons - Student Dashboard</title>
+<title>Furious Falcons</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
@@ -36,8 +23,8 @@ if(isset($_SESSION["isLoggedIn"])) {
     <!-- Avatar image in top left corner -->
     <img src="images/FalconsLogoOnly.png" style="width:100%">
     <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
-      <i class="fa fa-sign-out fa-rotate-180 w3-xxlarge"></i>
-      <p>RETURN & LOGOUT</p>
+      <i class="fa fa-home w3-xxlarge"></i>
+      <p>RETURN</p>
     </a>
   </nav>
 
@@ -45,21 +32,36 @@ if(isset($_SESSION["isLoggedIn"])) {
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />RETURN & LOGOUT</a>
+      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important"><i class="fa fa-home w3-xxlarge"></i><br />RETURN</a>
     </div>
   </div>
   <!-- Page Content -->
   <div class="w3-padding-large" id="wrapper">
+    <!-- Sponsors -->
+    <div id="Sponsors">
+      <ul>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+      </ul>
+    </div>
 
     <div class="w3-content" style="text-align: center;">
-      <h1 style="font-weight: bold;">Welcome to your Robotics Automated Dashboard, Fellow Falcon!</h1>
-      <h3>What can I do for you, <?php echo $userInfo["fName"]; ?>?</h3>
+      <h1 style="font-weight: bold;">You've discovered one of our unfinished features!</h1>
+      <h3>This page is currently still under construction. We apologize for the inconvience.</h3>
     </div>
-    <div class="w3-content">
 
-    </div>
-    <!-- END PAGE CONTENT -->
-  </div>
+<!-- END PAGE CONTENT -->
+</div>
 
 </body>
 </html>

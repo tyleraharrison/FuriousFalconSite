@@ -52,11 +52,11 @@
       <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-user w3-xlarge"></i><br />ABOUT</a>
       <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-eye w3-xlarge"></i><br />PHOTOS</a>
       <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-envelope w3-xlarge"></i><br />CONTACT</a>
-      <a href="/dashboard.php" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-lock w3-xlarge"></i><br />LOGIN</a>
+      <a href="/underconstruction.php" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-lock w3-xlarge"></i><br />LOGIN</a>
     </div>
   </div>
 
-  <a href="/dashboard.php">
+  <a href="/underconstruction.php">
     <div id="SignIn">
       <p style="margin-top: 10px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">LOGIN</b></p>
     </div>
