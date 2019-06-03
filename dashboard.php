@@ -72,7 +72,9 @@ if(isset($_SESSION["isLoggedIn"])) {
       <h1 style="font-weight: bold;">Welcome to your Robotics Automated Dashboard, Fellow Falcon!</h1>
       <h3>What can I do for you, <?php echo $userInfo["fName"]; ?>?</h3>
     </div>
-
+    <div class="w3-content">
+      
+    </div>
     <!-- END PAGE CONTENT -->
   </div>
 

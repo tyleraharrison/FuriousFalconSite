@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <title>Furious Falcons - Camp</title>
 <meta charset="UTF-8">
@@ -15,7 +15,6 @@
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
 
 <body class="w3-black">
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
@@ -58,8 +57,6 @@
       <h1>Furious Falcons Robotics Summer Camp</h1>
       <h4>Hosted at Foster High School</h4>
     </div>
-
-
 
     <!-- END PAGE CONTENT -->
   </div>
