@@ -59,8 +59,6 @@
       <h4>Hosted at Foster High School</h4>
     </div>
 
-
-
     <!-- END PAGE CONTENT -->
   </div>
 
