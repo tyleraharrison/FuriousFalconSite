@@ -75,6 +75,7 @@ session_destroy();
         <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
         <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
         <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
+
         <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
         <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
         <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
@@ -88,7 +89,7 @@ session_destroy();
       </div>
       <a href="/camp.php" style="text-decoration: none;">
         <div style="margin-right: 30px;">
-          <p class="w3-padding-16" style="padding-right: 35px; padding-left: 10px;">Looking for our Summer Camp? Click here and we'll get you squared away!</p>
+          <p class="w3-padding-16" style="padding-right: 35px; padding-left: 10px;">Looking for our Summer Camp? Click here to get more information!</p>
         </a>
       </div>
     </div>

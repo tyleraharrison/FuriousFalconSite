@@ -73,6 +73,7 @@ if (isset($_POST["name"])) {
         <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
         <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
         <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
+        
         <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
         <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
         <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
