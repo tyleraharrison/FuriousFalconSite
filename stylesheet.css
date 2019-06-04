@@ -134,7 +134,29 @@ nav a.active {
 
 }
 
+#MessageBanner {
+  width: 100%;
+  background-color: #f9c41c;
+  border-radius: 5px;
+  color: white;
+}
+
+#MessageBanner div p {
+  text-align: justify;
+}
+
+#BannerCloseButton {
+  position: relative;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
 @media screen and (max-width: 600px) {
+
+  #MessageBanner div p {
+    text-align: center;
+  }
 
   .halfAndCenter {
     width: 90%;

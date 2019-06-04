@@ -1,0 +1,6 @@
+Customer {
+    Name: *
+    Phone: 
+    Email: rubixsolver99@yahoo.com
+}
+

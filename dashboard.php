@@ -50,30 +50,13 @@ if(isset($_SESSION["isLoggedIn"])) {
   </div>
   <!-- Page Content -->
   <div class="w3-padding-large" id="wrapper">
-    <!-- Sponsors -->
-    <div id="Sponsors">
-      <ul>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-      </ul>
-    </div>
 
     <div class="w3-content" style="text-align: center;">
       <h1 style="font-weight: bold;">Welcome to your Robotics Automated Dashboard, Fellow Falcon!</h1>
       <h3>What can I do for you, <?php echo $userInfo["fName"]; ?>?</h3>
     </div>
     <div class="w3-content">
-      
+
     </div>
     <!-- END PAGE CONTENT -->
   </div>
