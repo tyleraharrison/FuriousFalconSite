@@ -56,7 +56,7 @@
     </div>
 
     <div class="w3-content" style="text-align: center;">
-      <h1 style="font-weight: bold;">You've discovered one of our unfinished features!</h1>
+      <h1 style="font-weight: bold;">You've Discovered One of Our Unfinished Features!</h1>
       <h3>This page is currently still under construction. We apologize for the inconvience.</h3>
     </div>
 

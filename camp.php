@@ -1,3 +1,29 @@
+<?php
+
+if (isset($_POST["name"])) {
+
+  $name = $_POST["name"];
+  $phone = $_POST["phone"];
+  $email = $_POST["email"];
+
+  if ($name == "") {
+    $name = "*";
+  }
+  if ($phone == "") {
+    $phone = "*";
+  }
+
+  $file = fopen("CampContactList.txt", "a");
+  fwrite($file,
+  "Customer {
+    Name: " . $name . "
+    Phone: " . $phone . "
+    Email: " . $email .
+    "\n}\n\n");
+  fclose($file);
+
+}
+?>
 
 <html>
 <title>Furious Falcons - Camp</title>
@@ -56,6 +82,16 @@
     <div id="CampPageTitle" class="w3-content">
       <h1>Furious Falcons Robotics Summer Camp</h1>
       <h4>Hosted at Foster High School</h4>
+    </div>
+
+    <div class="w3-content">
+      <p style="text-align: center;">We are still finalizing some of the details for our summer camp this year. Please subscribe to our information email list, and we will notify you once all of the bugs are worked out.</p>
+      <form action="camp.php" method="post">
+        <p><input name="name" placeholder="Name" class="w3-input w3-padding-16" type="text"></p>
+        <p><input name="phone" placeholder="Phone Number" class="w3-input w3-padding-16" type="tel"></p>
+        <p><input name="email" placeholder="Email Address" class="w3-input w3-padding-16" type="email" required></p>
+        <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-envelope" style="padding-right: 10px;"></i> SIGN UP</button>
+      </form>
     </div>
 
     <!-- END PAGE CONTENT -->
