@@ -89,7 +89,7 @@ session_destroy();
       </div>
       <a href="/camp.php" style="text-decoration: none;">
         <div style="margin-right: 30px;">
-          <p class="w3-padding-16" style="padding-right: 35px; padding-left: 10px;">Looking for our Summer Camp? Click here to get more information!</p>
+          <p class="w3-padding-16" style="padding-right: 35px; padding-left: 10px; font-weight: bold; font-size: 16px; text-align: center;">Looking for our Summer Camp? Click here to get more information!</p>
         </a>
       </div>
     </div>
