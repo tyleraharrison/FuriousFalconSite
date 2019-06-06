@@ -1,4 +1,4 @@
 <?php
 //Redirect to sponsors.html
-header("Location: /sponsors.html")
+header("Location: /sponsors.php")
 ?>

@@ -55,13 +55,14 @@ if(isset($_POST['pgname'])) {
   $email_message .= "Comments: ".clean_string($comments)."\n";
 
   // create email headers
-  $headers = 'From: '.$email_from."\r\n".
-  'Reply-To: '.$email_from."\r\n" .
+  $headers = 'From: '.$email."\r\n".
+  'Reply-To: '.$email."\r\n" .
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $email_message, $headers);
 
-  header("Location: /camp.php?registerSuccess");
-
+  if (isset($email)) {
+    header("Location: /camp.php?registerSuccess");
+  }
   exit();
 
 }
@@ -166,7 +167,7 @@ if(isset($_POST['pgname'])) {
         <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" required name="phone"></p>
         <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address" required name="email"></p>
         <p style="height: 200px;"><textarea style="height: 100%" class="w3-input w3-padding-16" placeholder="Additional Questions/Comments/Concerns" name="comments"></textarea></p>
-        <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
       </form>
     </div>
 
@@ -194,7 +195,6 @@ if(isset($_POST['pgname'])) {
   if (window.location.search == "?registerSuccess") {
     $('#campContent').css('display', 'none');
     $('#registerSuccessText').css('display', 'block');
-    goToContactForm();
   }
   </script>
 </body>
