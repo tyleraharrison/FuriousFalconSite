@@ -54,14 +54,27 @@
         <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
+    <h1 class="w3-content">Our Booster Club</h1>
+    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
-    <div class="w3-content" style="text-align: center;">
-      <h1 style="font-weight: bold;">You've Discovered One of Our Unfinished Features!</h1>
-      <h3>This page is currently still under construction. We apologize for the inconvience.</h3>
-    </div>
+      <h3>Useful Links</h3>
+      <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
+      <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
 
-<!-- END PAGE CONTENT -->
-</div>
+
+      <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fa fa-reddit w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fa fa-youtube w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"<i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+      <!--<a style="padding: 5px;" href="https://www.pinterest.com/fosterrobotics/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>-->
+      <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+      <!--<a style="padding: 5px;" href="https://www.linkedin.com/in/furious-falcons-936303187/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>-->
+
+      <!-- End footer -->
+    </footer>
+    <!-- END PAGE CONTENT -->
+  </div>
 
 </body>
 </html>
