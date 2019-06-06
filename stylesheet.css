@@ -91,13 +91,7 @@ nav a.active {
   padding-bottom: 400px;
 }
 
-#SignIn {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  left: auto;
-  width: 150px;
-  height: 55px;
+.coolButton {
   z-index: 15;
   border-radius: 5px;
   border: 2px solid #f9c41c;
@@ -125,12 +119,12 @@ nav a.active {
 }
 
 .birthdayForm {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    width: calc(33% - 2px);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: calc(33% - 2px);
 
 }
 
@@ -300,4 +294,29 @@ nav a.active {
 
 #CampPageTitle h1 {
   font-weight: bold;
+}
+
+
+/* Smooth Page Transitions WIP */
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 1;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.scene_element {
+  animation-duration: 0.5s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+.scene_element--fadein {
+  animation-name: fadeInRight;
 }
