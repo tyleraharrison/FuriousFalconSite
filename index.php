@@ -302,6 +302,7 @@ session_destroy();
       <!-- End Contact Section -->
     </div>
   </section>
+  
   <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
