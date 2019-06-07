@@ -54,7 +54,13 @@
         <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
-    <h1 class="w3-content">Our Booster Club</h1>
+
+    <div class="w3-content">
+      <h1 style="text-align: center; font-weight: bold;">Our Booster Club</h1>
+      <h3 style="text-align: center;">Furious Falcons Booster Inc.</h3>
+      <p class="w3-justify">The Furious Falcons Booster Club is an account with a 501(c)(3) tax-exempt status, whose sole purpose is to maintain the funds for our organization. This includes depositing raised funds, keeping up-to-date ledgers of the current status of the account, as well as approving expenditures that are proposed by the club. This page includes some of the general information for our booster club and the officers in charge of it. It also shows the most recent ledgers of our account.</p>
+    </div>
+
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
       <h3>Useful Links</h3>
@@ -76,5 +82,6 @@
     <!-- END PAGE CONTENT -->
   </div>
 
+  <script src="SmoothUI.js" type="text/javascript"></script>
 </body>
 </html>

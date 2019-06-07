@@ -120,10 +120,12 @@
             </li>
           </ul>
         </div>
-
-
-        <!-- END PAGE CONTENT -->
       </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
 
-    </body>
-    </html>
+
+  <script src="SmoothUI.js" type="text/javascript"></script>
+</body>
+</html>

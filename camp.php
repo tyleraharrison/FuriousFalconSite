@@ -129,7 +129,7 @@ if(isset($_POST['pgname'])) {
     </div>
     <p class="w3-content" id="registerSuccessText" style="text-align: center; display: none;">Thank you for registering for our camp! We will contact you with more information soon!</p>
     <div class="w3-content" id="campContent">
-      <p class="w3-justify w3-text-grey">Over the summer of 2019, the Furious Falcons, will be hosting a STEM camp at Foster High School.  The main objective of this camp is to extend the reach of Foster Robotics throughout the community. With your help, this program will allow aspiring engineers (ages 10 and up) to participate in various activities that will ensure the most interactive experience possible. Primarily, this camp will be directed towards educating students on the concepts we implement within our organization. The camp will be held August 5th – August 9th, and activity hours will range from 10:00 a.m. to 4:00p.m.  Food and other accommodations will be provided.</p>
+      <p class="w3-justify w3-text-grey">Over the summer of 2019, the Furious Falcon will be hosting a STEM camp at Foster High School.  The main objective of this camp is to extend the reach of Foster Robotics throughout the community. With your help, this program will allow aspiring engineers (ages 10 and up) to participate in various activities that will ensure the most interactive experience possible. Primarily, this camp will be directed towards educating students on the concepts we implement within our organization. The camp will be held August 5th – August 9th and activity hours will range from 10:00 a.m. to 4:00 p.m.  Food and other accommodations will be provided.</p>
       <h3>The Skills to be Learned</h3>
       <hr style="width:200px" class="w3-opacity">
       <ul>
@@ -191,6 +191,7 @@ if(isset($_POST['pgname'])) {
     </footer>
     <!-- END PAGE CONTENT -->
   </div>
+  <script src="SmoothUI.js" type="text/javascript"></script>
   <script type="text/javascript">
   if (window.location.search == "?registerSuccess") {
     $('#campContent').css('display', 'none');

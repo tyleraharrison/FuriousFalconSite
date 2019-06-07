@@ -205,6 +205,7 @@
     transform: rotate(45deg);
   }
   </style>
+  <script src="SmoothUI.js" type="text/javascript"></script>
   <script src="FormFunctions.js"></script>
   <script type="text/javascript">
   var birthDay = document.getElementsByClassName("birthdayForm")[1];

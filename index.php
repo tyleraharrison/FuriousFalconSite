@@ -20,7 +20,6 @@ session_destroy();
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-
 <body class="w3-black">
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" style="overflow: hidden;">
@@ -56,14 +55,14 @@ session_destroy();
     </div>
   </div>
 
-  <a href="/underconstruction.php">
-    <div id="SignIn" class="coolButton" style=" position: absolute; top: 25px; right: 25px; left: auto; width: 150px; height: 55px;">
-      <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">LOGIN</b></p>
-    </div>
-  </a>
-
   <!-- Page Content -->
-  <div class="w3-padding-large scene_element scene_element--fadein" id="wrapper">
+  <div class="w3-padding-large" id="wrapper">
+    <!-- Login Button -->
+    <a href="/underconstruction.php">
+      <div id="SignIn" class="coolButton" style=" position: absolute; top: 25px; right: 25px; left: auto; width: 150px; height: 55px;">
+        <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">LOGIN</b></p>
+      </div>
+    </a>
     <!-- Sponsors -->
     <div id="Sponsors">
       <ul>
@@ -107,68 +106,67 @@ session_destroy();
         <h2 class="w3-text-light-grey">Our Team</h2>
         <hr style="width:200px" class="w3-opacity">
         <p>As a FIRST Robotics Team, it is our mission to ensure that our members will walk away from this organization with not only the benefits of a good experience but also with applicable skills that they may use later in life to further their desired career path. We address the majority of the careers and opportunities that are found in the STEM (Science Technology Engineering & Mathematics) fields. More specifically, we endorse majors such as Mechanical Engineering, Computer Science, Electrical Engineering, Fluid-Power Engineering and even Control Engineering.  As much as we want to guide and educate our members on these valuable skills, we must also strive for an experience that is both memorable and fulfilling. Which is why we accept the roles both of an educational organization, but also an enjoyable club.</p>
-        <!--<h3 class="w3-padding-16 w3-text-light-grey">Our Finances</h3>
+        <h3 class="w3-padding-16 w3-text-light-grey">The Skills We Teach</h3>
+        <h5 class="w3-wide" style="font-weight: bold;">Mechanical Engineering</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Members of our mechanical team are taught to comprehend and utilize the basic principles of physics, mathematics, and problem-solving skills in the construction of our robot each year. This team is responsible for the primary assembly, maintenance and overall functionality of the robot. Most of the time, these members are continuously researching, redesigning and implementing potential solutions to overcome the current task at hand. This is all in hopes to innovate the overall building experience.</p>
+        <h5 class="w3-wide" style="font-weight: bold;">Electrical Engineering</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p> The electrical team holds a crucial role in our team and on our robot. In-depth knowledge of the RoboRIO and other electrical components is used. This team holds the responsibility of wiring the robot and all its components. While this is the only task for the electrical group, it requires a fair amount of organization to keep cables and wires out of the way of the moving parts of the robot. Much like the other departments of robotics, the members of the electrical team are taught the skills necessary to be successful both in their department and in their future, wherever it may take them.</p>
+        <h5 class="w3-wide" style="font-weight: bold;">Computer Science</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Our organization is dependent on our programming team. These individuals are tasked with learning the Java programming language, implementing the language in the Visual Studio Code IDE and exporting it to a RoboRIO controller, as well as familiarizing themselves with the basics of GRIP Vision and Image Recognition. As complex as these tasks may appear, our adept student-based teaching program allows new members, that might be oblivious to these components, to ease into the programming realm.  Students are able to learn the fundamentals of the technological aspect of robotics efficiently, effectively, and without the worry of falling behind their fellow members.</p>
+        <h5 class="w3-wide" style="font-weight: bold;">Fluid-Power Engineering</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Although a relatively new department to our organization, we believe that fluid power, or pneumatics, is a resource that should be further explored by our new generation of members. In the past, fluid-powered components have been overlooked and seen as a hinder our organization’s progression. However, during our previous season, pneumatics played a crucial role in our team’s success, increasing our desire to explore this technology further. In the future, members of the fluid-power team will work towards learning the fundamentals of pneumatic components such as pressure regulators, electrical-controlled solenoids, compressors, and air storage tanks. They will also incorporate these elements on the current robot build using polyurethane pneumatic tubing.</p>
+        <h5 class="w3-wide" style="font-weight: bold;">Control Engineering</h5>
+        <hr style="width:200px" class="w3-opacity">
+        <p>This division of our club does not hold too many responsibilities as it mostly consists of driving or manipulating our robot on the field of play. However, the tasks that are assigned do require a certain dedication to the club. Depending on the current status of the robot, drivers may receive little to no practice but are still expected to have a basic understanding of the primary functions of the robot and how they operate. This is so that no matter what might happen, our drivers are always prepared for whatever problems are thrown our way during the build season.</p>
+      </div>
+      <br>
 
-        <a href="/boosterclub.php" style="text-decoration: none;">
-        <div class="coolButton">
-        <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">About Our Booster Club</b></p>
+      <div class="w3-row w3-content w3-center w3-padding-16 w3-section w3-light-grey">
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">20+</span><br>
+          Robots Designed
         </div>
-    </a>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">40+</span><br>
+          Team Members
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">10+</span><br>
+          Proud Sponsors
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">100+</span><br>
+          Future Competitions Won
+        </div>
+      </div>
+      <div class="w3-content">
+        <h3 class="w3-padding-16 w3-text-light-grey">Our Finances</h3>
+        <a href="/boosterclub.php" style="text-decoration: none;">
+          <div class="coolButton">
+            <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Our Booster Club</b></p>
+          </div>
+        </a>
+      </div>
+      <!--
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download 2019 Game Manual
+    </button>
   -->
-  <h3 class="w3-padding-16 w3-text-light-grey">The Skills We Teach</h3>
-  <h5 class="w3-wide" style="font-weight: bold;">Mechanical Engineering</h5>
-  <hr style="width:200px" class="w3-opacity">
-  <p>Members of our mechanical team are taught to comprehend and utilize the basic principles of physics, mathematics, and problem-solving skills in the construction of our robot each year. This team is responsible for the primary assembly, maintenance and overall functionality of the robot. Most of the time, these members are continuously researching, redesigning and implementing potential solutions to overcome the current task at hand. This is all in hopes to innovate the overall building experience.</p>
-  <h5 class="w3-wide" style="font-weight: bold;">Electrical Engineering</h5>
-  <hr style="width:200px" class="w3-opacity">
-  <p> The electrical team holds a crucial role in our team and on our robot. In-depth knowledge of the RoboRIO and other electrical components is used. This team holds the responsibility of wiring the robot and all its components. While this is the only task for the electrical group, it requires a fair amount of organization to keep cables and wires out of the way of the moving parts of the robot. Much like the other departments of robotics, the members of the electrical team are taught the skills necessary to be successful both in their department and in their future, wherever it may take them.</p>
-  <h5 class="w3-wide" style="font-weight: bold;">Computer Science</h5>
-  <hr style="width:200px" class="w3-opacity">
-  <p>Our organization is dependent on our programming team. These individuals are tasked with learning the Java programming language, implementing the language in the Visual Studio Code IDE and exporting it to a RoboRIO controller, as well as familiarizing themselves with the basics of GRIP Vision and Image Recognition. As complex as these tasks may appear, our adept student-based teaching program allows new members, that might be oblivious to these components, to ease into the programming realm.  Students are able to learn the fundamentals of the technological aspect of robotics efficiently, effectively, and without the worry of falling behind their fellow members.</p>
-  <h5 class="w3-wide" style="font-weight: bold;">Fluid-Power Engineering</h5>
-  <hr style="width:200px" class="w3-opacity">
-  <p>Although a relatively new department to our organization, we believe that fluid power, or pneumatics, is a resource that should be further explored by our new generation of members. In the past, fluid-powered components have been overlooked and seen as a hinder our organization’s progression. However, during our previous season, pneumatics played a crucial role in our team’s success, increasing our desire to explore this technology further. In the future, members of the fluid-power team will work towards learning the fundamentals of pneumatic components such as pressure regulators, electrical-controlled solenoids, compressors, and air storage tanks. They will also incorporate these elements on the current robot build using polyurethane pneumatic tubing.</p>
-  <h5 class="w3-wide" style="font-weight: bold;">Control Engineering</h5>
-  <hr style="width:200px" class="w3-opacity">
-  <p>This division of our club does not hold too many responsibilities as it mostly consists of driving or manipulating our robot on the field of play. However, the tasks that are assigned do require a certain dedication to the club. Depending on the current status of the robot, drivers may receive little to no practice but are still expected to have a basic understanding of the primary functions of the robot and how they operate. This is so that no matter what might happen, our drivers are always prepared for whatever problems are thrown our way during the build season.</p>
-</div>
-<br>
 
-<div class="w3-row w3-content w3-center w3-padding-16 w3-section w3-light-grey">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">20+</span><br>
-    Robots Designed
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">40+</span><br>
-    Team Members
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">10+</span><br>
-    Proud Sponsors
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">100+</span><br>
-    Future Competitions Won
-  </div>
-</div>
+  <!-- Grid for pricing tables -->
 
-<!--
-<button class="w3-button w3-light-grey w3-padding-large w3-section">
-<i class="fa fa-download"></i> Download 2019 Game Manual
-</button>
--->
+  <!-- End Grid/Pricing tables -->
 
-<!-- Grid for pricing tables -->
-
-<!-- End Grid/Pricing tables -->
-
-<!-- What We Do Section -->
-<!-- <section id="whatWeDoSection">
-<div class="w3-padding-64 w3-content w3-text-grey" id="whatWeDo">
-<h2 class="w3-text-light-grey">What We Do</h2>
-<hr style="200px"></hr>
-<iframe width="1120" height="630" src="https://youtube.com/embed/zMH6ntA35Yg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <!-- What We Do Section -->
+  <!-- <section id="whatWeDoSection">
+  <div class="w3-padding-64 w3-content w3-text-grey" id="whatWeDo">
+  <h2 class="w3-text-light-grey">What We Do</h2>
+  <hr style="200px"></hr>
+  <iframe width="1120" height="630" src="https://youtube.com/embed/zMH6ntA35Yg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 </section> -->
 
@@ -333,6 +331,7 @@ session_destroy();
 
   <!-- END PAGE CONTENT -->
 </div>
+<script src="SmoothUI.js" type="text/javascript"></script>
 <script>
 
 if (window.location.search == "?contactSuccess") {

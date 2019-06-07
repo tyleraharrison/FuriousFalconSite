@@ -317,6 +317,10 @@ nav a.active {
   animation-fill-mode: both;
 }
 
-.scene_element--fadein {
+.scene_element--entering {
   animation-name: fadeInRight;
+}
+
+.scene_element--exiting {
+  animation-direction: alternate-reverse;
 }

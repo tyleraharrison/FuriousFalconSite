@@ -58,5 +58,6 @@
 <!-- END PAGE CONTENT -->
 </div>
 
+<script src="SmoothUI.js" type="text/javascript"></script>
 </body>
 </html>
