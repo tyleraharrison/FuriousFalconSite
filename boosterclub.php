@@ -89,7 +89,7 @@
         <div class="w3-third w3-margin-bottom">
           <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
             <li class="w3-dark-grey w3-xlarge w3-padding-32">Mr. Treasurer</li>
-            <li class="w3-padding-16"><img src="/images/Officers/DavidCaldwell.jpg" style="max-width: 100%; height: auto;"></li>
+            <li class="w3-padding-16"><img src="/images/Officers/RobertMalek.jpg" style="max-width: 100%; height: auto;"></li>
             <li class="w3-padding-16">
               <h2>Robert Malek</h2>
             </li>
