@@ -69,20 +69,17 @@
             <li class="w3-padding-16">
               <h2>David Caldwell</h2>
             </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large w3-hover-black">Contact Me</button>
-            </li>
+            <!-- <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
+            </li> -->
           </ul>
         </div>
         <div class="w3-third w3-margin-bottom">
           <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
             <li class="w3-dark-grey w3-xlarge w3-padding-32">Ms. Secretary</li>
-            <li class="w3-padding-16"><img src="/images/Officers/DavidCaldwell.jpg" style="max-width: 100%; height: auto;"></li>
+            <li class="w3-padding-16"><img src="/images/Officers/TammyAndersen.jpg" style="max-width: 100%; height: auto;"></li>
             <li class="w3-padding-16">
               <h2>Tammy Andersen</h2>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large w3-hover-black">Contact Me</button>
             </li>
           </ul>
         </div>
@@ -93,16 +90,21 @@
             <li class="w3-padding-16">
               <h2>Robert Malek</h2>
             </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large w3-hover-black">Contact Me</button>
-            </li>
           </ul>
         </div>
       </div>
+      <br />
+
+      <a href="mailto:contactus@furiousfalcons.org?subject=Booster%20Club" style="text-decoration: none;">
+        <div class="coolButton">
+          <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Have Questions Concerning Our Booster Club?</b></p>
+        </div>
+      </a>
+      <!--
       <h2 class="w3-text-light-grey">Our Bylaws</h2>
       <hr style="width:200px" class="w3-opacity">
       <h2 class="w3-text-light-grey">Our Ledger</h2>
-      <hr style="width:200px" class="w3-opacity">
+      <hr style="width:200px" class="w3-opacity">-->
     </div>
 
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">

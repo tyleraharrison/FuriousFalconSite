@@ -106,11 +106,11 @@ session_destroy();
         <h2 class="w3-text-light-grey">Our Team</h2>
         <hr style="width:200px" class="w3-opacity">
         <p>As a FIRST Robotics Team, it is our mission to ensure that our members will walk away from this organization with not only the benefits of a good experience but also with applicable skills that they may use later in life to further their desired career path. We address the majority of the careers and opportunities that are found in the STEM (Science Technology Engineering & Mathematics) fields. More specifically, we endorse majors such as Mechanical Engineering, Computer Science, Electrical Engineering, Fluid-Power Engineering and even Control Engineering.  As much as we want to guide and educate our members on these valuable skills, we must also strive for an experience that is both memorable and fulfilling. Which is why we accept the roles both of an educational organization, but also an enjoyable club.</p>
-        <a href="/boosterclub.php" style="text-decoration: none;">
+        <!-- <a href="/mentors.php" style="text-decoration: none;">
           <div class="coolButton">
             <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">The People Who Lead Us</b></p>
           </div>
-        </a>
+        </a> -->
         <h3 class="w3-padding-16 w3-text-light-grey">The Skills We Teach</h3>
         <h5 class="w3-wide" style="font-weight: bold;">Mechanical Engineering</h5>
         <hr style="width:200px" class="w3-opacity">
@@ -127,8 +127,25 @@ session_destroy();
         <h5 class="w3-wide" style="font-weight: bold;">Control Engineering</h5>
         <hr style="width:200px" class="w3-opacity">
         <p>This division of our club does not hold too many responsibilities as it mostly consists of driving or manipulating our robot on the field of play. However, the tasks that are assigned do require a certain dedication to the club. Depending on the current status of the robot, drivers may receive little to no practice but are still expected to have a basic understanding of the primary functions of the robot and how they operate. This is so that no matter what might happen, our drivers are always prepared for whatever problems are thrown our way during the build season.</p>
+
+        <h3 class="w3-padding-16 w3-text-light-grey w3-center">Our Finances</h3>
+        <div class="w3-content w3-row-padding">
+          <div class="w3-half w3-padding-16">
+            <a href="/boosterclub.php" style="text-decoration: none;">
+              <div class="coolButton">
+                <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Our Booster Club</b></p>
+              </div>
+            </a>
+          </div>
+          <div class="w3-half w3-padding-16">
+            <a href="/sponsors.php" style="text-decoration: none;">
+              <div class="coolButton">
+                <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Interested in being a Sponsor?</b></p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-      <br />
 
       <div class="w3-row w3-content w3-center w3-padding-16 w3-section w3-light-grey">
         <div class="w3-quarter w3-section">
@@ -149,14 +166,6 @@ session_destroy();
         </div>
       </div>
       <br />
-
-      <div class="w3-content">
-        <a href="/boosterclub.php" style="text-decoration: none;">
-          <div class="coolButton">
-            <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Our Booster Club</b></p>
-          </div>
-        </a>
-      </div>
 
       <!-- Portfolio Section -->
       <section class="scrollSection" id="photosSection" data-anchor="photosSection">
@@ -327,11 +336,13 @@ session_destroy();
         $('#contactSuccessText').css('display', 'block');
         goToContactForm();
       } else if (window.location.search == "?contact") {
-        goToContactForm();
+        setTimeout(function() {
+          goToContactForm();
+        }, 500);
       }
 
       function goToContactForm() {
-        var scrollPoint = $('section[data-anchor="contactSection"]').offset().top + 700;
+        var scrollPoint = $('section[data-anchor="contactSection"]').offset().top + 20;
 
         $('body,html').animate({
           scrollTop: scrollPoint
@@ -371,43 +382,43 @@ session_destroy();
         }
 
       }).scroll();
-    </script>
-    <script type="text/javascript">
+      </script>
+      <script type="text/javascript">
 
-    function closeBanner() {
-      document.getElementById("MessageBanner").style.display = "none";
-    }
-
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      var captionText = document.getElementById("caption");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      function closeBanner() {
+        document.getElementById("MessageBanner").style.display = "none";
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
       }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      captionText.innerHTML = dots[slideIndex-1].alt;
-    }
-  </script>
-</body>
-</html>
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      </script>
+    </body>
+    </html>

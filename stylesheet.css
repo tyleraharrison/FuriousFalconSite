@@ -20,6 +20,10 @@ p {
   margin: 20px 0;
 }
 
+ol li {
+  padding: 5px;
+}
+
 .wrapper {
   width: 400px;
   margin: 0 auto;
