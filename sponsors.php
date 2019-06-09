@@ -60,8 +60,8 @@
     <div class="w3-content">
       <h1 style="text-align: center; font-weight: bold;">Sponsorships</h1>
       <br />
-      
-      <a href="/files/Furious%20Falcons%20Sponsorship%20Document.pdf" style="text-decoration: none;">
+
+      <a target="_blank" href="/files/Furious%20Falcons%20Sponsorship%20Document.pdf" style="text-decoration: none;">
         <div class="coolButton">
           <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Take a Look at our Sponsorship Document</b></p>
         </div>
@@ -127,7 +127,7 @@
         <hr style="width:200px" class="w3-opacity">
         <ol class="w3-justify">
           <li>Decide on a sponsorship amount, and find the corresponding tier.</li>
-          <li>Open the <a href="/files/Furious%20Falcons%20Sponsorship%20Form.pdf"><b>Sponsorship Form</b></a> and fill it out. You will need to print it afterwards, so that you can sign and date it. You will also need your student contact to sign the form as well (if applicable).</li>
+          <li>Open the <a target="_blank" href="/files/Furious%20Falcons%20Sponsorship%20Form.pdf"><b>Sponsorship Form</b></a> and fill it out. You will need to print it afterwards, so that you can sign and date it. You will also need your student contact to sign the form as well (if applicable).</li>
           <li>
             After you have the completed and signed form, please give it to your student contact or you are welcome to mail it to:
             <b style="font-size: 20px;">
