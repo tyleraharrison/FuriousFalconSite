@@ -60,8 +60,9 @@
       <h3>This page is currently still under construction. We apologize for the inconvience.</h3>
     </div>
 
-<!-- END PAGE CONTENT -->
-</div>
+    <!-- END PAGE CONTENT -->
+  </div>
 
+  <script src="SmoothUI.js" type="text/javascript"></script>
 </body>
 </html>

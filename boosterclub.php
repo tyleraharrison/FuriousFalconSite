@@ -54,7 +54,59 @@
         <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
-    <h1 class="w3-content">Our Booster Club</h1>
+
+    <div class="w3-content">
+      <h1 style="text-align: center; font-weight: bold;">Our Booster Club</h1>
+      <h3 style="text-align: center;">Furious Falcons Booster Inc.</h3>
+      <p class="w3-justify w3-text-grey w3-padding-16">The Furious Falcons Booster Club is an account with a 501(c)(3) tax-exempt status, whose sole purpose is to maintain the funds for our organization. This includes depositing raised funds, keeping up-to-date ledgers of the current status of the account, as well as approving expenditures that are proposed by the club. This page includes some of the general information for our booster club and the officers in charge of it. It also shows the most recent ledgers of our account.</p>
+      <h2 class="w3-text-light-grey">Our Officers</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">Mr. President</li>
+            <li class="w3-padding-16"><img src="/images/Officers/DavidCaldwell.jpg" style="max-width: 100%; height: auto;"></li>
+            <li class="w3-padding-16">
+              <h2>David Caldwell</h2>
+            </li>
+            <!-- <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
+            </li> -->
+          </ul>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">Ms. Secretary</li>
+            <li class="w3-padding-16"><img src="/images/Officers/TammyAndersen.jpg" style="max-width: 100%; height: auto;"></li>
+            <li class="w3-padding-16">
+              <h2>Tammy Andersen</h2>
+            </li>
+          </ul>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">Mr. Treasurer</li>
+            <li class="w3-padding-16"><img src="/images/Officers/RobertMalek.jpg" style="max-width: 100%; height: auto;"></li>
+            <li class="w3-padding-16">
+              <h2>Robert Malek</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br />
+
+      <a href="mailto:contactus@furiousfalcons.org?subject=Booster%20Club" style="text-decoration: none;">
+        <div class="coolButton">
+          <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Have Questions Concerning Our Booster Club?</b></p>
+        </div>
+      </a>
+      <!--
+      <h2 class="w3-text-light-grey">Our Bylaws</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <h2 class="w3-text-light-grey">Our Ledger</h2>
+      <hr style="width:200px" class="w3-opacity">-->
+    </div>
+
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
       <h3>Useful Links</h3>
@@ -76,5 +128,6 @@
     <!-- END PAGE CONTENT -->
   </div>
 
+  <script src="SmoothUI.js" type="text/javascript"></script>
 </body>
 </html>
