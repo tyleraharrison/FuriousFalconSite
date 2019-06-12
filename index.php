@@ -272,7 +272,7 @@ session_destroy();
 
             <div class="w3-content" style="height: 100%; padding-bottom: 50px; overflow: hidden;">
               <h2 class="w3-text-light-grey w3-padding-64">El Paso District Competition Reflection</h2>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gHf8nbcu9FY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/K8pFP2B_NPE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
 
