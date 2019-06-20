@@ -14,7 +14,7 @@ if(isset($_POST['comments'])) {
 ?>
 <html>
 <body>
-  <form action="camp.php" method="post">
+  <form action="emails-DRAFT.php" method="post">
     <p style="height: 200px;"><textarea style="height: 100%" class="w3-input w3-padding-16" placeholder="MESSAGE" name="comments"></textarea></p>
     <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> SEND MESSAGE</button>
   </form>
