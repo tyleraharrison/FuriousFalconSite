@@ -96,7 +96,7 @@ session_destroy();
     <section class="scrollSection" id="homeSetion" data-anchor="homeSection">
       <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
         <img src="/images/FalconsLogo.png" alt="boy" class="w3-image" width="800">
-        <h2><b style="padding-right: 10px;"><i>FIRST</i></b> Robotics Team 4328</h2>
+        <h2><b style="padding-right: 10px;"><i>FIRST</i></b> Robotics Team #4328</h2>
       </header>
     </section>
 
