@@ -8,6 +8,7 @@ if(isset($_POST['comments'])) {
   'Reply-To: fosterrobotics@gmail.com'."\r\n" .
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $email_message, $headers);
+  echo "ALL GOOD";
 }
 
 
