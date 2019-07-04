@@ -1,10 +1,74 @@
 <?php
+if(isset($_POST['pgname'])) {
+
+  // EDIT THE 2 LINES BELOW AS REQUIRED
+  $email_to = $_POST['email'];
+  $email_subject = "Furious Falcons Summer STEM Camp Registration";
+
+  function died($error) {
+    // your error code can go here
+    echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+    echo "These errors appear below.<br /><br />";
+    echo $error."<br /><br />";
+    echo "Please go back and fix these errors.<br /><br />";
+    die();
+  }
+
+  $pgname = $_POST['pgname']; // required
+  $sname = $_POST['sname']; // required
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+  $comments = $_POST['comments'];
+
+  if (isset($_POST['comments'])) {
+    $comments = $_POST['comments'];
+  }
 
 
+  $error_message = "";
+  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 
+  if(!preg_match($email_exp, $email)) {
+    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+  }
+
+  $string_exp = "/^[A-Za-z .'-]+$/";
+
+  if(strlen($error_message) > 0) {
+    died($error_message);
+  }
+
+  function clean_string($string) {
+    $bad = array("content-type","bcc:","to:","cc:","href");
+    return str_replace($bad,"",$string);
+  }
+
+  $email_message = "
+  <html>
+  <body style=\"background-color: black;\">
+    <div style=\"padding-bottom: 500px;\"></div>
+  </body>
+  </html>
+  ";
+
+  // create email headers
+  $headers = 'From: Do Not Reply <donotreply@furiousfalcons.org>' . "\r\n" .
+  'Reply-To: Do Not Reply <donotreply@furiousfalcons.org>' . "\r\n" .
+  'X-Mailer: PHP/' . phpversion() .
+  'Content-Type: text/html' . "\r\n" .
+  'Bcc: fosterrobotics@gmail.com' . "\r\n";
+  @mail($email_to, $email_subject, $email_message, $headers);
+
+  if (isset($email)) {
+    header("Location: /camp.php?registerSuccess");
+  }
+  exit();
+
+}
 ?>
+
 <html>
-<title>Furious Falcons</title>
+<title>Furious Falcons - Camp Registration</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
@@ -57,6 +121,23 @@
         <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
         <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
+    </div>
+    <div class="w3-content ff-title">
+      <h1>Furious Falcons Camp Registration</h1>
+      <h4>Hosted at Foster High School</h4>
+    </div>
+    <div class="w3-content">
+      <h3>Ready to Register?</h3>
+      <hr style="width: 200px" class="w3-opactiy">
+      <p class="w3-justify w3-text-grey">Payment will be collected later, please sign up now if you think you will attend.</p>
+      <form action="camp-registration.php" method="post">
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Parent/Guardian Name" required name="pgname"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Student Name" required name="sname"></p>
+        <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" required name="phone"></p>
+        <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address" required name="email"></p>
+        <p style="height: 200px;"><textarea style="height: 100%" class="w3-input w3-padding-16" placeholder="Additional Questions/Comments/Concerns" name="comments"></textarea></p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
+      </form>
     </div>
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 

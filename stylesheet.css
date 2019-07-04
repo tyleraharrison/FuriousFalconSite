@@ -291,17 +291,14 @@ nav a.active {
   opacity: 1;
 }
 
-#CampPageTitle {
+.ff-title {
   text-align: center;
   margin-top: 50px;
 }
 
-#CampPageTitle h1 {
+.ff-title h1 {
   font-weight: bold;
 }
-
-
-/* Smooth Page Transitions WIP */
 
 @keyframes fadeInRight {
   0% {
