@@ -52,12 +52,11 @@ if(isset($_POST['pgname'])) {
   ";
 
   // create email headers
-  $headers = 'From: Do Not Reply <donotreply@furiousfalcons.org>' . "\r\n" .
-  'Reply-To: Do Not Reply <donotreply@furiousfalcons.org>' . "\r\n" .
-  'X-Mailer: PHP/' . phpversion() .
-  //'Bcc: fosterrobotics@gmail.com' . "\r\n" .
-  'Content-Type: text/html; charset=ISO-8859-1' . "\r\n" .
-  'MIME-Version: 1.0' . "\r\n";
+  $headers = "From: Furious Falcons <donotreply@furiousfalcons.org>\r\n" .
+  $headers .="Reply-To: Furious Falcons <donotreply@furiousfalcons.org>\r\n" .
+  //"Bcc: fosterrobotics@gmail.com\r\n" .
+  $headers .= "Content-Type: text/html; charset=iso-8859-1\r\n" .
+  $headers .= "MIME-Version: 1.0\r\n";
   @mail($email_to, $email_subject, $email_message, $headers);
 
 
