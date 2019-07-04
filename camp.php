@@ -123,7 +123,7 @@ if(isset($_POST['pgname'])) {
         <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
-    <div id="CampPageTitle" class="w3-content">
+    <div class="w3-content ff-title">
       <h1>Furious Falcons Summer STEM Camp</h1>
       <h4>Hosted at Foster High School</h4>
     </div>
