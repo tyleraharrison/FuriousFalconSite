@@ -55,10 +55,12 @@ if(isset($_POST['pgname'])) {
   $headers = 'From: Do Not Reply <donotreply@furiousfalcons.org>' . "\r\n" .
   'Reply-To: Do Not Reply <donotreply@furiousfalcons.org>' . "\r\n" .
   'X-Mailer: PHP/' . phpversion() .
-  'Content-Type: text/html' . "\r\n" .
+  'Content-Type: text/html; charset=ISO-8859-1' . "\r\n" .
   'Bcc: fosterrobotics@gmail.com' . "\r\n";
   @mail($email_to, $email_subject, $email_message, $headers);
 
+
+  //TODO: Change redirect link
   if (isset($email)) {
     header("Location: /camp.php?registerSuccess");
   }
