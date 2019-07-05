@@ -43,13 +43,7 @@ if(isset($_POST['pgname'])) {
     return str_replace($bad,"",$string);
   }
 
-  $email_message = "
-  <html>
-  <body style=\"background-color: black;>" .
-  $comments .
-  "</body>
-  </html>
-  ";
+  $email_message = $comments;
 
   // create email headers
   $headers = "From: Furious Falcons <donotreply@furiousfalcons.org>\r\n" .
