@@ -45,8 +45,8 @@ if(isset($_POST['pgname'])) {
 
   $email_message = "
   <html>
-  <body>" .
-  $comments . 
+  <body style=\"background-color: black;>" .
+  $comments .
   "</body>
   </html>
   ";
