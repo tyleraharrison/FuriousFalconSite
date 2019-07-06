@@ -43,25 +43,22 @@ if(isset($_POST['pgname'])) {
     return str_replace($bad,"",$string);
   }
 
-  $email_message = "
-  <html>
-  <body>
-  <div id=\"content\"></div>
-  </body>
-  </html>
-  <script type=\"text/javascript\">
-  document.getElementById(\"content\").innerHTML='<object type=\"text/html\" data=\"http://www.furiousfalcons.org/emailcontent.html\" ></object>';
-  </script>";
+  $to = 'rubixsolver99@yahoo.com';
 
-  // create email headers
-  $headers = "From: Furious Falcons <donotreply@furiousfalcons.org>\r\n" .
-  $headers .="Reply-To: Furious Falcons <donotreply@furiousfalcons.org>\r\n" .
-  //"Bcc: fosterrobotics@gmail.com\r\n" .
-  $headers .= "Content-Type: text/html; charset=iso-8859-1\r\n" .
+  $subject = 'TEST EMAIL';
+
+  $headers = "From: fosterroboics@gmail.com\r\n";
+  $headers .= "Reply-To: fosterrobotics@gmail.com\r\n";
   $headers .= "MIME-Version: 1.0\r\n";
-  @mail($email_to, $email_subject, $email_message, $headers);
+  $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
+  $message = '<html><body>';
+  $message .= '<h1>Hello, World!</h1>';
+  $message .= '</body></html>';
 
+  mail($to, $subject, $message, $headers);
+
+  
   //TODO: Change redirect link
   if (isset($email)) {
     header("Location: /camp.php?registerSuccess");
