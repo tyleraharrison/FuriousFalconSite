@@ -52,13 +52,18 @@ if(isset($_POST['pgname'])) {
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-  $message = '<html><body>';
-  $message .= '<h1>Hello, World!</h1>';
-  $message .= '</body></html>';
+  $message = '<html><head>';
+  $message .= '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>';
+  $message .= '<script>';
+  $message .= '$(function() {';
+  $message .= '$("#includedContent").load("http://www.furiousfalcons.org/emailcontent.html");';
+  $message .= '});';
+  $message .= '</script></head>';
+  $message .= '<div id="includedContent"></div></body></html>';
 
   mail($to, $subject, $message, $headers);
 
-  
+
   //TODO: Change redirect link
   if (isset($email)) {
     header("Location: /camp.php?registerSuccess");
