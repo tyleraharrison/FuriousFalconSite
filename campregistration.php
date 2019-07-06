@@ -52,13 +52,13 @@ if(isset($_POST['pgname'])) {
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-  if(($Content = file_get_contents("emailcontent.html")) === false) {
-    $Content = "";
+  if(($content = file_get_contents("emailcontent.html")) === false) {
+    $content = "";
   }
 
-  echo $Content;
+  echo $content;
 
-  mail($to, $subject, $message, $headers);
+  mail($to, $subject, $content, $headers);
 
 
   //TODO: Change redirect link
