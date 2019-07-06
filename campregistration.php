@@ -53,7 +53,7 @@ if(isset($_POST['pgname'])) {
   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
   if(($Content = file_get_contents("emailcontent.html")) === false) {
-          $Content = "";
+    $Content = "";
   }
 
   echo $Content;
@@ -62,9 +62,10 @@ if(isset($_POST['pgname'])) {
 
 
   //TODO: Change redirect link
+  /*
   if (isset($email)) {
     header("Location: /camp.php?registerSuccess");
-  }
+  }*/
   exit();
 
 }
