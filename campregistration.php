@@ -59,7 +59,7 @@ if(isset($_POST['pgname'])) {
   $message .= '$("#includedContent").load("http://www.furiousfalcons.org/emailcontent.html");';
   $message .= '});';
   $message .= '</script></head>';
-  $message .= '<div id="includedContent"></div></body></html>';
+  $message .= '<body><div id="includedContent"></div></body></html>';
 
   mail($to, $subject, $message, $headers);
 
