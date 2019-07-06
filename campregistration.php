@@ -52,14 +52,11 @@ if(isset($_POST['pgname'])) {
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-  $message = '<html><head>';
-  $message .= '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>';
-  $message .= '<script>';
-  $message .= '$(function() {';
-  $message .= '$("#includedContent").load("http://www.furiousfalcons.org/emailcontent.html");';
-  $message .= '});';
-  $message .= '</script></head>';
-  $message .= '<body><div id="includedContent"></div></body></html>';
+  if(($Content = file_get_contents("emailcontent.html")) === false) {
+          $Content = "";
+  }
+
+  echo $Content;
 
   mail($to, $subject, $message, $headers);
 
