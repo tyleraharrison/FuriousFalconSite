@@ -134,7 +134,7 @@ if(isset($_POST['pgname'])) {
       <h3>Ready to Register?</h3>
       <hr style="width: 200px" class="w3-opactiy">
       <p class="w3-justify w3-text-grey">Payment will be collected later, please sign up now if you think you will attend.</p>
-      <form action="camp-registration.php" method="post">
+      <form action="campregistration.php" method="post">
         <p><input class="w3-input w3-padding-16" type="text" placeholder="Parent/Guardian Name" required name="pgname"></p>
         <p><input class="w3-input w3-padding-16" type="text" placeholder="Student Name" required name="sname"></p>
         <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" required name="phone"></p>
