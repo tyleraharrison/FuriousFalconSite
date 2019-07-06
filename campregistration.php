@@ -52,7 +52,7 @@ if(isset($_POST['pgname'])) {
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-  if(($content = file_get_contents("emailcontent.html")) === false) {
+  if(($content = file_get_contents("emailcontent.php")) === false) {
     $content = "";
   }
 
