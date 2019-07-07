@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <html>
 <title>Furious Falcons - Camp Registration</title>
 <meta charset="UTF-8">
@@ -98,7 +101,6 @@
 </body>
 </html>
 <?php
-session_start();
 
 include 'emails.php';
 
