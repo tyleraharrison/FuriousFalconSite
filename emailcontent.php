@@ -1,6 +1,8 @@
 <?php
+session_start();
 
-$title = "Summer STEM Camp Registration Confirmation"
+$message = $_SESSION["email_message"];
+$title = $_SESSION["email_title"];
 
 ?>
 
@@ -196,34 +198,34 @@ $title = "Summer STEM Camp Registration Confirmation"
 
 <body style="padding:0; margin:0">
   <div id="content">
-      <!-- Sponsors -->
-      <div id="Sponsors">
-        <ul>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
-          <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
+    <!-- Sponsors -->
+    <div id="Sponsors">
+      <ul>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
+        <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
 
-          <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-          <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-          <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-          <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-        </ul>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+      </ul>
+    </div>
+    <!-- Header/Home -->
+    <section class="scrollSection w3-center" id="homeSection" data-anchor="homeSection">
+      <div class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <img src="http://www.furiousfalcons.org/images/FalconsLogo.png" alt="LOGO" class="w3-image" width="800">
+        <h1><b style="padding-right: 10px;"><?php echo $title ?></b></h1>
       </div>
-      <!-- Header/Home -->
-      <section class="scrollSection w3-center" id="homeSection" data-anchor="homeSection">
-        <div class="w3-container w3-padding-32 w3-center w3-black" id="home">
-          <img src="http://www.furiousfalcons.org/images/FalconsLogo.png" alt="LOGO" class="w3-image" width="800">
-          <h1><b style="padding-right: 10px;"><?php echo $title ?></b></h1>
-        </div>
-      </section>
+    </section>
 
-      <div id="emailcontent">
-        <p>Let's test some text lol. Lorem ipsum and all that.
+    <div id="emailcontent">
+      <p><?php echo $message ?></p>
       </div>
 
       <div class="w3-container w3-padding-32 w3-center w3-black" id="signature">

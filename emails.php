@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if(isset($_POST['comments'])) {
@@ -22,7 +21,11 @@ function sendMail($to, $from, $subject, $message, $title = " ", $bcc = False) {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    $_SESSION["email_message"] = $messge;
+    if ($title == " ") {
+      $title = $subject
+    }
+
+    $_SESSION["email_message"] = $message;
     $_SESSION["email_title"] = $title;
 
     mail($to, $subject, file_get_contents("emailcontent.php"), $headers);
