@@ -1,6 +1,3 @@
-<?php 
-session_start();
-?>
 <html>
 <title>Furious Falcons - Camp Registration</title>
 <meta charset="UTF-8">
