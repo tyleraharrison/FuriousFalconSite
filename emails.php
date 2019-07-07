@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if(isset($_POST['comments'])) {
   $email_to = "rubixsolver99@yahoo.com";
