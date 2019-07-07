@@ -29,7 +29,10 @@ function sendMail($to, $from, $subject, $message, $title = " ", $bcc = False) {
     $_SESSION["email_title"] = $title;
     session_write_close();
 
-    mail($to, $subject, file_get_contents("emailcontent.php"), $headers);
+    $content = file_get_contents("emailcontent.php");
+    file_put_contents("test.txt", $content);
+
+    mail($to, $subject, $content, $headers);
 }
 
 ?>
