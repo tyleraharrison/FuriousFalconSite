@@ -27,6 +27,7 @@ function sendMail($to, $from, $subject, $message, $title = " ", $bcc = False) {
 
     $_SESSION["email_message"] = $message;
     $_SESSION["email_title"] = $title;
+    session_write_close();
 
     mail($to, $subject, file_get_contents("emailcontent.php"), $headers);
 }

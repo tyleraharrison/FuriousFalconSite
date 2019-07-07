@@ -4,6 +4,8 @@ session_start();
 $message = $_SESSION["email_message"];
 $title = $_SESSION["email_title"];
 
+session_unset();
+session_destroy();
 ?>
 
 <!DOCTYPE html>
