@@ -13,7 +13,7 @@ if(isset($_POST['comments'])) {
   echo "ALL GOOD";
 }
 
-function sendMail($to, $from, $subject, $message, $title = $subject, $bcc = False) {
+function sendMail($to, $from, $subject, $message, $title = " ", $bcc = False) {
     $headers = "From: " . $from . "\r\n";
     $headers .= "Reply-To: " . $from . "\r\n";
     if ($bcc) {
