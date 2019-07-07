@@ -1,76 +1,3 @@
-<?php
-if(isset($_POST['pgname'])) {
-
-  // EDIT THE 2 LINES BELOW AS REQUIRED
-  $email_to = $_POST['email'];
-  $email_subject = "Furious Falcons Summer STEM Camp Registration";
-
-  function died($error) {
-    // your error code can go here
-    echo "We are very sorry, but there were error(s) found with the form you submitted. ";
-    echo "These errors appear below.<br /><br />";
-    echo $error."<br /><br />";
-    echo "Please go back and fix these errors.<br /><br />";
-    die();
-  }
-
-  $pgname = $_POST['pgname']; // required
-  $sname = $_POST['sname']; // required
-  $phone = $_POST['phone'];
-  $email = $_POST['email'];
-  $comments = $_POST['comments'];
-
-  if (isset($_POST['comments'])) {
-    $comments = $_POST['comments'];
-  }
-
-
-  $error_message = "";
-  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-
-  if(!preg_match($email_exp, $email)) {
-    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-  }
-
-  $string_exp = "/^[A-Za-z .'-]+$/";
-
-  if(strlen($error_message) > 0) {
-    died($error_message);
-  }
-
-  function clean_string($string) {
-    $bad = array("content-type","bcc:","to:","cc:","href");
-    return str_replace($bad,"",$string);
-  }
-
-  $to = 'rubixsolver99@yahoo.com';
-
-  $subject = 'TEST EMAIL';
-
-  $headers = "From: fosterroboics@gmail.com\r\n";
-  $headers .= "Reply-To: fosterrobotics@gmail.com\r\n";
-  $headers .= "MIME-Version: 1.0\r\n";
-  $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-  if(($content = file_get_contents("emailcontent.php")) === false) {
-    $content = "";
-  }
-
-  echo $content;
-
-  mail($to, $subject, $content, $headers);
-
-
-  //TODO: Change redirect link
-  /*
-  if (isset($email)) {
-    header("Location: /camp.php?registerSuccess");
-  }*/
-  exit();
-
-}
-?>
-
 <html>
 <title>Furious Falcons - Camp Registration</title>
 <meta charset="UTF-8">
@@ -134,6 +61,7 @@ if(isset($_POST['pgname'])) {
       <h3>Ready to Register?</h3>
       <hr style="width: 200px" class="w3-opactiy">
       <p class="w3-justify w3-text-grey">Sign up now! You will be sent a confirmation email containing additional information on the camp and completing payment and .</p>
+      <p class="error"></p>
       <form action="campregistration.php" method="post">
         <p><input class="w3-input w3-padding-16" type="text" placeholder="Parent/Guardian Name *" required name="pgname"></p>
         <p><input class="w3-input w3-padding-16" type="text" placeholder="Student Name *" required name="sname"></p>
@@ -165,7 +93,55 @@ if(isset($_POST['pgname'])) {
     </footer>
     <!-- END PAGE CONTENT -->
   </div>
-
+  <script src="FormFunctions.js" type="text/javascript"></script>
   <script src="SmoothUI.js" type="text/javascript"></script>
 </body>
 </html>
+<?php
+
+include 'emails.php';
+
+if(isset($_POST['pgname'])) {
+
+  // EDIT THE 2 LINES BELOW AS REQUIRED
+  $email_to = $_POST['email'];
+  $email_subject = "Furious Falcons Summer STEM Camp Registration";
+
+  function died($error) {
+    // your error code can go here
+    echo "<script type=\"text/javascript\">updateError(\"" . $error . "\");</script>";
+  }
+
+  $pgname = $_POST['pgname']; // required
+  $sname = $_POST['sname']; // required
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+  $comments = "*";
+
+  if (isset($_POST['comments'])) {
+    $comments = $_POST['comments'];
+  }
+
+
+  $error_message = "";
+  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+  if(!preg_match($email_exp, $email)) {
+    $error_message .= 'The Email Address you entered does not appear to be valid.';
+  }
+
+  $string_exp = "/^[A-Za-z .'-]+$/";
+
+  if(strlen($error_message) > 0) {
+    died($error_message);
+  } else {
+    sendMail($email_to, "Furious Falcons <donotreply@furiousfalcons.org>", "Summer STEM Camp", "MESSAGE", "Summer STEM Camp Registration Confirmation", True);
+    //TODO: Change redirect link
+    /*
+    if (isset($email)) {
+      header("Location: /camp.php?registerSuccess");
+    }*/
+    exit();
+  }
+}
+?>

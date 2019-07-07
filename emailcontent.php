@@ -1,6 +1,6 @@
 <?php
 
-
+$title = "Summer STEM Camp Registration Confirmation"
 
 ?>
 
@@ -29,6 +29,7 @@
     font-family: Roboto;
     color: white;
     background-color: black;
+    text-align: center;
   }
 
   body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
@@ -122,7 +123,7 @@
   }
 
   #homeSection {
-    padding-bottom: 400px;
+    padding-bottom: 0px;
     width: 100% !important;
   }
 
@@ -162,10 +163,6 @@
       vertical-align: middle;
     }
 
-    #homeSection {
-      padding-bottom: 200px;
-    }
-
     #SignIn {
       display: none;
     }
@@ -192,7 +189,7 @@
   .w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}
   .w3-center{display:inline-block;width:auto;text-align:center}
   .w3-image{max-width:100%;height:auto;}
-  h2{font-size:30px}
+  h1{font-size:36px}
 
   </style>
 </head>
@@ -221,15 +218,16 @@
       <section class="scrollSection w3-center" id="homeSection" data-anchor="homeSection">
         <div class="w3-container w3-padding-32 w3-center w3-black" id="home">
           <img src="http://www.furiousfalcons.org/images/FalconsLogo.png" alt="LOGO" class="w3-image" width="800">
+          <h1><b style="padding-right: 10px;"><?php echo $title ?></b></h1>
         </div>
       </section>
 
       <div id="emailcontent">
-
+        <p>Let's test some text lol. Lorem ipsum and all that.
       </div>
 
-      <div id="signature">
-        <img src="http://www.furiousfalcons.org/images/EmailSignature.png" alt="SIGNATURE" class="w3-image" width="800">
+      <div class="w3-container w3-padding-32 w3-center w3-black" id="signature">
+        <img src="http://www.furiousfalcons.org/images/EmailSignature.png" alt="SIGNATURE" class="w3-image" width="500">
       </div>
     </div>
   </body>
