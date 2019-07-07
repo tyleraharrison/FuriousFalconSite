@@ -11,10 +11,10 @@ session_destroy();
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
-  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
   <title>Furious Falcons Email</title>
   <style type="text/css">
   /* Some resets and issue fixes */
@@ -198,41 +198,41 @@ session_destroy();
   </style>
 </head>
 
-<body style="padding:0; margin:0">
+<body style="padding: 0;margin: 0;-webkit-text: ;size-adjust: 100%;-ms-text-size-adjust: 100%;font-family: &quot;Montserrat&quot;, sans-serif;width: 100% !important;">
   <div id="content">
     <!-- Sponsors -->
-    <div id="Sponsors">
-      <ul>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_Gtech.png"></li>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_Hampco.png"></li>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_SnapOn.png"></li>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_SolidWorks.png"></li>
-        <li class="forDesktop"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_WebCentral.png"></li>
+    <div id="Sponsors" style="text-align: center;">
+      <ul style="width: calc(100% - 200px);">
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_ChildhoodCenter.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_FIRST.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_GitHub.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_Gtech.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_Hampco.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_SnapOn.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_SolidWorks.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forDesktop" style="display: inline-block;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_WebCentral.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
 
-        <li class="forMobile"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forMobile"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forMobile"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forMobile"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forMobile" style="display: none;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_ChildhoodCenter.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forMobile" style="display: none;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_FIRST.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forMobile" style="display: none;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_GitHub.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
+        <li class="forMobile" style="display: none;padding: 15px;"><img src="http://www.furiousfalcons.org/images/Sponsors/Sponsor_Gtech.png" style="vertical-align: middle;max-width: 100px;max-height: 50px;"></li>
       </ul>
     </div>
     <!-- Header/Home -->
-    <section class="scrollSection w3-center" id="homeSection" data-anchor="homeSection">
-      <div class="w3-container w3-padding-32 w3-center w3-black" id="home">
-        <img src="http://www.furiousfalcons.org/images/FalconsLogo.png" alt="LOGO" class="w3-image" width="800">
-        <h1><b style="padding-right: 10px;"><?php echo $title ?></b></h1>
+    <section class="scrollSection w3-center" id="homeSection" data-anchor="homeSection" style="display: inline-block;width: 100% !important;text-align: center;padding-bottom: 0px;">
+      <div class="w3-container w3-padding-32 w3-center w3-black" id="home" style="padding: 0.01em 16px;width: auto;display: inline-block;text-align: center;padding-top: 32px!important;padding-bottom: 32px!important;">
+        <img src="http://www.furiousfalcons.org/images/FalconsLogo.png" alt="LOGO" class="w3-image" width="800" style="max-width: 100%;height: auto;">
+        <h1 style="font-family: &quot;Montserrat&quot;, sans-serif;font-size: 36px;"><b style="padding-right: 10px;"><?php echo $title ?></b></h1>
       </div>
     </section>
 
     <div id="emailcontent">
-      <p><?php echo $message ?></p>
-      </div>
-
-      <div class="w3-container w3-padding-32 w3-center w3-black" id="signature">
-        <img src="http://www.furiousfalcons.org/images/EmailSignature.png" alt="SIGNATURE" class="w3-image" width="500">
-      </div>
+      <p style="margin: 20px 0;"><?php echo $message ?></p>
     </div>
-  </body>
-  </html>
+
+    <div class="w3-container w3-padding-32 w3-center w3-black" id="signature" style="padding: 0.01em 16px;width: auto;display: inline-block;text-align: center;padding-top: 32px!important;padding-bottom: 32px!important;">
+      <img src="http://www.furiousfalcons.org/images/EmailSignature.png" alt="SIGNATURE" class="w3-image" width="500" style="max-width: 100%;height: auto;">
+    </div>
+  </div>
+</body>
+</html>
