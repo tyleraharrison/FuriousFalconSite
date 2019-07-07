@@ -133,12 +133,14 @@ if(isset($_POST['pgname'])) {
     <div class="w3-content">
       <h3>Ready to Register?</h3>
       <hr style="width: 200px" class="w3-opactiy">
-      <p class="w3-justify w3-text-grey">Payment will be collected later, please sign up now if you think you will attend.</p>
+      <p class="w3-justify w3-text-grey">Sign up now! You will be sent a confirmation email containing additional information on the camp and completing payment and .</p>
       <form action="campregistration.php" method="post">
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Parent/Guardian Name" required name="pgname"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Student Name" required name="sname"></p>
-        <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" required name="phone"></p>
-        <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address" required name="email"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Parent/Guardian Name *" required name="pgname"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Student Name *" required name="sname"></p>
+        <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number *" required name="phone"></p>
+        <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address *" required name="email"></p>
+        <p style="height: 100px;"><textarea style="height: 100%" class="w3-input w3-padding-16" placeholder="Additional Emergency Contact Information" name="emcontact"></textarea></p>
+        <p style="height: 100px;"><textarea style="height: 100%" class="w3-input w3-padding-16" placeholder="Medical Information (Allergies, Medication, etc.)" name="emcontact"></textarea></p>
         <p style="height: 200px;"><textarea style="height: 100%" class="w3-input w3-padding-16" placeholder="Additional Questions/Comments/Concerns" name="comments"></textarea></p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
       </form>
