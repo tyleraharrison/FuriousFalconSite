@@ -22,7 +22,7 @@ function sendMail($to, $from, $subject, $message, $title = " ", $bcc = False) {
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     if ($title == " ") {
-      $title = $subject
+      $title = $subject;
     }
 
     $_SESSION["email_message"] = $message;
