@@ -64,7 +64,7 @@
     <p style="display: none;">Come and register for the Furious Falcons Summer STEM Camp!</p>
     <p class="w3-content" id="registerSuccessText" style="text-align: center; display: none;">Thank you for registering for our camp! We will contact you with more information soon!</p>
     <div class="w3-content" id="fromContent">
-      <p class="w3-justify w3-text-grey">Payment will be collected later, please sign up now if you think you will attend.</p>
+      <p class="w3-justify w3-text-grey">After you have registered, we will send you a confirmation email, please make sure you get this email. If the email appears in your spam folder, be sure to mark it as "Not Spam" that way, we will be able to contact you in the future.</p>
       <p class="error"></p>
       <form action="campregistration.php" method="post">
         <h4>General Information</h4>
@@ -95,7 +95,7 @@
           <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number *" required name="ec1_number"></p>
         </div>
         <div class="formSectionLast formHalfWidth">
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Other Contact" name="ec1_other"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Other Contact Information" name="ec1_other"></p>
         </div>
 
         <h6>Secondary Contact:</h6>
@@ -110,7 +110,28 @@
           <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" name="ec2_number"></p>
         </div>
         <div class="formSectionLast formHalfWidth">
-          <p><input class="w3-input w3-padding-16" type="text" placeholder="Other Contact" name="ec2_other"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Other Contact Information" name="ec2_other"></p>
+        </div>
+
+        <h4>Early Arrival & Late Departure</h4>
+        <div class="formSection form2Third">
+          <p>We will be providing early arrival and late departure, if requested, so please check the options that apply to you:</p>
+          <label class="formCheckbox">My student will need to be dropped off earlier than the starting time (9:00 A.M.)
+            <input type="checkbox" name="earlyArive">
+            <span class="checkmark"></span>
+          </label>
+          <label class="formCheckbox">My student will need to be picked up later than the ending time (4:00 P.M.)
+            <input type="checkbox" name="lateDepart">
+            <span class="checkmark"></span>
+          </label>
+          <label class="formCheckbox">None of the options above apply to me
+            <input type="checkbox" name="noEALD">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div class="formSection formThird">
+          <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="If you chose one of the first two options, please specify the times for your student" name="med_specification" style="height: 100%;"></textarea></p>
         </div>
 
         <h4>Medical Information</h4>
@@ -129,8 +150,32 @@
             <span class="checkmark"></span>
           </label>
         </div>
+
         <div class="formSection form2Third">
-          <p style="height: 155px;"><textarea class="w3-input" type="paragraph" placeholder="Please specify all allergies, medications and/or limitations" name="med_specification" style="height: 100%;"></textarea></p>
+          <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="Please specify all allergies, medications and/or limitations" name="med_specification" style="height: 100%;"></textarea></p>
+        </div>
+
+        <h4>Payment</h4>
+        <p>We are not quite accepting payment, but we are going to begin soon. Which of the following payment options would be most convenient for you?</p>
+        <div class="formSection formHalfWidth">
+          <label class="formCheckbox">Online Credit Card Transaction
+            <input type="checkbox" name="pay_cc">
+            <span class="checkmark"></span>
+          </label>
+          <label class="formCheckbox">Venmo Transaction
+            <input type="checkbox" name="pay_ven">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="formSection formHalfWidth">
+          <label class="formCheckbox">PayPal Transaction
+            <input type="checkbox" name="pay_pp">
+            <span class="checkmark"></span>
+          </label>
+          <label class="formCheckbox">Mailed Check
+            <input type="checkbox" name="pay_check">
+            <span class="checkmark"></span>
+          </label>
         </div>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
       </form>
