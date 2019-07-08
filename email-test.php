@@ -1,4 +1,5 @@
 <?php
+/*
 
 session_start();
 
@@ -13,7 +14,7 @@ if (isset($_POST["to"])) {
   header("Location: /sendemail.php");
   exit();
 }
-
+*/
 ?>
 
 <html>
