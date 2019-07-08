@@ -46,7 +46,7 @@ session_destroy();
   <!-- Navbar on small screens (Hidden on medium and large screens) -->
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
       <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-home w3-xlarge"></i><br />HOME</a>
       <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-user w3-xlarge"></i><br />ABOUT</a>
       <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-eye w3-xlarge"></i><br />PHOTOS</a>
@@ -96,7 +96,8 @@ session_destroy();
     <section class="scrollSection" id="homeSetion" data-anchor="homeSection">
       <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
         <img src="/images/FalconsLogo.png" alt="boy" class="w3-image" width="800">
-        <h2><b style="padding-right: 10px;"><i>FIRST</i></b> Robotics Team #4328</h2>
+        <h2><b>Foster High School Robotics</b></h2>
+        <h2><b>FRC Team #4328</b></h2>
       </header>
     </section>
 
