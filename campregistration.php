@@ -61,6 +61,7 @@
     <div class="w3-content ff-title">
       <h1>Furious Falcons Summer STEM Camp Registration</h1>
     </div>
+    <p style="display: none;">Come and register for the Furious Falcons Summer STEM Camp!</p>
     <p class="w3-content" id="registerSuccessText" style="text-align: center; display: none;">Thank you for registering for our camp! We will contact you with more information soon!</p>
     <div class="w3-content" id="fromContent">
       <p class="w3-justify w3-text-grey">Payment will be collected later, please sign up now if you think you will attend.</p>
