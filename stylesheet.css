@@ -24,6 +24,10 @@ ol li {
   padding: 5px;
 }
 
+form h4 {
+  font-weight: bold;
+}
+
 .wrapper {
   width: 400px;
   margin: 0 auto;
@@ -158,6 +162,93 @@ nav a.active {
   cursor: pointer;
 }
 
+.formCheckbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.formCheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.formCheckbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.formCheckbox input:checked ~ .checkmark {
+  background-color: #f9c41c;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.formCheckbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.formCheckbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 8px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.formSection p {
+  padding-right: 10px;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.formSectionLast p {
+  padding-right: 0;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.formHalfWidth {
+  width: calc(50% - 10px);
+  display: inline-block;
+}
+
+.formThird {
+  width: calc(33% - 10px);
+  display: inline-block;
+}
+
+.form2Third {
+  width: calc(67% - 10px);
+  display: inline-block;
+}
+
 @media screen and (max-width: 600px) {
   .halfAndCenter {
     width: 90%;
@@ -200,6 +291,33 @@ nav a.active {
 
   #SignIn {
     display: none;
+  }
+
+  .formSection p {
+    padding-right: 0;
+    margin: 0;
+    margin-bottom: 12px;
+  }
+
+  .formSectionLast p {
+    padding-right: 0;
+    margin: 0;
+    margin-bottom: 12px;
+  }
+
+  .formHalfWidth {
+    width: 100%;
+    display: block;
+  }
+
+  .formThird {
+    width: 100%;
+    display: block;
+  }
+
+  .form2Third {
+    width: 100%;
+    display: block;
   }
 
 }

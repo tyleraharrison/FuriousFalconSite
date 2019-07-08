@@ -100,7 +100,7 @@ if(isset($_POST['pgname'])) {
   <!-- Navbar on small screens (Hidden on medium and large screens) -->
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
       <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important"><i class="fa fa-home w3-xlarge"></i><br />RETURN</a>
     </div>
   </div>
@@ -127,7 +127,6 @@ if(isset($_POST['pgname'])) {
       <h1>Furious Falcons Summer STEM Camp</h1>
       <h4>Hosted at Foster High School</h4>
     </div>
-    <p class="w3-content" id="registerSuccessText" style="text-align: center; display: none;">Thank you for registering for our camp! We will contact you with more information soon!</p>
     <div class="w3-content" id="campContent">
       <p class="w3-justify w3-text-grey">Over the summer of 2019, the Furious Falcon will be hosting a STEM camp at Foster High School.  The main objective of this camp is to extend the reach of Foster Robotics throughout the community. With your help, this program will allow aspiring engineers (ages 10 and up) to participate in various activities that will ensure the most interactive experience possible. Primarily, this camp will be directed towards educating students on the concepts we implement within our organization. The camp will be held August 5th – August 9th and activity hours will range from 10:00 a.m. to 4:00 p.m.  Food and other accommodations will be provided.</p>
       <h3>The Skills to be Learned</h3>
