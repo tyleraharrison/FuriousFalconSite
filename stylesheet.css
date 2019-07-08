@@ -222,6 +222,10 @@ nav a.active {
   transform: rotate(45deg);
 }
 
+.formSection label {
+  font-size: 16px;
+}
+
 .formSection p {
   padding-right: 10px;
   margin: 0;
