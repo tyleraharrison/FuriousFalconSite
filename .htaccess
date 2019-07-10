@@ -1,2 +1,0 @@
-RewriteEngineOn
-RewriteCond%{HTTP_HOST} ^http://payment.furiousfalcons.org RewriteRule ^(.*) https://furious-falcons-booster-inc.square.site/ [P]
