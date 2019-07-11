@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 ?>
 <html>
@@ -62,8 +62,10 @@
       <h1>Furious Falcons Summer STEM Camp Registration</h1>
     </div>
     <p style="display: none;">Come and register for the Furious Falcons Summer STEM Camp!</p>
-    <p class="w3-content" id="registerSuccessText" style="text-align: center; display: none;">Thank you for registering for our camp! We will contact you with more information soon!</p>
-    <div class="w3-content" id="fromContent">
+    <div class="w3-content" id="registerSuccessDiv" style="text-align: center; display: none;">
+      <p>Thank you for registering for our camp! We will contact you with more information soon!</p>
+    </div>
+    <div class="w3-content" id="formContent">
       <p class="w3-justify w3-text-grey">After you have registered, we will send you a confirmation email, please make sure you get this email. If the email appears in your spam folder, be sure to mark it as "Not Spam" that way, we will be able to contact you in the future.</p>
       <p class="error"></p>
       <form action="campregistration.php" method="post">
@@ -92,7 +94,7 @@
         </div>
 
         <div class="formSection formHalfWidth">
-          <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number *" required name="ec1_number"></p>
+          <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number *" required name="ec1_phone"></p>
         </div>
         <div class="formSectionLast formHalfWidth">
           <p><input class="w3-input w3-padding-16" type="text" placeholder="Other Contact Information" name="ec1_other"></p>
@@ -107,7 +109,7 @@
         </div>
 
         <div class="formSection formHalfWidth">
-          <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" name="ec2_number"></p>
+          <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" name="ec2_phone"></p>
         </div>
         <div class="formSectionLast formHalfWidth">
           <p><input class="w3-input w3-padding-16" type="text" placeholder="Other Contact Information" name="ec2_other"></p>
@@ -117,65 +119,42 @@
         <div class="formSection form2Third">
           <p>We will be providing early arrival and late departure, if requested, so please check the options that apply to you:</p>
           <label class="formCheckbox">My student will need to be dropped off earlier than the starting time (9:00 A.M.)
-            <input type="checkbox" name="earlyArive">
+            <input type="checkbox" name="EALD[]" value="EA">
             <span class="checkmark"></span>
           </label>
           <label class="formCheckbox">My student will need to be picked up later than the ending time (4:00 P.M.)
-            <input type="checkbox" name="lateDepart">
+            <input type="checkbox" name="EALD[]" value="LD">
             <span class="checkmark"></span>
           </label>
           <label class="formCheckbox">None of the options above apply to me
-            <input type="checkbox" name="noEALD">
+            <input type="checkbox" name="EALD[]" value="NA">
             <span class="checkmark"></span>
           </label>
         </div>
 
         <div class="formSection formThird">
-          <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="If you chose one of the first two options, please specify the times for your student" name="med_specification" style="height: 100%;"></textarea></p>
+          <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="If you chose one of the first two options, please specify the times for your student" name="EALD_spec" style="height: 100%;"></textarea></p>
         </div>
 
         <h4>Medical Information</h4>
         <div class="formSection formThird">
           <p>Does your student require a medical device?</p>
           <label class="formCheckbox">Inhaler
-            <input type="checkbox" name="med_inh">
+            <input type="checkbox" name="med[]" value="inh">
             <span class="checkmark"></span>
           </label>
           <label class="formCheckbox">EpiPen
-            <input type="checkbox" name="med_epi">
+            <input type="checkbox" name="med[]" value="epi">
             <span class="checkmark"></span>
           </label>
           <label class="formCheckbox">Medication
-            <input type="checkbox" name="med_medic">
+            <input type="checkbox" name="med[]" value="medic">
             <span class="checkmark"></span>
           </label>
         </div>
 
         <div class="formSection form2Third">
-          <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="Please specify all allergies, medications and/or limitations" name="med_specification" style="height: 100%;"></textarea></p>
-        </div>
-
-        <h4>Payment</h4>
-        <p>We are not quite accepting payment, but we are going to begin soon. Which of the following payment options would be most convenient for you?</p>
-        <div class="formSection formHalfWidth">
-          <label class="formCheckbox">Online Credit Card Transaction
-            <input type="checkbox" name="pay_cc">
-            <span class="checkmark"></span>
-          </label>
-          <label class="formCheckbox">Venmo Transaction
-            <input type="checkbox" name="pay_ven">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="formSection formHalfWidth">
-          <label class="formCheckbox">PayPal Transaction
-            <input type="checkbox" name="pay_pp">
-            <span class="checkmark"></span>
-          </label>
-          <label class="formCheckbox">Mailed Check
-            <input type="checkbox" name="pay_check">
-            <span class="checkmark"></span>
-          </label>
+          <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="Please specify all allergies, medications and/or limitations" name="med_spec" style="height: 100%;"></textarea></p>
         </div>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
       </form>
@@ -200,7 +179,126 @@
     </footer>
     <!-- END PAGE CONTENT -->
   </div>
-
   <script src="SmoothUI.js" type="text/javascript"></script>
+  <script src="FormFunctions.js"></script>
+  <script type="text/javascript">
+  if (window.location.search == "?registerSuccess") {
+    $('#formContent').css('display', 'none');
+    $('#registerSuccessDiv').css('display', 'block');
+  }
+  </script>
 </body>
 </html>
+<?php
+
+$error = "";
+
+function error($str) {
+  $GLOBALS["error"] .= "<p>" . $str . "</p>";
+}
+
+function return_error() {
+  echo '<script type="text/javascript">updateError("' . $GLOBALS["error"] . '");</script>';
+  exit();
+}
+
+//if form is submitted
+if (isset($_POST["pgname"])) {
+  //retreive variables
+  $pgname = $_POST["pgname"];
+  $sname = $_POST["sname"];
+  $phone = $_POST["phone"];
+  $email = $_POST["email"];
+  $ec1_name = $_POST["ec1_name"];
+  $ec1_rel = $_POST["ec1_rel"];
+  $ec1_phone = $_POST["ec1_phone"];
+  if (isset($_POST["ec1_other"])) {
+    $ec1_other = $_POST["ec1_other"];
+  }
+  if (isset($_POST["ec2_name"])) {
+    $ec2_name = $_POST["ec2_name"];
+  }
+  if (isset($_POST["ec2_rel"])) {
+    $ec2_rel = $_POST["ec2_rel"];
+  }
+  if (isset($_POST["ec2_phone"])) {
+    $ec2_phone = $_POST["ec2_phone"];
+  }
+  if (isset($_POST["ec2_other"])) {
+    $ec2_other = $_POST["ec2_other"];
+  }
+  if (isset($_POST["EALD"])) {
+    $EALD = $_POST["EALD"];
+  }
+  if (isset($_POST["EALD_spec"])) {
+    $EALD_spec = $_POST["EALD_spec"];
+  }
+  if (isset($_POST["med"])) {
+    $med = $_POST["med"];
+  }
+  if (isset($_POST["med_spec"])) {
+    $med_spec = $_POST["med_spec"];
+  }
+
+  //validate inputs
+  if (preg_match('/[^A-Za-z]/', str_replace(" ", "", $pgname))) {
+    error("Please enter a valid parent/guardian name");
+  }
+  if (preg_match('/[^A-Za-z]/', str_replace(" ", "", $sname))) {
+    error("Please enter a valid student name");
+  }
+  if ((preg_match('/[^0-9]/', $phone)) || (strlen($phone) != 10)) {
+    error("Please enter a valid phone number");
+  }
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    error("Please enter a valid email address");
+  }
+  if (preg_match('/[^A-Za-z]/', str_replace(" ", "",  $ec1_name))) {
+    error("Please enter a valid primary emergency contact name");
+  }
+  if (preg_match('/[^A-Za-z]/', str_replace(" ", "", $ec1_rel))) {
+    error("Please enter a valid primary emergency contact relationship");
+  }
+  if ((preg_match('/[^0-9]/', $ec1_phone)) || (strlen($ec1_phone) != 10)) {
+    error("Please enter a valid primary emergency contact phone number");
+  }
+  if (isset($ec2_name)) {
+    if (preg_match('/[^A-Za-z]/', str_replace(" ", "", $ec2_name))) {
+      error("Please enter a valid secondary emergency contact name");
+    }
+  }
+  if (isset($ec2_rel)) {
+    if (preg_match('/[^A-Za-z]/', str_replace(" ", "", $ec2_rel))) {
+      error("Please enter a valid secondary emergency contact relationship");
+    }
+  }
+  if (strlen($ec2_phone) > 0) {
+    if ((preg_match('/[^0-9]/', $ec2_phone)) || (strlen($ec2_phone) != 10)) {
+      error("Please enter a valid secondary emergency contact phone number" . $ec2_phone);
+      echo "<script type='text/javascript'>console.log('" . $ec2_phone . "');</script>";
+    }
+  }
+  if (!isset($EALD)) {
+    error("Please select an option from the Early Arrival & Late Departure section");
+  }
+
+  if(strlen($error) > 0) {
+    return_error();
+  } else {
+    $_SESSION["email_to"] = $email;
+    $_SESSION["email_from"] = "camp@furiousfalcons.org";
+    $_SESSION["email_sub"] = "Furious Falcons Camp Registration";
+    $_SESSION["email_message"] = "TEST MESSAGE #1";
+    $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
+    $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
+    session_write_close();
+    echo '<script type="text/javascript">location.href = "/sendemail.php";</script>';
+    exit();
+  }
+
+
+} else {
+  $_POST = array();
+}
+
+?>
