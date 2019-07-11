@@ -293,27 +293,27 @@ if (isset($_POST["pgname"])) {
     if (isset($ec1_other)) {
       $message .= "<p>Primary Emergency Contact Additional Info: $ec1_other</p>";
     } else {
-      $message .= "<p>Primary Emergency Contact Additional Info: </p>";
+      $message .= "<p>Primary Emergency Contact Additional Info: *</p>";
     }
     if (isset($ec2_name)) {
       $message .= "<p>Secondary Emergency Contact Name: $ec2_name</p>";
     } else {
-      $message .= "<p>Secondary Emergency Contact Name: </p>";
+      $message .= "<p>Secondary Emergency Contact Name: *</p>";
     }
     if (isset($ec2_rel)) {
       $message .= "<p>Secondary Emergency Contact Relationship to Student: $ec2_rel</p>";
     } else {
-      $message .= "<p>Secondary Emergency Contact Relationship to Student: </p>";
+      $message .= "<p>Secondary Emergency Contact Relationship to Student: *</p>";
     }
     if (isset($ec2_phone)) {
       $message .= "<p>Secondary Emergency Contact Phone Number: $ec2_phone</p>";
     } else {
-      $message .= "<p>Secondary Emergency Contact Phone Number: </p>";
+      $message .= "<p>Secondary Emergency Contact Phone Number: *</p>";
     }
     if (isset($ec2_other)) {
       $message .= "<p>Secondary Emergency Contact Additional Information: $ec2_other</p>";
     } else {
-      $message .= "<p>Secondary Emergency Contact Additional Information: </p>";
+      $message .= "<p>Secondary Emergency Contact Additional Information: *</p>";
     }
     if (in_array("EA", $EALD) && in_array("LD", $EALD)) {
       $message .= "<p>My student will require both early drop-off in the morning and late pickup in the afternoon, with the following specifications:</p>";
@@ -347,7 +347,7 @@ if (isset($_POST["pgname"])) {
     } else {
       $message .= "<p>My student does not require any medical devices.</p>";
     }
-    if (isset($med_spec)) {
+    if ($med_spec != "") {
       $message .= "<p>My student has the following medical conditions:</p><p>$med_spec</p>";
     } else {
       $message .= "<p>My student does not have any specific medical conditions.</p>";
