@@ -286,9 +286,9 @@ if (isset($_POST["pgname"])) {
     return_error();
   } else {
     $_SESSION["email_to"] = $email;
-    $_SESSION["email_from"] = "camp@furiousfalcons.org";
+    $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
     $_SESSION["email_sub"] = "Furious Falcons Camp Registration";
-    $_SESSION["email_message"] = "TEST MESSAGE #1";
+    $_SESSION["email_message"] = "<a href=\"furiousfalcons.org\">TEST HTML</a>";
     $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
     $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
     session_write_close();
