@@ -353,7 +353,7 @@ if (isset($_POST["pgname"])) {
       $message .= "<p>My student does not have any specific medical conditions.</p>\n";
     }
 
-    $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below.</p>\n<p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;'>Pay Here</a></p>\n";
+    $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below. An initial payment of $100 is due by Saturday, July 20th, and the remaining amount must be paid before the first day of camp, Monday, August 5th.</p>\n<p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;'>Pay Here</a></p>\n";
 
     $_SESSION["email_to"] = $email;
     $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
