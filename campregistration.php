@@ -63,10 +63,10 @@ session_start();
     </div>
     <p style="display: none;">Come and register for the Furious Falcons Summer STEM Camp!</p>
     <div class="w3-content" id="registerSuccessDiv" style="text-align: center; display: none;">
-      <p>Thank you for registering for our camp! We will contact you with more information soon!</p>
+      <p>Thank you for registering for our camp! Now that you have registered, we will send you a confirmation email, please make sure you get this email. If the email appears in your spam folder, be sure to mark it as "Not Spam," that way we will be able to contact you in the future.</p>
     </div>
     <div class="w3-content" id="formContent">
-      <p class="w3-justify w3-text-grey">After you have registered, we will send you a confirmation email, please make sure you get this email. If the email appears in your spam folder, be sure to mark it as "Not Spam" that way, we will be able to contact you in the future.</p>
+      <p class="w3-justify w3-text-grey">Come and register for the Furious Falcons Summer STEM Camp!</p>
       <p class="error"></p>
       <form action="campregistration.php" method="post">
         <h4>General Information</h4>
@@ -353,15 +353,15 @@ if (isset($_POST["pgname"])) {
       $message .= "<p>My student does not have any specific medical conditions.</p>";
     }
 
-    $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below.</p><p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;''>Pay Here</a></p>";
+    $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below.</p><p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;'>Pay Here</a></p>";
 
     $_SESSION["email_to"] = $email;
     $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
-    //$_SESSION["bcc"] = "fosterrobotics@gmail.com";
-    $_SESSION["email_sub"] = "Furious Falcons Camp Registration";
+    $_SESSION["bcc"] = "fosterrobotics@gmail.com";
+    $_SESSION["email_sub"] = "Summer STEM Camp Registration";
     $_SESSION["email_message"] = $message;
     $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
-    $_SESSION["email_redir"] = "?test";
+    $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
     session_write_close();
     echo '<script type="text/javascript">location.href = "/sendemail.php";</script>';
     exit();
