@@ -282,15 +282,86 @@ if (isset($_POST["pgname"])) {
     error("Please select an option from the Early Arrival & Late Departure section");
   }
 
+  foreach ($EALD as $current) {
+    echo $current;
+  }
+
   if(strlen($error) > 0) {
     return_error();
   } else {
+    $message = "Thank you for registering for our 2019 Furious Falcons Summer STEM Camp! We have the following information for your registration:</p><p>Parent/Guardian Name: $pgname</p><p>Student Name: $sname</p><p>Phone Number: $phone</p><p>Email Address: $email</p><p>Primary Emergency Contact Name: $ec1_name</p><p>Primary Emergency Contact Relationship to Student: $ec1_rel</p><p>Primary Emergency Contact Phone Number: $ec1_phone</p>";
+    if (isset($ec1_other)) {
+      $message .= "<p>Primary Emergency Contact Additional Info: $ec1_other</p>";
+    } else {
+      $message .= "<p>Primary Emergency Contact Additional Info: </p>";
+    }
+    if (isset($ec2_name)) {
+      $message .= "<p>Secondary Emergency Contact Name: $ec2_name</p>";
+    } else {
+      $message .= "<p>Secondary Emergency Contact Name: </p>";
+    }
+    if (isset($ec2_rel)) {
+      $message .= "<p>Secondary Emergency Contact Relationship to Student: $ec2_rel</p>";
+    } else {
+      $message .= "<p>Secondary Emergency Contact Relationship to Student: </p>";
+    }
+    if (isset($ec2_phone)) {
+      $message .= "<p>Secondary Emergency Contact Phone Number: $ec2_phone</p>";
+    } else {
+      $message .= "<p>Secondary Emergency Contact Phone Number: </p>";
+    }
+    if (isset($ec2_other)) {
+      $message .= "<p>Secondary Emergency Contact Additional Information: $ec2_other</p>";
+    } else {
+      $message .= "<p>Secondary Emergency Contact Additional Information: </p>";
+    }
+    if (in_array("EA", $EALD) && in_array("LD", $EALD)) {
+      $message .= "<p>My student will require both early drop-off in the morning and late pickup in the afternoon, with the following specifications:</p>";
+      if (isset($EALD_spec)) {
+        $message .= "<p>$EALD_spec</p>";
+      }
+    } else if (in_array("EA", $EALD)) {
+      $message .= "<p>My student will require early drop-off in the morning, with the following specifications:</p>";
+      if (isset($EALD_spec)) {
+        $message .= "<p>$EALD_spec</p>";
+      }
+    } else if (in_array("LD", $EALD)) {
+      $message .= "<p>My student will require late pickup in the afternoon, with the following specifications:</p>";
+      if (isset($EALD_spec)) {
+        $message .= "<p>$EALD_spec</p>";
+      }
+    } else if (in_array("NA", $EALD)) {
+      $message .= "<p>My student does not require early drop-off or late pickup.</p>";
+    }
+    if (isset($med)) {
+      $message .= "<p>My studnet requires the following medical devices:</p>";
+      if (in_array("inh", $med)) {
+        $message .= "<p>Inhaler</p>";
+      }
+      if (in_array("epi", $med)) {
+        $message .= "<p>EpiPen</p>";
+      }
+      if (in_array("medic", $med)) {
+        $message .= "<p>Specific Medication</p>";
+      }
+    } else {
+      $message .= "<p>My student does not require any medical devices.</p>";
+    }
+    if (isset($med_spec)) {
+      $message .= "<p>My student has the following medical conditions:</p><p>$med_spec</p>";
+    } else {
+      $message .= "<p>My student does not have any specific medical conditions.</p>";
+    }
+
+    $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below.</p><p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;''>Pay Here</a></p>";
+
     $_SESSION["email_to"] = $email;
     $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
+    //$_SESSION["bcc"] = "fosterrobotics@gmail.com";
     $_SESSION["email_sub"] = "Furious Falcons Camp Registration";
-    $_SESSION["email_message"] = "<a href=\"furiousfalcons.org\">TEST HTML</a>";
+    $_SESSION["email_message"] = $message;
     $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
-    $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
+    $_SESSION["email_redir"] = "?test";
     session_write_close();
     echo '<script type="text/javascript">location.href = "/sendemail.php";</script>';
     exit();
