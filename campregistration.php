@@ -357,7 +357,7 @@ if (isset($_POST["pgname"])) {
 
     $_SESSION["email_to"] = $email;
     $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
-    $_SESSION["bcc"] = "fosterrobotics@gmail.com";
+    $_SESSION["email_bcc"] = "fosterrobotics@gmail.com";
     $_SESSION["email_sub"] = "Summer STEM Camp Registration";
     $_SESSION["email_message"] = $message;
     $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
