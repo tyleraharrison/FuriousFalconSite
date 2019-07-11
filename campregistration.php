@@ -289,71 +289,71 @@ if (isset($_POST["pgname"])) {
   if(strlen($error) > 0) {
     return_error();
   } else {
-    $message = "Thank you for registering for our 2019 Furious Falcons Summer STEM Camp! We have the following information for your registration:</p><p>Parent/Guardian Name: $pgname</p><p>Student Name: $sname</p><p>Phone Number: $phone</p><p>Email Address: $email</p><p>Primary Emergency Contact Name: $ec1_name</p><p>Primary Emergency Contact Relationship to Student: $ec1_rel</p><p>Primary Emergency Contact Phone Number: $ec1_phone</p>";
+    $message = "Thank you for registering for our 2019 Furious Falcons Summer STEM Camp! We have the following information for your registration:</p>\n<p>Parent/Guardian Name: $pgname</p>\n<p>Student Name: $sname</p>\n<p>Phone Number: $phone</p>\n<p>Email Address: $email</p>\n<p>Primary Emergency Contact Name: $ec1_name</p>\n<p>Primary Emergency Contact Relationship to Student: $ec1_rel</p>\n<p>Primary Emergency Contact Phone Number: $ec1_phone</p>\n";
     if (isset($ec1_other)) {
-      $message .= "<p>Primary Emergency Contact Additional Info: $ec1_other</p>";
+      $message .= "<p>Primary Emergency Contact Additional Info: $ec1_other</p>\n";
     } else {
-      $message .= "<p>Primary Emergency Contact Additional Info: *</p>";
+      $message .= "<p>Primary Emergency Contact Additional Info: *</p>\n";
     }
     if (isset($ec2_name)) {
-      $message .= "<p>Secondary Emergency Contact Name: $ec2_name</p>";
+      $message .= "<p>Secondary Emergency Contact Name: $ec2_name</p>\n";
     } else {
-      $message .= "<p>Secondary Emergency Contact Name: *</p>";
+      $message .= "<p>Secondary Emergency Contact Name: *</p>\n";
     }
     if (isset($ec2_rel)) {
-      $message .= "<p>Secondary Emergency Contact Relationship to Student: $ec2_rel</p>";
+      $message .= "<p>Secondary Emergency Contact Relationship to Student: $ec2_rel</p>\n";
     } else {
-      $message .= "<p>Secondary Emergency Contact Relationship to Student: *</p>";
+      $message .= "<p>Secondary Emergency Contact Relationship to Student: *</p>\n";
     }
     if (isset($ec2_phone)) {
-      $message .= "<p>Secondary Emergency Contact Phone Number: $ec2_phone</p>";
+      $message .= "<p>Secondary Emergency Contact Phone Number: $ec2_phone</p>\n";
     } else {
-      $message .= "<p>Secondary Emergency Contact Phone Number: *</p>";
+      $message .= "<p>Secondary Emergency Contact Phone Number: *</p>\n";
     }
     if (isset($ec2_other)) {
-      $message .= "<p>Secondary Emergency Contact Additional Information: $ec2_other</p>";
+      $message .= "<p>Secondary Emergency Contact Additional Information: $ec2_other</p>\n";
     } else {
-      $message .= "<p>Secondary Emergency Contact Additional Information: *</p>";
+      $message .= "<p>Secondary Emergency Contact Additional Information: *</p>\n";
     }
     if (in_array("EA", $EALD) && in_array("LD", $EALD)) {
-      $message .= "<p>My student will require both early drop-off in the morning and late pickup in the afternoon, with the following specifications:</p>";
+      $message .= "<p>My student will require both early drop-off in the morning and late pickup in the afternoon, with the following specifications:</p>\n";
       if (isset($EALD_spec)) {
-        $message .= "<p>$EALD_spec</p>";
+        $message .= "<p>$EALD_spec</p>\n";
       }
     } else if (in_array("EA", $EALD)) {
-      $message .= "<p>My student will require early drop-off in the morning, with the following specifications:</p>";
+      $message .= "<p>My student will require early drop-off in the morning, with the following specifications:</p>\n";
       if (isset($EALD_spec)) {
-        $message .= "<p>$EALD_spec</p>";
+        $message .= "<p>$EALD_spec</p>\n";
       }
     } else if (in_array("LD", $EALD)) {
-      $message .= "<p>My student will require late pickup in the afternoon, with the following specifications:</p>";
+      $message .= "<p>My student will require late pickup in the afternoon, with the following specifications:</p>\n";
       if (isset($EALD_spec)) {
-        $message .= "<p>$EALD_spec</p>";
+        $message .= "<p>$EALD_spec</p>\n";
       }
     } else if (in_array("NA", $EALD)) {
-      $message .= "<p>My student does not require early drop-off or late pickup.</p>";
+      $message .= "<p>My student does not require early drop-off or late pickup.</p>\n";
     }
     if (isset($med)) {
-      $message .= "<p>My studnet requires the following medical devices:</p>";
+      $message .= "<p>My studnet requires the following medical devices:</p>\n";
       if (in_array("inh", $med)) {
-        $message .= "<p>Inhaler</p>";
+        $message .= "<p>Inhaler</p>\n";
       }
       if (in_array("epi", $med)) {
-        $message .= "<p>EpiPen</p>";
+        $message .= "<p>EpiPen</p>\n";
       }
       if (in_array("medic", $med)) {
-        $message .= "<p>Specific Medication</p>";
+        $message .= "<p>Specific Medication</p>\n";
       }
     } else {
-      $message .= "<p>My student does not require any medical devices.</p>";
+      $message .= "<p>My student does not require any medical devices.</p>\n";
     }
     if ($med_spec != "") {
-      $message .= "<p>My student has the following medical conditions:</p><p>$med_spec</p>";
+      $message .= "<p>My student has the following medical conditions:</p><p>$med_spec</p>\n";
     } else {
-      $message .= "<p>My student does not have any specific medical conditions.</p>";
+      $message .= "<p>My student does not have any specific medical conditions.</p>\n";
     }
 
-    $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below.</p><p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;'>Pay Here</a></p>";
+    $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below.</p>\n<p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;'>Pay Here</a></p>\n";
 
     $_SESSION["email_to"] = $email;
     $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
