@@ -1,74 +1,3 @@
-<?php
-if(isset($_POST['pgname'])) {
-
-  // EDIT THE 2 LINES BELOW AS REQUIRED
-  $email_to = "fosterrobotics@gmail.com";
-  $email_subject = "SUMMER CAMP SIGNUP FROM WEBSTITE";
-
-  function died($error) {
-    // your error code can go here
-    echo "We are very sorry, but there were error(s) found with the form you submitted. ";
-    echo "These errors appear below.<br /><br />";
-    echo $error."<br /><br />";
-    echo "Please go back and fix these errors.<br /><br />";
-    die();
-  }
-
-  $pgname = $_POST['pgname']; // required
-  $sname = $_POST['sname']; // required
-  $phone = $_POST['phone'];
-  $email = $_POST['email'];
-  $comments = "";
-
-  if (isset($_POST['comments'])) {
-    $comments = $_POST['comments'];
-  }
-
-
-  $error_message = "";
-  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-
-  if(!preg_match($email_exp, $email)) {
-    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-  }
-
-  $string_exp = "/^[A-Za-z .'-]+$/";
-
-  if(strlen($error_message) > 0) {
-    died($error_message);
-  }
-
-  $email_message = "Form details below.\n\n";
-
-
-  function clean_string($string) {
-    $bad = array("content-type","bcc:","to:","cc:","href");
-    return str_replace($bad,"",$string);
-  }
-
-
-
-  $email_message .= "Parent/Guardian Name: ".clean_string($pgname)."\n";
-  $email_message .= "Student Name: ".clean_string($sname)."\n";
-  $email_message .= "Phone: ".clean_string($phone)."\n";
-  $email_message .= "Email: ".clean_string($email)."\n";
-  $email_message .= "Comments: ".clean_string($comments)."\n";
-
-  // create email headers
-  $headers = 'From: '.$email."\r\n".
-  'Reply-To: '.$email."\r\n" .
-  'X-Mailer: PHP/' . phpversion();
-  @mail($email_to, $email_subject, $email_message, $headers);
-
-  if (isset($email)) {
-    header("Location: /camp.php?registerSuccess");
-  }
-  exit();
-
-}
-?>
-
-
 <html>
 <title>Furious Falcons - Camp</title>
 <meta charset="UTF-8">
@@ -159,15 +88,11 @@ if(isset($_POST['pgname'])) {
       </div>
       <h3>Ready to Register?</h3>
       <hr style="width: 200px" class="w3-opactiy">
-      <p class="w3-justify w3-text-grey">Payment will be collected later, please sign up now if you think you will attend.</p>
-      <form action="camp.php" method="post">
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Parent/Guardian Name" required name="pgname"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Student Name" required name="sname"></p>
-        <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" required name="phone"></p>
-        <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address" required name="email"></p>
-        <p style="height: 200px;"><textarea style="height: 100%" class="w3-input w3-padding-16" placeholder="Additional Questions/Comments/Concerns" name="comments"></textarea></p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
-      </form>
+      <a href="/campregistration.php">
+        <div id="SignIn" class="coolButton">
+          <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">CLICK HERE</b></p>
+        </div>
+      </a>
     </div>
 
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
