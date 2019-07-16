@@ -5,6 +5,8 @@ if(isset($_SESSION["isLoggedIn"])) {
   $isLoggedIn = $_SESSION["isLoggedIn"];
   if ($isLoggedIn) {
     $userInfo = $_SESSION["userInfo"];
+    session_unset();
+    session_destroy();
   }
 } else {
   $_SESSION["isLoggedIn"] = False;
