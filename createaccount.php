@@ -106,23 +106,23 @@
         <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" required name="phone" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>"></p>
         <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address" required name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"></p>
         <h3 style="font-weight: bold;">Select Your Interests</h3>
-        <label class="container">Mechanical Engineering (Construction & Assembly)
+        <label class="formCheckbox">Mechanical Engineering (Construction & Assembly)
           <input type="checkbox" name="Int_ME">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Electrical Engineering (Wiring & Connections)
+        <label class="formCheckbox">Electrical Engineering (Wiring & Connections)
           <input type="checkbox" name="Int_EE">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Computer Science (Programming)
+        <label class="formCheckbox">Computer Science (Programming)
           <input type="checkbox" name="Int_CS">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Fluid-Power Engineering (Pneumatics & Hydraulics)
+        <label class="formCheckbox">Fluid-Power Engineering (Pneumatics & Hydraulics)
           <input type="checkbox" name="Int_FPE">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Control Engineering (Driving & Manipulating)
+        <label class="formCheckbox">Control Engineering (Driving & Manipulating)
           <input type="checkbox" name="Int_CE">
           <span class="checkmark"></span>
         </label>
@@ -135,76 +135,6 @@
     <!-- END PAGE CONTENT -->
   </div>
 
-  <style>
-  /* The container */
-  .container {
-    text-align: left;
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  /* Hide the browser's default checkbox */
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  /* Create a custom checkbox */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-  }
-
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #f9c41c;
-  }
-
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-
-  /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-
-  /* Style the checkmark/indicator */
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  </style>
   <script src="SmoothUI.js" type="text/javascript"></script>
   <script src="FormFunctions.js"></script>
   <script type="text/javascript">
@@ -240,7 +170,7 @@
 <?php
 
 if (isset($_POST["id"])) {
-  $isValid = true;
+  $isValid = True;
   $fName = $_POST["fName"];
   $lName = $_POST["lName"];
   $id = $_POST["id"];
@@ -368,7 +298,30 @@ if (isset($_POST["id"])) {
     }
     $birthday = $birthY . '-' . $birthM . '-' . $birthD;
 
-    $passEnc = base64_encode($pass);
+    # --- ENCRYPTION ---
+
+    # the key should be random binary, use scrypt, bcrypt or PBKDF2 to
+    # convert a string into a key
+    # key is specified using hexadecimal
+    $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
+
+    # show key size use either 16, 24 or 32 byte keys for AES-128, 192
+    # and 256 respectively
+    $key_size =  strlen($key);
+
+    $plaintext = $pass;
+
+    $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
+    $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
+
+    $ciphertext = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $key,
+                                 $plaintext, MCRYPT_MODE_CBC, $iv);
+
+    $ciphertext = $iv . $ciphertext;
+
+    $ciphertext_base64 = base64_encode($ciphertext);
+
+    $passEnc = $ciphertext_base64;
 
     $query = 'SELECT `ID` FROM `Users`';
     $RSids = $DBconn->query($query);
