@@ -83,7 +83,7 @@
           <option value="XXL">XX-Large</option>
         </select></p>
         <p>
-          <select class="birthdayForm w3-padding-16" name="birthM" >
+          <select class="birthdayForm w3-padding-16" name="birthM" required>
             <option value="default" disabled selected>Birth Month</option>
             <option value="jan">January</option>
             <option value="feb">February</option>
@@ -169,7 +169,7 @@
 </html>
 <?php
 
-if (isset($_POST["id"])) {
+if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && isset($_POST["grade"]) && isset($_POST["shirt"]) && isset($_POST["birthM"]) && isset($_POST["birthD"]) && isset($_POST["birthY"])) {
   $isValid = True;
   $fName = $_POST["fName"];
   $lName = $_POST["lName"];
@@ -299,29 +299,15 @@ if (isset($_POST["id"])) {
     $birthday = $birthY . '-' . $birthM . '-' . $birthD;
 
     # --- ENCRYPTION ---
-
-    # the key should be random binary, use scrypt, bcrypt or PBKDF2 to
-    # convert a string into a key
-    # key is specified using hexadecimal
     $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
 
-    # show key size use either 16, 24 or 32 byte keys for AES-128, 192
-    # and 256 respectively
-    $key_size =  strlen($key);
-
     $plaintext = $pass;
-
-    $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
-    $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-
-    $ciphertext = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $key,
-                                 $plaintext, MCRYPT_MODE_CBC, $iv);
-
-    $ciphertext = $iv . $ciphertext;
-
-    $ciphertext_base64 = base64_encode($ciphertext);
-
-    $passEnc = $ciphertext_base64;
+    $cipher = "aes-128-gcm";
+    $ivlen = openssl_cipher_iv_length($cipher);
+    $iv = openssl_random_pseudo_bytes($ivlen);
+    $ciphertext = openssl_encrypt($plaintext, $cipher, $key, $options=0, $iv, $tag);
+    //store $cipher, $iv, and $tag for decryption later
+    $passEnc = $ciphertext . ";\n" . base64_encode($iv) . ";\n" . base64_encode($tag) . ";\n";
 
     $query = 'SELECT `ID` FROM `Users`';
     $RSids = $DBconn->query($query);
@@ -333,6 +319,12 @@ if (isset($_POST["id"])) {
           $isExists = True;
           echo '<script type="text/javascript">
           updateError("A user with this ID has already been created. Try logging in.");
+          </script>';
+        }
+        if ($row["username"] == $username) {
+          $isExists = True;
+          echo '<script type="text/javascript">
+          updateError("A user with this username has already been created. Try a different one.");
           </script>';
         }
       }
@@ -364,6 +356,10 @@ if (isset($_POST["id"])) {
     $_POST["pass2"] = "";
   }
 
+} else {
+  echo '<script type="text/javascript">
+  updateError("Please fill out all fields")
+  </script>';
 }
 
 ?>
