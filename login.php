@@ -90,7 +90,8 @@ if(isset($_POST["username"])) {
     die("Connection failed :(");
   }
 
-  $passwordEnc = base64_encode($password);
+  $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
+  $cipher = "aes-128-gcm";
 
   $query = "SELECT * FROM `Users`";
   $RSusers = $DBconn->query($query);
@@ -98,18 +99,25 @@ if(isset($_POST["username"])) {
   if ($RSusers->num_rows > 0) {
     while ($row = $RSusers->fetch_assoc()) {
       if ($row["username"] == $username) {
-        if ($row["password"] == $passwordEnc) {
+
+        $passString = $row["password"];
+        $passwordInfo = explode(";\n", $passString);
+
+        $original_plaintext = openssl_decrypt($passwordInfo[0], $cipher, $key, $options=0, base64_decode($passwordInfo[1]), base64_decode($passwordInfo[2]));
+        $password_dec = $original_plaintext;
+
+        if ($password == $password_dec) {
           $_SESSION["isLoggedIn"] = True;
           $_SESSION["userInfo"] = array("id" => $row["ID"], "user" => $row["username"], "fName" => $row["First Name"], "lName" => $row["Last Name"], "grade" => $row["Grade"], "shirt" => $row["T-Shirt Size"], "email" => $row["Email"], "phone" => $row["Phone Number"], "interests" => $row["Interest"], "birthday" => $row["Birthday"], "roles" => $row["Roles"]);
           header("Location: /dashboard.php");
         }
       }
     }
-    if (!$_SESSION["isLoggedIn"]) {
-      echo '<script type="text/javascript">
-      updateError("Invalid username or password");
-      </script>';
-    }
+  }
+  if (!$_SESSION["isLoggedIn"]) {
+    echo '<script type="text/javascript">
+    updateError("Invalid username or password");
+    </script>';
   }
 
   $DBconn->close();
