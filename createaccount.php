@@ -311,6 +311,8 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
 
     $query = 'SELECT `ID` FROM `Users`';
     $RSids = $DBconn->query($query);
+    $query = 'SELECT `username` FROM `USERS`';
+    $RSusers = $DBconn->query($query);
 
     $isExists = False;
     if ($RSids->num_rows > 0) {
@@ -321,6 +323,10 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
           updateError("A user with this ID has already been created. Try logging in.");
           </script>';
         }
+      }
+    }
+    if ($RSusers->num_rows > 0) {
+      while ($row = $RSusers->fetch_assoc()) {
         if ($row["username"] == $username) {
           $isExists = True;
           echo '<script type="text/javascript">
