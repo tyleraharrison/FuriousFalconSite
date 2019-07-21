@@ -88,7 +88,7 @@
       </div>
       <h3>Ready to Register?</h3>
       <hr style="width: 200px" class="w3-opactiy">
-      <a href="/campregistration.php">
+      <a href="/campregistration.php" style="text-decoration: none;">
         <div id="SignIn" class="coolButton">
           <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">CLICK HERE</b></p>
         </div>
