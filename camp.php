@@ -57,7 +57,7 @@
       <h4>Hosted at Foster High School</h4>
     </div>
     <div class="w3-content" id="campContent">
-      <p class="w3-justify w3-text-grey">Over the summer of 2019, the Furious Falcon will be hosting a STEM camp at Foster High School.  The main objective of this camp is to extend the reach of Foster Robotics throughout the community. With your help, this program will allow aspiring engineers (ages 10 and up) to participate in various activities that will ensure the most interactive experience possible. Primarily, this camp will be directed towards educating students on the concepts we implement within our organization. The camp will be held August 5th – August 9th and activity hours will range from 9:00 a.m. to 4:00 p.m.  Food and other accommodations will be provided.</p>
+      <p class="w3-justify w3-text-grey">Over the summer of 2019, the Furious Falcons will be hosting a STEM camp at Foster High School.  The main objective of this camp is to extend the reach of Foster Robotics throughout the community. With your help, this program will allow aspiring engineers (ages 10 and up) to participate in various activities that will ensure the most interactive experience possible. Primarily, this camp will be directed towards educating students on the concepts we implement within our organization. The camp will be held August 5th – August 9th and activity hours will range from 9:00 a.m. to 4:00 p.m.  Food and other accommodations will be provided.</p>
       <h3>The Skills to be Learned</h3>
       <hr style="width:200px" class="w3-opacity">
       <ul>
@@ -88,7 +88,7 @@
       </div>
       <h3>Ready to Register?</h3>
       <hr style="width: 200px" class="w3-opactiy">
-      <a href="/campregistration.php">
+      <a href="/campregistration.php" style="text-decoration: none;">
         <div id="SignIn" class="coolButton">
           <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">CLICK HERE</b></p>
         </div>

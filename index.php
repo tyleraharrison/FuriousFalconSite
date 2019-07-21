@@ -82,7 +82,7 @@ session_destroy();
       </ul>
     </div>
 
-    <div class="w3-content" id="MessageBanner">
+    <div class="w3-content" id="MessageBanner" style="display: none;">
       <div id="BannerCloseButton" onclick="closeBanner()">
         <i class="fa fa-window-close"></i>
       </div>
