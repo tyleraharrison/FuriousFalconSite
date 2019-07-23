@@ -67,6 +67,7 @@ $retval = mail($to, $subject, $content, $header);
 
 if ($retval == true) {
   header("Location: " . $redir);
+  exit();
 } else {
   echo "ERROR";
 }
