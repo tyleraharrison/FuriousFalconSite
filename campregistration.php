@@ -61,7 +61,6 @@ session_start();
     <div class="w3-content ff-title">
       <h1>Furious Falcons Summer STEM Camp Registration</h1>
     </div>
-    <!--
     <p style="display: none;">Come and register for the Furious Falcons Summer STEM Camp!</p>
     <div class="w3-content" id="registerSuccessDiv" style="text-align: center; display: none;">
       <p>Thank you for registering for our camp! Now that you have registered, we will send you a confirmation email, please make sure you get this email. If the email appears in your spam folder, be sure to mark it as "Not Spam," that way we will be able to contact you in the future.</p>
@@ -158,8 +157,7 @@ session_start();
           <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="Please specify all allergies, medications and/or limitations" name="med_spec" style="height: 100%;"></textarea></p>
         </div>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
-      </form>-->
-      <p class="w3-content">We apologize for this inconvenience, but our Summer STEM Camp Registration has been closed for this year. Maybe next year!</p>
+      </form>
     </div>
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 

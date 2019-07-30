@@ -110,6 +110,7 @@ if(isset($_POST["username"])) {
           $_SESSION["isLoggedIn"] = True;
           $_SESSION["userInfo"] = array("id" => $row["ID"], "user" => $row["username"], "fName" => $row["First Name"], "lName" => $row["Last Name"], "grade" => $row["Grade"], "shirt" => $row["T-Shirt Size"], "email" => $row["Email"], "phone" => $row["Phone Number"], "interests" => $row["Interest"], "birthday" => $row["Birthday"], "roles" => $row["Roles"]);
           header("Location: /dashboard.php");
+          exit();
         }
       }
     }

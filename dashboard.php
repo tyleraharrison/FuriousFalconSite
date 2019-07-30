@@ -3,14 +3,11 @@ session_start();
 
 if(isset($_SESSION["isLoggedIn"])) {
   $isLoggedIn = $_SESSION["isLoggedIn"];
-  if ($isLoggedIn) {
-    $userInfo = $_SESSION["userInfo"];
-    session_unset();
-    session_destroy();
-  }
+  $userInfo = $_SESSION["userInfo"];
 } else {
   $_SESSION["isLoggedIn"] = False;
   header("Location: /login.php");
+  exit();
 }
 ?>
 
@@ -41,17 +38,24 @@ if(isset($_SESSION["isLoggedIn"])) {
       <i class="fa fa-sign-out fa-rotate-180 w3-xxlarge"></i>
       <p>RETURN & LOGOUT</p>
     </a>
+    <!-- TODO: Change href -->
+    <a href="/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+      <i class="fa fa-sign-in w3-xxlarge"></i>
+      <p>SIGN INTO A MEETING</p>
+    </a>
   </nav>
 
   <!-- Navbar on small screens (Hidden on medium and large screens) -->
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:100% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />RETURN & LOGOUT</a>
+      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:50% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />RETURN & LOGOUT</a>
+      <!-- TODO: Change href -->
+      <a href="/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:50% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
     </div>
   </div>
   <!-- Page Content -->
-  <div class="w3-padding-large" id="wrapper">
+  <div class="w3-padding-large" id="wrapper" style="margin-top: 50px;">
 
     <div class="w3-content" style="text-align: center;">
       <h1 style="font-weight: bold;">Welcome to your Robotics Automated Dashboard, Fellow Falcon!</h1>
