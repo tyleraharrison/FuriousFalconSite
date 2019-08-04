@@ -62,7 +62,11 @@ if(isset($_SESSION["isLoggedIn"])) {
       <h3>What can I do for you, <?php echo $userInfo["fName"]; ?>?</h3>
     </div>
     <div class="w3-content">
-
+      <a href="https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db" style="text-decoration: none;">
+        <div class="coolButton" style="width: 150px; height: 80px;">
+          <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">JOIN THE TRELLO</b></p>
+        </div>
+      </a>
     </div>
     <!-- END PAGE CONTENT -->
   </div>
