@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-
+header("Location: /camp.php");
+exit();
 ?>
 <html>
 <title>Furious Falcons - Camp Registration</title>
