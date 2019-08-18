@@ -56,6 +56,7 @@
       <h1>Furious Falcons Summer STEM Camp</h1>
       <h4>Hosted at Foster High School</h4>
     </div>
+    <!---
     <div class="w3-content" id="campContent">
       <p class="w3-justify w3-text-grey">Over the summer of 2019, the Furious Falcons will be hosting a STEM camp at Foster High School.  The main objective of this camp is to extend the reach of Foster Robotics throughout the community. With your help, this program will allow aspiring engineers (ages 10 and up) to participate in various activities that will ensure the most interactive experience possible. Primarily, this camp will be directed towards educating students on the concepts we implement within our organization. The camp will be held August 5th – August 9th and activity hours will range from 9:00 a.m. to 4:00 p.m.  Food and other accommodations will be provided.</p>
       <h3>The Skills to be Learned</h3>
@@ -94,7 +95,10 @@
         </div>
       </a>
     </div>
-
+    -->
+    <div class="w3-content">
+      <p>Sorry you missed our camp this year. We look forward to seeing you next year!</p>
+    </div>
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
       <h3>Useful Links</h3>
