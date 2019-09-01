@@ -34,7 +34,7 @@ session_destroy();
       <p>ABOUT</p>
     </a>
     <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
-      <i class="fa fa-eye w3-xxlarge"></i>
+      <i class="far fa-images w3-xxlarge"></i>
       <p>PHOTOS</p>
     </a>
     <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
@@ -49,7 +49,7 @@ session_destroy();
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
       <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-home w3-xlarge"></i><br />HOME</a>
       <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-user w3-xlarge"></i><br />ABOUT</a>
-      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-eye w3-xlarge"></i><br />PHOTOS</a>
+      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="far fa-images"></i></i><br />PHOTOS</a>
       <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-envelope w3-xlarge"></i><br />CONTACT</a>
       <a href="/dashboard.php" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-lock w3-xlarge"></i><br />LOGIN</a>
     </div>
@@ -229,7 +229,7 @@ session_destroy();
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#1094;</a>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
         <!-- Image text -->
