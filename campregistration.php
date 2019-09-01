@@ -10,7 +10,6 @@ exit();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -20,6 +19,7 @@ exit();
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/ae92485cd8.js"></script>
 
 
 <body class="w3-black">
@@ -166,16 +166,15 @@ exit();
       <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
       <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
 
-
-      <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fa fa-reddit w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"<i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fab fa-reddit w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fab fa-facebook"></i></a>
+      <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fab fa-youtube w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"><i class="fab fa-instagram"></i></a>
+      <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
       <!--<a style="padding: 5px;" href="https://www.pinterest.com/fosterrobotics/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>-->
-      <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fab fa-twitter w3-hover-opacity"></i></a>
       <!--<a style="padding: 5px;" href="https://www.linkedin.com/in/furious-falcons-936303187/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>-->
-
+      <a style="padding: 5px;" href="https://discord.gg/r7Zrs4A"><i class="fab fa-discord"></i></a>
       <!-- End footer -->
     </footer>
     <!-- END PAGE CONTENT -->
@@ -356,21 +355,21 @@ if (isset($_POST["pgname"])) {
 
     $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below. An initial payment of $100 is due by Saturday, July 20th, and the remaining amount must be paid before the first day of camp, Monday, August 5th.</p>\n<p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;'>Pay Here</a></p>\n";
 
-    $_SESSION["email_to"] = $email;
-    $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
-    $_SESSION["email_bcc"] = "fosterrobotics@gmail.com";
-    $_SESSION["email_sub"] = "Summer STEM Camp Registration";
-    $_SESSION["email_message"] = $message;
-    $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
-    $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
-    session_write_close();
-    echo '<script type="text/javascript">location.href = "/sendemail.php";</script>';
-    exit();
+      $_SESSION["email_to"] = $email;
+      $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
+      $_SESSION["email_bcc"] = "fosterrobotics@gmail.com";
+      $_SESSION["email_sub"] = "Summer STEM Camp Registration";
+      $_SESSION["email_message"] = $message;
+      $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
+      $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
+      session_write_close();
+      echo '<script type="text/javascript">location.href = "/sendemail.php";</script>';
+      exit();
+    }
+
+
+  } else {
+    $_POST = array();
   }
 
-
-} else {
-  $_POST = array();
-}
-
-?>
+  ?>

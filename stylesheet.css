@@ -400,6 +400,7 @@ nav a.active {
 .column {
   float: left;
   width: 20%;
+  vertical-align: middle;
 }
 
 /* Add a transparency effect for thumnbail images */
