@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"><link rel="stylesheet" type="text/css" href="stylesheet.css">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -15,6 +13,7 @@
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/ae92485cd8.js"></script>
 
 
 <body class="w3-black">
@@ -70,64 +69,63 @@
               <h2>David Caldwell</h2>
             </li>
             <!-- <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
-            </li> -->
-          </ul>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-            <li class="w3-dark-grey w3-xlarge w3-padding-32">Ms. Secretary</li>
-            <li class="w3-padding-16"><img src="/images/Officers/TammyAndersen.jpg" style="max-width: 100%; height: auto;"></li>
-            <li class="w3-padding-16">
-              <h2>Tammy Andersen</h2>
-            </li>
-          </ul>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-            <li class="w3-dark-grey w3-xlarge w3-padding-32">Mr. Treasurer</li>
-            <li class="w3-padding-16"><img src="/images/Officers/RobertMalek.jpg" style="max-width: 100%; height: auto;"></li>
-            <li class="w3-padding-16">
-              <h2>Robert Malek</h2>
-            </li>
-          </ul>
-        </div>
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Choose Tier</button>
+          </li> -->
+        </ul>
       </div>
-      <br />
-
-      <a href="mailto:contactus@furiousfalcons.org?subject=Booster%20Club" style="text-decoration: none;">
-        <div class="coolButton">
-          <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Have Questions Concerning Our Booster Club?</b></p>
-        </div>
-      </a>
-      <!--
-      <h2 class="w3-text-light-grey">Our Bylaws</h2>
-      <hr style="width:200px" class="w3-opacity">
-      <h2 class="w3-text-light-grey">Our Ledger</h2>
-      <hr style="width:200px" class="w3-opacity">-->
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Ms. Secretary</li>
+          <li class="w3-padding-16"><img src="/images/Officers/TammyAndersen.jpg" style="max-width: 100%; height: auto;"></li>
+          <li class="w3-padding-16">
+            <h2>Tammy Andersen</h2>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Mr. Treasurer</li>
+          <li class="w3-padding-16"><img src="/images/Officers/RobertMalek.jpg" style="max-width: 100%; height: auto;"></li>
+          <li class="w3-padding-16">
+            <h2>Robert Malek</h2>
+          </li>
+        </ul>
+      </div>
     </div>
+    <br />
 
-    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-
-      <h3>Useful Links</h3>
-      <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
-      <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
-
-
-      <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fa fa-reddit w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"<i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
-      <!--<a style="padding: 5px;" href="https://www.pinterest.com/fosterrobotics/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>-->
-      <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-      <!--<a style="padding: 5px;" href="https://www.linkedin.com/in/furious-falcons-936303187/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>-->
-
-      <!-- End footer -->
-    </footer>
-    <!-- END PAGE CONTENT -->
+    <a href="mailto:contactus@furiousfalcons.org?subject=Booster%20Club" style="text-decoration: none;">
+      <div class="coolButton">
+        <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Have Questions Concerning Our Booster Club?</b></p>
+      </div>
+    </a>
+    <!--
+    <h2 class="w3-text-light-grey">Our Bylaws</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <h2 class="w3-text-light-grey">Our Ledger</h2>
+    <hr style="width:200px" class="w3-opacity">-->
   </div>
 
-  <script src="SmoothUI.js" type="text/javascript"></script>
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+
+    <h3>Useful Links</h3>
+    <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
+    <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
+
+    <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fab fa-reddit w3-hover-opacity"></i></a>
+    <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fab fa-facebook"></i></a>
+    <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fab fa-youtube w3-hover-opacity"></i></a>
+    <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"><i class="fab fa-instagram"></i></a>
+    <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
+    <!--<a style="padding: 5px;" href="https://www.pinterest.com/fosterrobotics/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>-->
+    <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fab fa-twitter w3-hover-opacity"></i></a>
+    <!--<a style="padding: 5px;" href="https://www.linkedin.com/in/furious-falcons-936303187/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>-->
+    <a style="padding: 5px;" href="https://discord.gg/r7Zrs4A"><i class="fab fa-discord"></i></a>
+    <!-- End footer -->
+  </footer>
+  <!-- END PAGE CONTENT -->
+</div>
+
+<script src="SmoothUI.js" type="text/javascript"></script>
 </body>
 </html>
