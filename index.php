@@ -132,7 +132,7 @@ session_destroy();
     <h3 class="w3-padding-16 w3-text-light-grey w3-center">Our Finances</h3>
     <div class="w3-content w3-row-padding">
       <div class="w3-half w3-padding-16">
-        <a href="/boosterclub.php" style="text-decoration: none;">
+        <a href="/booster-club/info.php" style="text-decoration: none;">
           <div class="coolButton">
             <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Our Booster Club</b></p>
           </div>
@@ -312,7 +312,7 @@ session_destroy();
 
       <h3>Useful Links</h3>
       <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
-      <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
+      <p style="font-size: 16px;"><a href="/camp/info.php">Look at our Summer Camp</a></p>
 
       <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fab fa-reddit w3-hover-opacity"></i></a>
       <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fab fa-facebook"></i></a>

@@ -2,8 +2,10 @@
 session_start();
 
 if(isset($_SESSION["isLoggedIn"])) {
-  $isLoggedIn = $_SESSION["isLoggedIn"];
-  $userInfo = $_SESSION["userInfo"];
+  if ($_SESSION["isLoggedIn"]) {
+    $isLoggedIn = $_SESSION["isLoggedIn"];
+    $userInfo = $_SESSION["userInfo"];
+  }
 } else {
   $_SESSION["isLoggedIn"] = False;
   header("Location: /login.php");
@@ -75,7 +77,6 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -85,6 +86,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/ae92485cd8.js"></script>
 
 
 <body class="w3-black">
@@ -92,14 +94,18 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
     <img src="images/FalconsLogoOnly.png" style="width:100%">
-    <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
-      <i class="fa fa-sign-out fa-rotate-180 w3-xxlarge"></i>
-      <p>RETURN & LOGOUT</p>
+    <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+      <i class="fas fa-tachometer-alt w3-xxlarge"></i>
+      <p>DASHBOARD</p>
     </a>
     <!-- TODO: Change href -->
     <a href="/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-sign-in w3-xxlarge"></i>
       <p>SIGN INTO A MEETING</p>
+    </a>
+    <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+      <i class="fa fa-sign-out fa-rotate-180 w3-xxlarge"></i>
+      <p>LOGOUT</p>
     </a>
   </nav>
 
@@ -107,9 +113,10 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
-      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:50% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />RETURN & LOGOUT</a>
+      <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fas fa-tachometer-alt w3-xlarge"></i><br />DASHBOARD</a>
       <!-- TODO: Change href -->
-      <a href="/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:50% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
+      <a href="/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
+      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />LOGOUT</a>
     </div>
   </div>
   <!-- Page Content -->
@@ -122,6 +129,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 
     <div class="w3-content">
       <?php
+      //TODO: Remove !
       if (!$showRegisterInfo) {
         echo "<div class=\"w3-row-padding\" style=\"margin:0 -16px\">\n
         <div class=\"w3-margin-bottom\">\n
@@ -130,7 +138,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
         <li class=\"w3-padding-16\">Please complete all of the following tasks within the first month of your registration.</li>\n
         <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://discord.gg/r7Zrs4A\">Join the Discord</a></li>\n
         <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db\">Join the Trello</a></li>\n
-        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://discord.gg/r7Zrs4A\">Complete Emergency Contact Form</a></li>\n
+        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"/ec-form.php\">Complete Emergency Contact Form</a></li>\n
         <li class=\"w3-padding-16\">_</li>\n
         <h2>$ 100+</h2>\n
         <span class=\"w3-opacity\">Sponsored Amount</span>\n
