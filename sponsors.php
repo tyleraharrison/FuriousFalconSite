@@ -139,7 +139,7 @@
             <li>We can now contact you directly, using the information on the form. We will get back with you as soon as we can to take the next steps in the process.</li>
           </ol>
           <br />
-          <h3>Thank you for considering us as a sponsor!</h3>
+          <h3>Thank you for considering sponsoring our team!</h3>
         </div>
         <!-- END PAGE CONTENT -->
       </div>
