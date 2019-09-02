@@ -51,14 +51,14 @@ session_destroy();
       <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-user w3-xlarge"></i><br />ABOUT</a>
       <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="far fa-images"></i></i><br />PHOTOS</a>
       <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-envelope w3-xlarge"></i><br />CONTACT</a>
-      <a href="/dashboard.php" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-lock w3-xlarge"></i><br />LOGIN</a>
+      <a href="/dashboard/index.php" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-lock w3-xlarge"></i><br />LOGIN</a>
     </div>
   </div>
 
   <!-- Page Content -->
   <div class="w3-padding-large" id="wrapper">
     <!-- Login Button -->
-    <a href="/dashboard.php">
+    <a href="/dashboard/index.php">
       <div id="SignIn" class="coolButton" style=" position: absolute; top: 25px; right: 25px; left: auto; width: 150px; height: 55px;">
         <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">LOGIN</b></p>
       </div>

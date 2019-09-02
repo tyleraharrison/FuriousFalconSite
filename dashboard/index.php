@@ -8,7 +8,7 @@ if(isset($_SESSION["isLoggedIn"])) {
   }
 } else {
   $_SESSION["isLoggedIn"] = False;
-  header("Location: /login.php");
+  header("Location: /dashboard/login.php");
   exit();
 }
 
@@ -75,14 +75,14 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 <title>Furious Falcons - Student Dashboard</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ffc200">
+<link rel="stylesheet" type="text/css" href="/stylesheet.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffc200">
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -93,7 +93,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
-    <img src="images/FalconsLogoOnly.png" style="width:100%">
+    <img src="/images/FalconsLogoOnly.png" style="width:100%">
     <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fas fa-tachometer-alt w3-xxlarge"></i>
       <p>DASHBOARD</p>
@@ -138,11 +138,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
         <li class=\"w3-padding-16\">Please complete all of the following tasks within the first month of your registration.</li>\n
         <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://discord.gg/r7Zrs4A\">Join the Discord</a></li>\n
         <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db\">Join the Trello</a></li>\n
-        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"/ec-form.php\">Complete Emergency Contact Form</a></li>\n
-        <li class=\"w3-padding-16\">_</li>\n
-        <h2>$ 100+</h2>\n
-        <span class=\"w3-opacity\">Sponsored Amount</span>\n
-        </li>\n
+        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSd47N_z49GWVNuzwBf26gn3SfTMvwje-vkzAo6467-1pTskSw/viewform?usp=pp_url&entry.790555731=" . $userInfo["id"] . "\">Complete Emergency Contact Form</a></li>\n
         </ul>\n
         </div>";
       }
