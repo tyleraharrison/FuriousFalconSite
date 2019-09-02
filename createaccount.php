@@ -126,6 +126,10 @@
           <input type="checkbox" name="Int_CE">
           <span class="checkmark"></span>
         </label>
+        <label class="formCheckbox">CAD Engineering (3D Modeling & Design)
+          <input type="checkbox" name="Int_CADE">
+          <span class="checkmark"></span>
+        </label>
         <p><input class="w3-input w3-padding-16" type="text" placeholder="Username (If blank will be ID#)" name="user" value="<?php echo isset($_POST['user']) ? $_POST['user'] : '' ?>"></p>
         <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="pass" value=""></p>
         <p><input class="w3-input w3-padding-16" type="password" placeholder="Confirm Password" required name="pass2" value=""></p>
@@ -196,6 +200,9 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
   }
   if (isset($_POST["Int_CE"])) {
     $interests .= "5";
+  }
+  if (isset($_POST["Int_CADE"])) {
+    $interests .= "6";
   }
   $user = $_POST["user"];
   $pass = $_POST["pass"];
@@ -298,6 +305,8 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
     }
     $birthday = $birthY . '-' . $birthM . '-' . $birthD;
 
+    $registerDate = date("Y-m-d");
+
     # --- ENCRYPTION ---
     $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
 
@@ -337,7 +346,7 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
     }
 
     if (!$isExists) {
-      $query = 'INSERT INTO `Users`(`ID`, `username`, `password`, `First Name`, `Last Name`, `Grade`, `T-Shirt Size`, `Email`, `Phone Number`, `Interest`, `Birthday`, `Roles`) VALUES ("' . $id . '","' . $user . '","' . $passEnc . '","' . $fName . '","' . $lName . '","' . $grade . '","' . $shirt . '","' . $email . '","' . $phone . '","' . $interests . '","' . $birthday . '","");' ;
+      $query = 'INSERT INTO `Users`(`ID`, `username`, `password`, `First Name`, `Last Name`, `Grade`, `T-Shirt Size`, `Email`, `Phone Number`, `Interest`, `Birthday`, `Registration Date`) VALUES ("' . $id . '","' . $user . '","' . $passEnc . '","' . $fName . '","' . $lName . '","' . $grade . '","' . $shirt . '","' . $email . '","' . $phone . '","' . $interests . '","' . $birthday . '","" . $registerDate . '"');' ;
       $RSusers = $DBconn->query($query);
       echo '<script type="text/javascript">
       document.getElementById("createAccountDiv").style.display = "none";

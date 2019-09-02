@@ -9,6 +9,64 @@ if(isset($_SESSION["isLoggedIn"])) {
   header("Location: /login.php");
   exit();
 }
+
+function add30Days($year, $month, $day) {
+  if ($month == "01" || $month == "03" || $month == "05" || $month == "07" || $month == "08" || $month == "10" || $month == "12") {
+    if ($day == "01") {
+      $day = 31;
+    } else {
+      $day -= 1;
+    }
+    $month += 1;
+  } else if ($month == "04" || $month == "06" || $month == "09" || $month == "11") {
+    $month += 1;
+  } else if ($month == "02") {
+    $day += 2;
+    $month += 1;
+  }
+  if ($month == 13) {
+    $month = 1;
+    $year += 1;
+  }
+  if (strlen($month) == 1) {
+    $month = "0" . $month;
+  }
+  if (strlen($day) == 1) {
+    $day = "0" . $day;
+  }
+  return $year . "-" . $month . "-" . $day;
+}
+
+function isDateGreater($year1, $month1, $day1, $year2, $month2, $day2) {
+  if ($day2 > $day1) {
+    return True;
+  } else if ($month2 > $month1) {
+    return True;
+  } else if ($year2 > $year1) {
+    return True;
+  } else {
+    return False;
+  }
+}
+
+$startDate = $userInfo["registerDate"];
+$day = substr($startDate, -2);
+$month = substr($startDate, -4, 2);
+$year = substr($startDate, 0, 4);
+$date30 = add30Days($year, $month, $day);
+$year30 = substr($date30, 0, 4);
+$month30 = substr($date30, -4, 2);
+$day30 = substr($date30, -2);
+$currentDay = date("d");
+$currentMonth = date("m");
+$currentYear = date("Y");
+
+if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $day30)) {
+  $showRegisterInfo = False;
+} else {
+  $showRegisterInfo = True;
+}
+
 ?>
 
 <html>
@@ -61,12 +119,26 @@ if(isset($_SESSION["isLoggedIn"])) {
       <h1 style="font-weight: bold;">Welcome to your Robotics Automated Dashboard, Fellow Falcon!</h1>
       <h3>What can I do for you, <?php echo $userInfo["fName"]; ?>?</h3>
     </div>
+
     <div class="w3-content">
-      <a href="https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db" style="text-decoration: none;">
-        <div class="coolButton" style="width: 150px; height: 80px;">
-          <p style="margin-top: 12px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">JOIN THE TRELLO</b></p>
-        </div>
-      </a>
+      <?php
+      if (!$showRegisterInfo) {
+        echo "<div class=\"w3-row-padding\" style=\"margin:0 -16px\">\n
+        <div class=\"w3-margin-bottom\">\n
+        <ul class=\"w3-ul w3-white w3-center\">\n
+        <li class=\"w3-dark-grey w3-xlarge w3-padding-32\">Newly Registered Objectives</li>\n
+        <li class=\"w3-padding-16\">Please complete all of the following tasks within the first month of your registration.</li>\n
+        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://discord.gg/r7Zrs4A\">Join the Discord</a></li>\n
+        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db\">Join the Trello</a></li>\n
+        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://discord.gg/r7Zrs4A\">Complete Emergency Contact Form</a></li>\n
+        <li class=\"w3-padding-16\">_</li>\n
+        <h2>$ 100+</h2>\n
+        <span class=\"w3-opacity\">Sponsored Amount</span>\n
+        </li>\n
+        </ul>\n
+        </div>";
+      }
+      ?>
     </div>
     <!-- END PAGE CONTENT -->
   </div>
