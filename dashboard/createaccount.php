@@ -3,15 +3,15 @@
 <title>Furious Falcons - Create Account</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ffc200">
+<link rel="stylesheet" type="text/css" href="/stylesheet.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffc200">
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -21,7 +21,7 @@
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
-    <img src="images/FalconsLogoOnly.png" style="width:100%">
+    <img src="/images/FalconsLogoOnly.png" style="width:100%">
     <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-home w3-xxlarge"></i>
       <p>RETURN</p>
@@ -40,18 +40,18 @@
     <!-- Sponsors -->
     <div id="Sponsors">
       <ul>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_Hampco.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_SnapOn.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_SolidWorks.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_WebCentral.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
 
@@ -126,17 +126,25 @@
           <input type="checkbox" name="Int_CE">
           <span class="checkmark"></span>
         </label>
+        <label class="formCheckbox">CAD Engineering (3D Modeling & Design)
+          <input type="checkbox" name="Int_CADE">
+          <span class="checkmark"></span>
+        </label>
         <p><input class="w3-input w3-padding-16" type="text" placeholder="Username (If blank will be ID#)" name="user" value="<?php echo isset($_POST['user']) ? $_POST['user'] : '' ?>"></p>
         <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="pass" value=""></p>
         <p><input class="w3-input w3-padding-16" type="password" placeholder="Confirm Password" required name="pass2" value=""></p>
+        <label class="formCheckbox">I agree to abide by and follow all of the <a target="_blank" href="https://drive.google.com/file/d/1ZFJea1E3gfRuNDjq4E5COidX4KM1NRDG/view">Bylaws</a>
+          <input type="checkbox" name="Bylaws_Ack">
+          <span class="checkmark"></span>
+        </label>
         <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-lock" style="padding-right: 10px;"></i> CREATE ACCOUNT</button>
       </form>
     </div>
     <!-- END PAGE CONTENT -->
   </div>
 
-  <script src="SmoothUI.js" type="text/javascript"></script>
-  <script src="FormFunctions.js"></script>
+  <script src="/SmoothUI.js" type="text/javascript"></script>
+  <script src="/FormFunctions.js"></script>
   <script type="text/javascript">
   var birthDay = document.getElementsByClassName("birthdayForm")[1];
   var birthYear = document.getElementsByClassName("birthdayForm")[2];
@@ -197,9 +205,17 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
   if (isset($_POST["Int_CE"])) {
     $interests .= "5";
   }
+  if (isset($_POST["Int_CADE"])) {
+    $interests .= "6";
+  }
   $user = $_POST["user"];
   $pass = $_POST["pass"];
   $pass2 = $_POST["pass2"];
+  if (isset($_POST["Bylaws_Ack"])) {
+    $bylaws = True;
+  } else {
+    $bylaws = False;
+  }
 
   //Validators
   if ((!preg_match('~[A-Za-z]+~', $fName)) || (!preg_match('~[A-Za-z]+~', $lName))) {
@@ -241,6 +257,13 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
   if ($pass != $pass2) {
     echo '<script type="text/javascript">
     updateError("Passwords do not match");
+    </script>';
+    $isValid = False;
+  }
+
+  if (!$bylaws) {
+    echo '<script type="text/javascript">
+    updateError("Please agree to the bylaws");
     </script>';
     $isValid = False;
   }
@@ -298,6 +321,8 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
     }
     $birthday = $birthY . '-' . $birthM . '-' . $birthD;
 
+    $registerDate = date("Y-m-d");
+
     # --- ENCRYPTION ---
     $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
 
@@ -311,7 +336,7 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
 
     $query = 'SELECT `ID` FROM `Users`';
     $RSids = $DBconn->query($query);
-    $query = 'SELECT `username` FROM `USERS`';
+    $query = 'SELECT `username` FROM `Users`';
     $RSusers = $DBconn->query($query);
 
     $isExists = False;
@@ -327,7 +352,7 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
     }
     if ($RSusers->num_rows > 0) {
       while ($row = $RSusers->fetch_assoc()) {
-        if ($row["username"] == $username) {
+        if ($row["username"] == $user) {
           $isExists = True;
           echo '<script type="text/javascript">
           updateError("A user with this username has already been created. Try a different one.");
@@ -337,7 +362,7 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
     }
 
     if (!$isExists) {
-      $query = 'INSERT INTO `Users`(`ID`, `username`, `password`, `First Name`, `Last Name`, `Grade`, `T-Shirt Size`, `Email`, `Phone Number`, `Interest`, `Birthday`, `Roles`) VALUES ("' . $id . '","' . $user . '","' . $passEnc . '","' . $fName . '","' . $lName . '","' . $grade . '","' . $shirt . '","' . $email . '","' . $phone . '","' . $interests . '","' . $birthday . '","");' ;
+      $query = 'INSERT INTO `Users`(`ID`, `username`, `password`, `First Name`, `Last Name`, `Grade`, `T-Shirt Size`, `Email`, `Phone Number`, `Interest`, `Birthday`, `Registration Date`) VALUES ("' . $id . '","' . $user . '","' . $passEnc . '","' . $fName . '","' . $lName . '","' . $grade . '","' . $shirt . '","' . $email . '","' . $phone . '","' . $interests . '","' . $birthday . '","' . $registerDate . '");';
       $RSusers = $DBconn->query($query);
       echo '<script type="text/javascript">
       document.getElementById("createAccountDiv").style.display = "none";

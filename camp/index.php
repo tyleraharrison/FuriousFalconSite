@@ -1,4 +1,5 @@
 <?php
-//Redirect to sponsors.html
-header("Location: /camp.php")
+
+header("Location: /camp/info.php");
+exit();
 ?>

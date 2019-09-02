@@ -110,7 +110,7 @@
 
     <h3>Useful Links</h3>
     <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
-    <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
+    <p style="font-size: 16px;"><a href="/camp/info.php">Look at our Summer Camp</a></p>
 
     <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fab fa-reddit w3-hover-opacity"></i></a>
     <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fab fa-facebook"></i></a>
