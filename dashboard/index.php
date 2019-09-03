@@ -99,7 +99,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
       <p>DASHBOARD</p>
     </a>
     <!-- TODO: Change href -->
-    <a href="192.168.1.22/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+    <a href="http://192.168.1.22/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-sign-in w3-xxlarge"></i>
       <p>SIGN INTO A MEETING</p>
     </a>
@@ -115,7 +115,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
       <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fas fa-tachometer-alt w3-xlarge"></i><br />DASHBOARD</a>
       <!-- TODO: Change href -->
-      <a href="192.168.1.22/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
+      <a href="http://192.168.1.22/attendance.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
       <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />LOGOUT</a>
     </div>
   </div>
