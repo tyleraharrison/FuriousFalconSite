@@ -130,7 +130,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
     <div class="w3-content">
       <?php
       //TODO: Remove !
-      if (!$showRegisterInfo) {
+      if ($showRegisterInfo) {
         echo "<div class=\"w3-row-padding\" style=\"margin:0 -16px\">\n
         <div class=\"w3-margin-bottom\">\n
         <ul class=\"w3-ul w3-white w3-center\">\n
