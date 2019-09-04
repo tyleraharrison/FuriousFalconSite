@@ -49,7 +49,7 @@ session_destroy();
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
       <a href="#" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-home w3-xlarge"></i><br />HOME</a>
       <a href="#" data-scroll="aboutSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-user w3-xlarge"></i><br />ABOUT</a>
-      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="far fa-images"></i></i><br />PHOTOS</a>
+      <a href="#" data-scroll="photosSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="far fa-images w3-xlarge"></i></i><br />PHOTOS</a>
       <a href="#" data-scroll="contactSection" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-envelope w3-xlarge"></i><br />CONTACT</a>
       <a href="/dashboard/index.php" class="w3-bar-item w3-button navlink" style="width:20% !important"><i class="fa fa-lock w3-xlarge"></i><br />LOGIN</a>
     </div>
