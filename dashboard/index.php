@@ -94,7 +94,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
     <img src="/images/FalconsLogoOnly.png" style="width:100%">
-    <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+    <a href="/dashboard/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fas fa-tachometer-alt w3-xxlarge"></i>
       <p>DASHBOARD</p>
     </a>
@@ -113,7 +113,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
-      <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fas fa-tachometer-alt w3-xlarge"></i><br />DASHBOARD</a>
+      <a href="/dashboard/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fas fa-tachometer-alt w3-xlarge"></i><br />DASHBOARD</a>
       <!-- TODO: Change href -->
       <a href="http://192.168.1.22/attendance.php?id=<?php echo $userInfo["id"]; ?>" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
       <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />LOGOUT</a>
