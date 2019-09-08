@@ -12,61 +12,61 @@ if(isset($_SESSION["isLoggedIn"])) {
   exit();
 }
 
-function add30Days($year, $month, $day) {
-  if ($month == "01" || $month == "03" || $month == "05" || $month == "07" || $month == "08" || $month == "10" || $month == "12") {
-    if ($day == "01") {
-      $day = 31;
-    } else {
-      $day -= 1;
+$DBservername = "sql223.main-hosting.eu";
+$DBusername = "u995699429_robot";
+$DBpassword = "5YkT;>;lZxlgh`e9~";
+$DBname = "u995699429_robot";
+
+$DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+
+$query = "SELECT * FROM `Website Information`";
+$RSwebinfo = $DBconn->query($query);
+
+$isExists = False;
+if ($RSwebinfo->num_rows > 0) {
+  while($row = $RSwebinfo->fetch_assoc()) {
+    if ($row["ID"] == $userInfo["id"]) {
+      $isExists = True;
     }
-    $month += 1;
-  } else if ($month == "04" || $month == "06" || $month == "09" || $month == "11") {
-    $month += 1;
-  } else if ($month == "02") {
-    $day += 2;
-    $month += 1;
   }
-  if ($month == 13) {
-    $month = 1;
-    $year += 1;
-  }
-  if (strlen($month) == 1) {
-    $month = "0" . $month;
-  }
-  if (strlen($day) == 1) {
-    $day = "0" . $day;
-  }
-  return $year . "-" . $month . "-" . $day;
 }
 
-function isDateGreater($year1, $month1, $day1, $year2, $month2, $day2) {
-  if ($day2 > $day1) {
-    return True;
-  } else if ($month2 > $month1) {
-    return True;
-  } else if ($year2 > $year1) {
-    return True;
+if (!$isExists) {
+  $query = 'INSERT INTO `Website Information`(`ID`) VALUES ("' . $userInfo["id"] . '");';
+  $RSaddUser = $DBconn->query($query);
+}
+
+$query = 'SELECT * FROM `Website Information` WHERE `ID` = ' . $userInfo["id"];
+$RSuserWebInfo = $DBconn->query($query);
+
+$userWebInfo = array();
+$webInfo = array();
+if ($RSuserWebInfo->num_rows > 0) {
+  while($row = $RSuserWebInfo->fetch_assoc()) {
+    $webInfo = array_keys($row);
+    array_shift($webInfo);
+    foreach($row as $col) {
+      if(strlen($col) > 1) {
+        continue;
+      } else {
+        array_push($userWebInfo, $col);
+      }
+    }
+  }
+}
+
+if (isset($_GET["togTask"])) {
+  $task = $_GET["togTask"];
+  $index = array_search($task, $webInfo);
+  $curVal = $userWebInfo[$index];
+  if ($curVal == "1") {
+    $query = 'UPDATE `Website Information` SET `' . $task . '`="0" WHERE `ID` = ' . $userInfo["id"];
+    $userWebInfo[$index] = "0";
   } else {
-    return False;
+    $query = 'UPDATE `Website Information` SET `' . $task . '`="1" WHERE `ID` = ' . $userInfo["id"];
+    $userWebInfo[$index] = "1";
   }
-}
-
-$startDate = $userInfo["registerDate"];
-$day = substr($startDate, -2);
-$month = substr($startDate, -4, 2);
-$year = substr($startDate, 0, 4);
-$date30 = add30Days($year, $month, $day);
-$year30 = substr($date30, 0, 4);
-$month30 = substr($date30, -4, 2);
-$day30 = substr($date30, -2);
-$currentDay = date("d");
-$currentMonth = date("m");
-$currentYear = date("Y");
-
-if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $day30)) {
-  $showRegisterInfo = False;
-} else {
-  $showRegisterInfo = True;
+  $DBconn->query($query);
 }
 
 ?>
@@ -87,14 +87,24 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/ae92485cd8.js"></script>
+<style>
 
+.formCheckbox {
+  font-size: 16px;
+}
+
+.task {
+  text-align: left;
+}
+
+</style>
 
 <body class="w3-black">
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
     <img src="/images/FalconsLogoOnly.png" style="width:100%">
-    <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
+    <a href="/dashboard/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fas fa-tachometer-alt w3-xxlarge"></i>
       <p>DASHBOARD</p>
     </a>
@@ -113,7 +123,7 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
-      <a href="/dashboard.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fas fa-tachometer-alt w3-xlarge"></i><br />DASHBOARD</a>
+      <a href="/dashboard/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fas fa-tachometer-alt w3-xlarge"></i><br />DASHBOARD</a>
       <!-- TODO: Change href -->
       <a href="http://192.168.1.22/attendance.php?id=<?php echo $userInfo["id"]; ?>" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
       <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />LOGOUT</a>
@@ -128,24 +138,85 @@ if (isDateGreater($currentYear, $currentMonth, $currentDay, $year30, $month30, $
     </div>
 
     <div class="w3-content">
-      <?php
-      //TODO: Remove !
-      if ($showRegisterInfo) {
-        echo "<div class=\"w3-row-padding\" style=\"margin:0 -16px\">\n
-        <div class=\"w3-margin-bottom\">\n
-        <ul class=\"w3-ul w3-white w3-center\">\n
-        <li class=\"w3-dark-grey w3-xlarge w3-padding-32\">Newly Registered Objectives</li>\n
-        <li class=\"w3-padding-16\">Please complete all of the following tasks within the first month of your registration.</li>\n
-        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://discord.gg/r7Zrs4A\">Join the Discord</a></li>\n
-        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db\">Join the Trello</a></li>\n
-        <li class=\"w3-padding-16\"><a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSd47N_z49GWVNuzwBf26gn3SfTMvwje-vkzAo6467-1pTskSw/viewform?usp=pp_url&entry.790555731=" . $userInfo["id"] . "\">Complete Emergency Contact Form</a></li>\n
-        </ul>\n
-        </div>";
-      }
-      ?>
-    </div>
-    <!-- END PAGE CONTENT -->
-  </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-margin-bottom">
+          <ul class="w3-ul w3-white w3-center">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">To-Do Tasks</li>
+            <li class="w3-padding-16">Please complete all of the following tasks within the first month of your registration.</li>
+            <?php
 
+            if ($userWebInfo[0] == "1") {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Join the <a target="_blank" href="https://discord.gg/r7Zrs4A">Discord</a>
+                <input type="checkbox" name="task_joinDiscord">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            } else {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Join the <a target="_blank" href="https://discord.gg/r7Zrs4A">Discord</a>
+                <input type="checkbox" name="task_joinDiscord" checked="checked">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            }
+            if ($userWebInfo[1] == "1") {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Join the <a target="_blank" href="https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db">Trello</a>
+              <input type="checkbox" name="task_joinTrello">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            } else {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Join the <a target="_blank" href="https://trello.com/invite/furiousfalcons4328/4b3ecd46d4786aec963c1536e8e4e5db">Trello</a>
+                <input type="checkbox" name="task_joinTrello" checked="checked">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            }
+            if ($userWebInfo[2] == "1") {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Complete Your <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd47N_z49GWVNuzwBf26gn3SfTMvwje-vkzAo6467-1pTskSw/viewform?usp=pp_url&entry.790555731=' . $userInfo["id"] . '">Emergency Contact Form</a>
+                <input type="checkbox" name="task_ECForm">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            } else {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Complete Your <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd47N_z49GWVNuzwBf26gn3SfTMvwje-vkzAo6467-1pTskSw/viewform?usp=pp_url&entry.790555731=' . $userInfo["id"] . '">Emergency Contact Form</a>
+                <input type="checkbox" name="task_ECForm" checked="checked">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            }
+            if ($userWebInfo[3] == "1") {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Review the <a target="_blank" href="https://docs.google.com/presentation/d/1nB95tUWsdkZtM0QpcyWIdgusFGLjsYORQ6vAyGc6-ys/edit?usp=sharing">Safety Presentation</a>
+                <input type="checkbox" name="task_safetyPres">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            } else {
+              echo '<li class="w3-padding-16 task">
+              <label class="formCheckbox">Reviw the <a target="_blank" href="https://docs.google.com/presentation/d/1nB95tUWsdkZtM0QpcyWIdgusFGLjsYORQ6vAyGc6-ys/edit?usp=sharing">Safety Presentation</a>
+                <input type="checkbox" name="task_safetyPres" checked="checked">
+                <span class="checkmark"></span>
+                </label>
+                </li>';
+            }
+
+            ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  $("input:checkbox").click(function() {
+    window.location.replace("/dashboard/index.php?togTask=" + this.name);
+  });
+  </script>
+  <!-- END PAGE CONTENT -->
 </body>
 </html>
