@@ -103,7 +103,7 @@
           <select class="birthdayForm w3-padding-16" name="birthY">
           </select>
         </p>
-        <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number" required name="phone" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>"></p>
+        <p><input class="w3-input w3-padding-16" type="tel" placeholder="Phone Number (Only Numbers)" required name="phone" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>"></p>
         <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address" required name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"></p>
         <h3 style="font-weight: bold;">Select Your Interests</h3>
         <label class="formCheckbox">Mechanical Engineering (Construction & Assembly)
@@ -364,6 +364,19 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
     if (!$isExists) {
       $query = 'INSERT INTO `Users`(`ID`, `username`, `password`, `First Name`, `Last Name`, `Grade`, `T-Shirt Size`, `Email`, `Phone Number`, `Interest`, `Birthday`, `Registration Date`) VALUES ("' . $id . '","' . $user . '","' . $passEnc . '","' . $fName . '","' . $lName . '","' . $grade . '","' . $shirt . '","' . $email . '","' . $phone . '","' . $interests . '","' . $birthday . '","' . $registerDate . '");';
       $RSusers = $DBconn->query($query);
+      $_POST["fName"] = "";
+      $_POST["lName"] = "";
+      $_POST["id"] = "";
+      $_POST["grade"] = "";
+      $_POST["shirt"] = "";
+      $_POST["birthM"] = "";
+      $_POST["birthD"] = "";
+      $_POST["birthY"] = "";
+      $_POST["phone"] = "";
+      $_POST["email"] = "";
+      $_POST["user"] = "";
+      $_POST["pass"] = "";
+      $_POST["pass2"] = "";
       echo '<script type="text/javascript">
       document.getElementById("createAccountDiv").style.display = "none";
       document.getElementById("successMessage").style.display = "block";
@@ -371,20 +384,6 @@ if (isset($_POST["fName"]) && isset($_POST["lName"]) && isset($_POST["id"]) && i
     }
 
     $DBconn->close();
-
-    $_POST["fName"] = "";
-    $_POST["lName"] = "";
-    $_POST["id"] = "";
-    $_POST["grade"] = "";
-    $_POST["shirt"] = "";
-    $_POST["birthM"] = "";
-    $_POST["birthD"] = "";
-    $_POST["birthY"] = "";
-    $_POST["phone"] = "";
-    $_POST["email"] = "";
-    $_POST["user"] = "";
-    $_POST["pass"] = "";
-    $_POST["pass2"] = "";
   }
 
 } else {
