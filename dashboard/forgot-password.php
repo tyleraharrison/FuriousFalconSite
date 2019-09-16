@@ -59,19 +59,16 @@ session_start();
 
     <h1 style="text-align: center; font-weight: bold; font-size: 50px;">Login</h1>
     <p class="error"></p>
-    <form action="login.php" method="post" class="halfAndCenter">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Username" required name="username"></p>
-      <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="password"></p>
-      <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-lock" style="padding-right: 10px;"></i> LOGIN</button>
-    </form>
-    <div class="halfAndCenter">
-      <a href="/dashboard/createaccount.php">
-        <button class="w3-button w3-light-grey w3-padding-large" id="createAccountButton"><i class="fa fa-user" style="padding-right: 10px;"></i> CREATE ACCOUNT</button>
-      </a>
-    </div>
-    <div class="halfAndCenter" id="forgotPassword">
-      <p><a href="/dashboard/forgot-password.php">Forgot your username or password?</a></p>
-    </div>
+    <?php
+
+    if (!isset($_SESSION["reset"])) {
+      echo "<form action=\"forgot-password.php\" method=\"post\" class=\"halfAndCenter\">
+      <p><input class=\"w3-input w3-padding-16\" type=\"text\" placeholder=\"Student ID\" required name=\"id\"></p>
+      <p><input class=\"w3-input w3-padding-16\" type=\"email\" placeholder=\"Email Address\" required name=\"email\"></p>
+      <button class=\"w3-button w3-light-grey w3-padding-large\" id=\"loginButton\" type=\"submit\"><i class=\"fa fa-refresh\" style=\"padding-right: 10px;\"></i> RESET PASSWORD</button>
+      </form>";
+    } else if (isset($_POST["id"]))
+    ?>
     <!-- END PAGE CONTENT -->
   </div>
   <script src="FormFunctions.js"></script>
@@ -79,13 +76,14 @@ session_start();
 </html>
 <?php
 
-if(isset($_POST["username"])) {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+if(isset($_POST["id"])) {
+  $id = $_POST["id"];
+  $email = $_POST["email"];
   $DBservername = "sql223.main-hosting.eu";
   $DBusername = "u995699429_robot";
   $DBpassword = "5YkT;>;lZxlgh`e9~";
   $DBname = "u995699429_robot";
+  $passReset = False;
 
   $DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
 
@@ -93,32 +91,18 @@ if(isset($_POST["username"])) {
     die("Connection failed :(");
   }
 
-  $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
-  $cipher = "aes-128-gcm";
-
   $query = "SELECT * FROM `Users`";
   $RSusers = $DBconn->query($query);
 
   if ($RSusers->num_rows > 0) {
     while ($row = $RSusers->fetch_assoc()) {
-      if ($row["username"] == $username) {
-
-        $passString = $row["password"];
-        $passwordInfo = explode(";\n", $passString);
-
-        $original_plaintext = openssl_decrypt($passwordInfo[0], $cipher, $key, $options=0, base64_decode($passwordInfo[1]), base64_decode($passwordInfo[2]));
-        $password_dec = $original_plaintext;
-
-        if ($password == $password_dec) {
-          $_SESSION["isLoggedIn"] = True;
-          $_SESSION["userInfo"] = array("id" => $row["ID"], "user" => $row["username"], "fName" => $row["First Name"], "lName" => $row["Last Name"], "grade" => $row["Grade"], "shirt" => $row["T-Shirt Size"], "email" => $row["Email"], "phone" => $row["Phone Number"], "interests" => $row["Interest"], "birthday" => $row["Birthday"], "registerDate" => $row["Registration Date"], "roles" => $row["Roles"]);
-          header("Location: /dashboard/index.php");
-          exit();
-        }
+      if ($row["ID"] == $id) {
+        $passReset = True;
+        header("Location: /dashboard/forgot-password.php");
       }
     }
   }
-  if (!$_SESSION["isLoggedIn"]) {
+  if ($passReset) {
     echo '<script type="text/javascript">
     updateError("Invalid username or password");
     </script>';
