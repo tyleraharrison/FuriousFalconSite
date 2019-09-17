@@ -1,51 +1,17 @@
 <?php
 session_start();
 
-if(isset($_POST["username"])) {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-  $DBservername = "sql223.main-hosting.eu";
-  $DBusername = "u995699429_robot";
-  $DBpassword = "5YkT;>;lZxlgh`e9~";
-  $DBname = "u995699429_robot";
-
-  $DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
-
-  if ($DBconn->connect_error) {
-    die("Connection failed :(");
-  }
-
-  $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
-  $cipher = "aes-128-gcm";
-
-  $query = "SELECT * FROM `Users`";
-  $RSusers = $DBconn->query($query);
-
-  if ($RSusers->num_rows > 0) {
-    while ($row = $RSusers->fetch_assoc()) {
-      if ($row["username"] == $username) {
-
-        $passString = $row["password"];
-        $passwordInfo = explode(";\n", $passString);
-
-        $original_plaintext = openssl_decrypt($passwordInfo[0], $cipher, $key, $options=0, base64_decode($passwordInfo[1]), base64_decode($passwordInfo[2]));
-        $password_dec = $original_plaintext;
-
-        if ($password == $password_dec) {
-          $_SESSION["isLoggedIn"] = True;
-          $_SESSION["userInfo"] = array("id" => $row["ID"], "user" => $row["username"], "fName" => $row["First Name"], "lName" => $row["Last Name"], "grade" => $row["Grade"], "shirt" => $row["T-Shirt Size"], "email" => $row["Email"], "phone" => $row["Phone Number"], "interests" => $row["Interest"], "birthday" => $row["Birthday"], "registerDate" => $row["Registration Date"], "roles" => $row["Roles"]);
-          header("Location: /dashboard/index.php");
-          exit();
-        }
-      }
-    }
-  }
-
-  $DBconn->close();
+if (!isset($_SESSION["id"])) {
+  header("Location: /dashboard/forgot-password.php");
+} else {
+  $id = $_SESSION["id"];
+  $email = $_SESSION["email"];
+  $username = $_SESSION["username"];
 }
+
 ?>
 <html>
-<title>Furious Falcons - Login</title>
+<title>Furious Falcons - Reset Password</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/w3.css">
@@ -100,21 +66,15 @@ if(isset($_POST["username"])) {
       </ul>
     </div>
 
-    <h1 style="text-align: center; font-weight: bold; font-size: 50px;">Login</h1>
+    <h1 style="text-align: center; font-weight: bold; font-size: 50px;">Reset Password</h1>
     <p class="error"></p>
-    <form action="login.php" method="post" class="halfAndCenter">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Username" required name="username"></p>
-      <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="password"></p>
-      <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-lock" style="padding-right: 10px;"></i> LOGIN</button>
+    <p style="display: none; text-align: center;" class="halfAndCenter success">Your password has been reset, you can now use this <a href="/dashboard/login.php" style="color: #f9c41c;">link</a> to login.</p>
+    <form action="reset-password.php" method="post" class="halfAndCenter form" id="resetPSForm">
+      <p>If all you needed was your username, than here you go: <b style="font-weight: 800;"><?php echo $username; ?></b> and use this <a style="color: #f9c41c;" href="/dashboard/login.php">link</a> to login. If you need to reset your password, please do so below:</p>
+      <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="pass" value=""></p>
+      <p><input class="w3-input w3-padding-16" type="password" placeholder="Confirm Password" required name="pass2" value=""></p>
+      <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-refresh" style="padding-right: 10px;"></i> RESET PASSWORD</button>
     </form>
-    <div class="halfAndCenter">
-      <a href="/dashboard/createaccount.php">
-        <button class="w3-button w3-light-grey w3-padding-large" id="createAccountButton"><i class="fa fa-user" style="padding-right: 10px;"></i> CREATE ACCOUNT</button>
-      </a>
-    </div>
-    <div class="halfAndCenter" id="forgotPassword">
-      <p><a href="/dashboard/forgot-password.php">Forgot your username or password?</a></p>
-    </div>
     <!-- END PAGE CONTENT -->
   </div>
   <script src="/FormFunctions.js"></script>
@@ -122,11 +82,57 @@ if(isset($_POST["username"])) {
 </html>
 <?php
 
-if (isset($_SESSION["isLoggedIn"])) {
-  if (!$_SESSION["isLoggedIn"]) {
+if(isset($_POST["pass"])) {
+
+  if ($_POST["pass"] == $_POST["pass2"]) {
+
+    $pass = $_POST["pass"];
+    $pass2 = $_POST["pass2"];
+    $DBservername = "sql223.main-hosting.eu";
+    $DBusername = "u995699429_robot";
+    $DBpassword = "5YkT;>;lZxlgh`e9~";
+    $DBname = "u995699429_robot";
+
+    $DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
+
+    if ($DBconn->connect_error) {
+      die("Connection failed :(");
+    }
+
+    $query = "SELECT * FROM `Users` WHERE `ID`=\"" . $id . "\";";
+    $RSuser = $DBconn->query($query);
+
+    if ($RSuser->num_rows > 0) {
+      while ($row = $RSuser->fetch_assoc()) {
+        if ($row["ID"] == $id && $row["Email"] == $email && $row["username"] == $username) {
+          $key = pack('H*', "6145564d526e64534e34736c616c3533597539716d7a4763466a736333635964");
+
+          $plaintext = $pass;
+          $cipher = "aes-128-gcm";
+          $ivlen = openssl_cipher_iv_length($cipher);
+          $iv = openssl_random_pseudo_bytes($ivlen);
+          $ciphertext = openssl_encrypt($plaintext, $cipher, $key, $options=0, $iv, $tag);
+          //store $cipher, $iv, and $tag for decryption later
+          $passEnc = $ciphertext . ";\n" . base64_encode($iv) . ";\n" . base64_encode($tag) . ";\n";
+
+          $query = "UPDATE `Users` SET `password`=\"" . $passEnc . "\" WHERE `ID`=\"" . $id . "\";";
+          $RSupdatePass = $DBconn->query($query);
+          echo '<script type="text/javascript">
+          success();
+          </script>';
+          session_unset();
+          session_destroy();
+        }
+      }
+    }
+    
+    $DBconn->close();
+
+  } else {
     echo '<script type="text/javascript">
-    updateError("Invalid username or password");
+    updateError("Passwords must match");
     </script>';
+    exit();
   }
 }
 ?>

@@ -2,7 +2,7 @@
 session_start();
 ?>
 <html>
-<title>Furious Falcons - Login</title>
+<title>Furious Falcons - Forgot Password</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/w3.css">
@@ -57,21 +57,16 @@ session_start();
       </ul>
     </div>
 
-    <h1 style="text-align: center; font-weight: bold; font-size: 50px;">Login</h1>
+    <h1 style="text-align: center; font-weight: bold; font-size: 50px;">Forgot Password</h1>
     <p class="error"></p>
-    <?php
-
-    if (!isset($_SESSION["reset"])) {
-      echo "<form action=\"forgot-password.php\" method=\"post\" class=\"halfAndCenter\">
-      <p><input class=\"w3-input w3-padding-16\" type=\"text\" placeholder=\"Student ID\" required name=\"id\"></p>
-      <p><input class=\"w3-input w3-padding-16\" type=\"email\" placeholder=\"Email Address\" required name=\"email\"></p>
-      <button class=\"w3-button w3-light-grey w3-padding-large\" id=\"loginButton\" type=\"submit\"><i class=\"fa fa-refresh\" style=\"padding-right: 10px;\"></i> RESET PASSWORD</button>
-      </form>";
-    } else if (isset($_POST["id"]))
-    ?>
+    <form action="forgot-password.php" method="post" class="halfAndCenter">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Student ID" required name="id"></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email Address" required name="email"></p>
+      <button class="w3-button w3-light-grey w3-padding-large" id="loginButton" type="submit"><i class="fa fa-lock" style="padding-right: 10px;"></i> VERIFY ME</button>
+    </form>
     <!-- END PAGE CONTENT -->
   </div>
-  <script src="FormFunctions.js"></script>
+  <script src="/FormFunctions.js"></script>
 </body>
 </html>
 <?php
@@ -83,7 +78,7 @@ if(isset($_POST["id"])) {
   $DBusername = "u995699429_robot";
   $DBpassword = "5YkT;>;lZxlgh`e9~";
   $DBname = "u995699429_robot";
-  $passReset = False;
+  $userExists = False;
 
   $DBconn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
 
@@ -96,18 +91,23 @@ if(isset($_POST["id"])) {
 
   if ($RSusers->num_rows > 0) {
     while ($row = $RSusers->fetch_assoc()) {
-      if ($row["ID"] == $id) {
-        $passReset = True;
-        header("Location: /dashboard/forgot-password.php");
+      if ($row["ID"] == $id && $row["Email"] == $email) {
+        $userExists = True;
+        $_SESSION["id"] = $id;
+        $_SESSION["email"] = $email;
+        $_SESSION["username"] = $row["username"];
+        $DBconn->close();
+        header("Location: /dashboard/reset-password.php");
+        exit();
       }
     }
   }
-  if ($passReset) {
-    echo '<script type="text/javascript">
-    updateError("Invalid username or password");
-    </script>';
-  }
 
-  $DBconn->close();
+  if (!$userExists) {
+    echo '<script type="text/javascript">
+    updateError("Invalid Student ID or Email Address");
+    </script>';
+    $DBconn->close();
+  }
 }
 ?>
