@@ -112,11 +112,15 @@ nav a.active {
 }
 
 #loginButton {
-  float:left;
+  float: right;
 }
 
 #createAccountButton {
-  float: right;
+  float: left;
+}
+
+#forgotPassword {
+  margin-top: 75px;
 }
 
 .error {
@@ -323,6 +327,21 @@ nav a.active {
     display: block;
   }
 
+}
+
+@media screen and (max-width: 500px) {
+  #loginButton {
+    float: left;
+  }
+
+  .halfAndCenter {
+    float: left;
+    margin-left: 5%;
+  }
+
+  #forgotPassword {
+    margin-top: 0px;
+  }
 }
 
 * {
