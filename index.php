@@ -129,8 +129,8 @@ session_destroy();
     <hr style="width:200px" class="w3-opacity">
     <p>This division of our club does not hold too many responsibilities as it mostly consists of driving or manipulating our robot on the field of play. However, the tasks that are assigned do require a certain dedication to the club. Depending on the current status of the robot, drivers may receive little to no practice but are still expected to have a basic understanding of the primary functions of the robot and how they operate. This is so that no matter what might happen, our drivers are always prepared for whatever problems are thrown our way during the build season.</p>
 
-    <h3 class="w3-padding-16 w3-text-light-grey w3-center">Our Finances</h3>
-    <div class="w3-content w3-row-padding">
+    <h3 class="w3-padding-16 w3-text-light-grey w3-center">More Information on Us</h3>
+    <div class="w3-content w3-row-padding" style="text-align: center;">
       <div class="w3-half w3-padding-16">
         <a href="/booster-club/info.php" style="text-decoration: none;">
           <div class="coolButton">
@@ -141,7 +141,14 @@ session_destroy();
       <div class="w3-half w3-padding-16">
         <a href="/sponsors.php" style="text-decoration: none;">
           <div class="coolButton">
-            <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Interested in being a Sponsor?</b></p>
+            <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Our Sponsorships</b></p>
+          </div>
+        </a>
+      </div>
+      <div class="w3-half w3-padding-16" style="margin-left: 25%;">
+        <a href="https://drive.google.com/file/d/1ZFJea1E3gfRuNDjq4E5COidX4KM1NRDG/view?usp=sharing" style="text-decoration: none;">
+          <div class="coolButton">
+            <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Our Club Bylaws</b></p>
           </div>
         </a>
       </div>
