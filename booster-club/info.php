@@ -3,13 +3,14 @@
 <title>Furious Falcons</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"><link rel="stylesheet" type="text/css" href="stylesheet.css">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ffc200">
+<link rel="stylesheet" type="text/css" href="/stylesheet.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffc200">
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -20,7 +21,7 @@
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
-    <img src="images/FalconsLogoOnly.png" style="width:100%">
+    <img src="/images/FalconsLogoOnly.png" style="width:100%">
     <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-home w3-xxlarge"></i>
       <p>RETURN</p>
@@ -39,18 +40,18 @@
     <!-- Sponsors -->
     <div id="Sponsors">
       <ul>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_Hampco.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_SnapOn.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_SolidWorks.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_WebCentral.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
 
@@ -58,6 +59,15 @@
       <h1 style="text-align: center; font-weight: bold;">Our Booster Club</h1>
       <h3 style="text-align: center;">Furious Falcons Booster Inc.</h3>
       <p class="w3-justify w3-text-grey w3-padding-16">The Furious Falcons Booster Club is an account with a 501(c)(3) tax-exempt status, whose sole purpose is to maintain the funds for our organization. This includes depositing raised funds, keeping up-to-date ledgers of the current status of the account, as well as approving expenditures that are proposed by the club. This page includes some of the general information for our booster club and the officers in charge of it. It also shows the most recent ledgers of our account.</p>
+      <div style="height: 100px;">
+        <div class="w3-half w3-padding-16" style="margin-left: 25%;">
+          <a href="/files/Furious%20Falcons%20Booster%20Club%20Bylaws.pdf" style="text-decoration: none; text-align: center;">
+            <div class="coolButton">
+              <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Booster Club Bylaws</b></p>
+            </div>
+          </a>
+        </div>
+      </div>
       <h2 class="w3-text-light-grey">Our Officers</h2>
       <hr style="width:200px" class="w3-opacity">
       <div class="w3-row-padding" style="margin:0 -16px">
