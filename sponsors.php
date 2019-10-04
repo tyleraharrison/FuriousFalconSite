@@ -127,15 +127,15 @@
         <hr style="width:200px" class="w3-opacity">
         <ol class="w3-justify">
           <li>Decide on a sponsorship amount, and find the corresponding tier.</li>
-          <li>Open the <a target="_blank" href="/files/Furious%20Falcons%20Sponsorship%20Form.pdf"><b>Sponsorship Form</b></a> and fill it out. You will need to print it afterwards, so that you can sign and date it. You will also need your student contact to sign the form as well (if applicable).</li>
+          <li>Open the <a style="color: #f9c41c;" target="_blank" href="/files/Furious%20Falcons%20Sponsorship%20Form.pdf"><b>Sponsorship Form</b></a> and fill it out. You will need to print it afterwards, so that you can sign and date it. You will also need your student contact to sign the form as well (if applicable).</li>
           <li>
-            After you have the completed and signed form, please give it to your student contact or you are welcome to mail it to:
+            After you have the completed and signed the form, please give it and your payment (if cash or check) to your student contact or you are welcome to mail them to:
             <b style="font-size: 20px;">
               <p>Mr. Willeby - FRC Team #4328<br />
                 4400 FM 723 Rd<br />
-                Richmond, TX 77406
+                Richmond, TX 77406<br />
               </b>
-            </li>
+            If you wish to pay by card, please click <b><a style="color: #f9c41c;" target="_blank" href="https://furious-falcons-booster-inc.square.site/product/donation-sponsorship-payment/9?cs=true">here</a></b>.</li>
             <li>We can now contact you directly, using the information on the form. We will get back with you as soon as we can to take the next steps in the process.</li>
           </ol>
           <br />
