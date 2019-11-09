@@ -44,7 +44,7 @@ $root_path = $_SERVER['DOCUMENT_ROOT'] . '/files/CAD';
 
 // Root url for links in file manager.Relative to $http_host. Variants: '', 'path/to/subfolder'
 // Will not working if $root_path will be outside of server document root
-$root_url = '';
+$root_url = '/files/CAD/';
 
 // Server hostname. Can set manually if wrong
 $http_host = $_SERVER['HTTP_HOST'];
@@ -630,11 +630,10 @@ if (isset($_GET['upload'])) {
     <form action="" method="post" enctype="multipart/form-data">
       <input type="hidden" name="p" value="<?php echo fm_enc(FM_PATH) ?>">
       <input type="hidden" name="upl" value="1">
-      <input type="file" name="upload[]"><br>
-      <input type="file" name="upload[]"><br>
-      <input type="file" name="upload[]"><br>
-      <input type="file" name="upload[]"><br>
-      <input type="file" name="upload[]"><br>
+      <p>Upload files here:</p>
+      <input type="file" name="upload[]" multiple><br>
+      <p>Upload folders here:</p>
+      <input type="file" name="upload[]" webkitdirectory directory multiple /><br>
       <br>
       <p>
         <button class="btn"><i class="icon-apply"></i> Upload</button> &nbsp;
