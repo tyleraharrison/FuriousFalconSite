@@ -145,7 +145,7 @@ session_destroy();
           </div>
         </a>
       </div>
-      <div class="w3-half w3-padding-16" style="margin-left: 25%;">
+      <div class="w3-half w3-padding-16 buttonCenter">
         <a href="https://drive.google.com/file/d/1ZFJea1E3gfRuNDjq4E5COidX4KM1NRDG/view?usp=sharing" style="text-decoration: none;">
           <div class="coolButton">
             <p style="margin-top: 18px; text-align: center; vertical-align: middle;"><b style="color: white; margin: 0; font-size: 18px;">Our Club Bylaws</b></p>
