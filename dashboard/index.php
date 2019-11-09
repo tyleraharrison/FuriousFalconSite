@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if(isset($_SESSION["isLoggedIn"])) {
   if ($_SESSION["isLoggedIn"]) {
@@ -8,6 +10,7 @@ if(isset($_SESSION["isLoggedIn"])) {
   }
 } else {
   $_SESSION["isLoggedIn"] = False;
+  $_SESSION["redir"] = "/dashboard/index.php";
   header("Location: /dashboard/login.php");
   exit();
 }
