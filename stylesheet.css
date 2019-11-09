@@ -256,7 +256,15 @@ nav a.active {
   display: inline-block;
 }
 
+.buttonCenter {
+  margin-left: 25%;
+}
+
 @media screen and (max-width: 600px) {
+  .buttonCenter {
+    margin-left: auto;
+  }
+  
   .halfAndCenter {
     width: 90%;
   }
