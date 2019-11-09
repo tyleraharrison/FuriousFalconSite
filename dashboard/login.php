@@ -3,10 +3,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if(isset($_SESSION["redir"])) {
-  echo $_SESSION["redir"];
-}
-
 if(isset($_POST["username"])) {
   $username = $_POST["username"];
   $password = $_POST["password"];
