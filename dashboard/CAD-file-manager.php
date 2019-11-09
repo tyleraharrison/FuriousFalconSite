@@ -13,7 +13,7 @@ if(isset($_SESSION["isLoggedIn"])) {
 } else {
   $_SESSION["isLoggedIn"] = False;
   $_SESSION["redir"] = "/dashboard/CAD-file-manager.php";
-  //header("Location: /dashboard/login.php");
+  header("Location: /dashboard/login.php");
   exit();
 }
 
