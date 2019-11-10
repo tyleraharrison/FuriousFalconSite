@@ -421,6 +421,9 @@ if (isset($_POST['upl'])) {
   for ($i = 0; $i < $total; $i++) {
     $tmp_name = $_FILES['upload']['tmp_name'][$i];
     if (empty($_FILES['upload']['error'][$i]) && !empty($tmp_name) && $tmp_name != 'none') {
+      chown($tmp_name, "test");
+      $stat = stat($tmp_name);
+      print_r(posix_getpwuid($stat['uid']));
       if (move_uploaded_file($tmp_name, $path . '/' . $_FILES['upload']['name'][$i])) {
         $uploads++;
       } else {
@@ -1050,8 +1053,13 @@ if (isset($_GET['view'])) {
           $filelink = '?p=' . urlencode(FM_PATH) . '&view=' . urlencode($f);
           $all_files_size += $filesize_raw;
           $perms = substr(decoct(fileperms($path . '/' . $f)), -4);
-          $owner = array("name" => $currentUser);
-          $group = array("name" => "CAD Team");
+          if (function_exists('posix_getpwuid') && function_exists('posix_getgrgid')) {
+            $owner = str_replace("u995699429.", "", posix_getpwuid(fileowner($path . '/' . $f)));
+            $group = posix_getgrgid(filegroup($path . '/' . $f));
+          } else {
+            $owner = array('name' => '?');
+            $group = array('name' => '?');
+          }
           ?>
           <tr>
             <td><label style="margin-top: -10px;" class="formCheckbox"><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"><span class="checkmark"></span></label></td>
