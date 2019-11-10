@@ -712,12 +712,12 @@ if (isset($_GET['copy']) && !isset($_GET['finish'])) {
       <?php
       if ($parent !== false) {
         ?>
-        <li><a href="?p=<?php echo urlencode($parent) ?>&amp;copy=<?php echo urlencode($copy) ?>"><i class="icon-arrow_up"></i> ..</a></li>
+        <li><a href="?p=<?php echo urlencode($parent) ?>&amp;copy=<?php echo urlencode($copy) ?>"><i class="fa fa-arrow-up"></i> ..</a></li>
         <?php
       }
       foreach ($folders as $f) {
         ?>
-        <li><a href="?p=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>&amp;copy=<?php echo urlencode($copy) ?>"><i class="icon-folder"></i> <?php echo fm_enc(fm_convert_win($f)) ?></a></li>
+        <li><a href="?p=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>&amp;copy=<?php echo urlencode($copy) ?>"><i class="fa fa-folder"></i> <?php echo fm_enc(fm_convert_win($f)) ?></a></li>
         <?php
       }
       ?>
@@ -985,7 +985,7 @@ if (isset($_GET['view'])) {
       // link to parent folder
       if ($parent !== false) {
         ?>
-        <tr><td></td><td colspan="<?php echo !FM_IS_WIN ? '6' : '4' ?>"><a href="?p=<?php echo urlencode($parent) ?>"><i class="icon-arrow_up"></i> ..</a></td></tr>
+        <tr><td></td><td colspan="<?php echo !FM_IS_WIN ? '6' : '4' ?>"><a href="?p=<?php echo urlencode($parent) ?>"><i class="fa fa-arrow-up"></i> ..</a></td></tr>
         <?php
       }
       foreach ($folders as $f) {
@@ -1011,9 +1011,9 @@ if (isset($_GET['view'])) {
           <?php endif; ?>
           <td>
             <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete folder?');"><i style="color: red;" class="fa fa-times"></i></a>
-            <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i class="icon-rename"></i></a>
-            <a title="Copy to..." href="?p=&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i class="icon-copy"></i></a>
-            <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f . '/') ?>" target="_blank"><i class="icon-chain"></i></a>
+            <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i style="color: white;" class="fa fa-edit"></i></a>
+            <a title="Copy to..." href="?p=&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i style="color: blue;" class="icon-copy"></i></a>
+            <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f . '/') ?>" target="_blank"><i style="color: grey;" class="icon-chain"></i></a>
           </td></tr>
           <?php
           flush();
@@ -1046,10 +1046,10 @@ if (isset($_GET['view'])) {
               <td><?php echo fm_enc($owner['name'] . ':' . $group['name']) ?></td>
             <?php endif; ?>
             <td>
-              <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete file?');"><i style="color: #f9c41c;" class="fa fa-times w3-large"></i></a>
-              <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i style="color: #f9c41c;" class="fa fa-edit w3-large"></i></a>
-              <a title="Copy to..." href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i style="color: #f9c41c;" class="fa fa-copy w3-large"></i></a>
-              <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f) ?>" target="_blank"><i style="color: #f9c41c;" class="fa fa-chain w3-large"></i></a>
+              <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete file?');"><i style="color: red;" class="fa fa-times w3-large"></i></a>
+              <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i style="color: white;" class="fa fa-edit w3-large"></i></a>
+              <a title="Copy to..." href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i style="color: blue;" class="fa fa-copy w3-large"></i></a>
+              <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f) ?>" target="_blank"><i style="color: grey;" class="fa fa-chain w3-large"></i></a>
               <a title="Download" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;dl=<?php echo urlencode($f) ?>"><i style="color: #f9c41c;" class="fa fa-download w3-large"></i></a>
             </td></tr>
             <?php
