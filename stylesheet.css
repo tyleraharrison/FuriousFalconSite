@@ -261,10 +261,41 @@ nav a.active {
 }
 
 @media screen and (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .menuIconContainer {
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    padding-left: 20px;
+  }
+
+  .menuIconBar1, .menuIconBar2, .menuIconBar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .menuIconChange .menuIconBar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .menuIconChange .menuIconBar2 {opacity: 0;}
+
+  .menuIconChange .menuIconBar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
   .buttonCenter {
     margin-left: auto;
   }
-  
+
   .halfAndCenter {
     width: 90%;
   }

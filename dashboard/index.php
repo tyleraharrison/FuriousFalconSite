@@ -126,10 +126,14 @@ if (isset($_GET["togTask"])) {
 
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
     <div class="w3-bar w3-black w3-hover-opacity-off w3-center w3-small">
-      <a href="/dashboard/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fas fa-tachometer-alt w3-xlarge"></i><br />DASHBOARD</a>
-      <!-- TODO: Change href -->
-      <a href="http://192.168.1.22/attendance.php?id=<?php echo $userInfo["id"]; ?>" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-in fa-rotate-180 w3-xlarge"></i><br />SIGN INTO A MEETING</a>
-      <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button navlink" style="width:33% !important"><i class="fa fa-sign-out fa-rotate-180 w3-xlarge"></i><br />LOGOUT</a>
+      <div style="margin-top: 15px;" class="menuIconContainer" onclick="menuIconTrans(this)">
+        <div class="menuIconBar1"></div>
+        <div class="menuIconBar2"></div>
+        <div class="menuIconBar3"></div>
+      </div>
+      <div class="menuContainer">
+
+      </div>
     </div>
   </div>
   <!-- Page Content -->
@@ -219,6 +223,14 @@ if (isset($_GET["togTask"])) {
   $("input:checkbox").click(function() {
     window.location.replace("/dashboard/index.php?togTask=" + this.name);
   });
+
+  function menuIconTrans(x) {
+    x.classList.toggle("menuIconChange");
+  }
+
+  function menuTrans(x) {
+    if (x.)
+  }
   </script>
   <!-- END PAGE CONTENT -->
 </body>
