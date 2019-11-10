@@ -4,7 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if(isset($_SESSION["isLoggedIn"])) {
-  echo $_SESSION["isLoggedIn"];
   if ($_SESSION["isLoggedIn"]) {
     $isLoggedIn = $_SESSION["isLoggedIn"];
     $userInfo = $_SESSION["userInfo"];
@@ -636,8 +635,8 @@ if (isset($_GET['upload'])) {
       <input type="file" name="upload[]" webkitdirectory directory multiple /><br>
       <br>
       <p>
-        <button class="btn"><i class="icon-apply"></i> Upload</button> &nbsp;
-        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i class="icon-cancel"></i> Cancel</a></b>
+        <button class="btn"><i style="color: green;" class="fa fa-check w3-large"></i> Upload</button> &nbsp;
+        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i style="color: red;" class="fa fa-times w3-large"></i> Cancel</a></b>
       </p>
     </form>
   </div>
@@ -673,10 +672,10 @@ if (isset($_POST['copy'])) {
         <label for="inp_copy_to">Destination folder:</label>
         <?php echo FM_ROOT_PATH ?>/<input name="copy_to" id="inp_copy_to" value="<?php echo fm_enc(FM_PATH) ?>">
       </p>
-      <p><label><input type="checkbox" name="move" value="1"> Move</label></p>
+      <p><label class="formCheckbox">Move<input type="checkbox" name="move" value="1"><span class="checkmark"></span></label></p>
       <p>
-        <button class="btn"><i class="icon-apply"></i> Copy</button> &nbsp;
-        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i class="icon-cancel"></i> Cancel</a></b>
+        <button class="btn"><i style="color: green;" class="fa fa-check w3-large"></i> Copy</button> &nbsp;
+        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i style="color: red;" class="fa fa-times w3-large"></i> Cancel</a></b>
       </p>
     </form>
   </div>
@@ -704,9 +703,9 @@ if (isset($_GET['copy']) && !isset($_GET['finish'])) {
       Destination folder: <?php echo fm_enc(fm_convert_win(FM_ROOT_PATH . '/' . FM_PATH)) ?>
     </p>
     <p>
-      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode($copy) ?>&amp;finish=1"><i class="icon-apply"></i> Copy</a></b> &nbsp;
-      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode($copy) ?>&amp;finish=1&amp;move=1"><i class="icon-apply"></i> Move</a></b> &nbsp;
-      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i class="icon-cancel"></i> Cancel</a></b>
+      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode($copy) ?>&amp;finish=1"><i style="color: green;" class="fa fa-check w3-large"></i> Copy</a></b> &nbsp;
+      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode($copy) ?>&amp;finish=1&amp;move=1"><i style="color: green;" class="fa fa-check w3-large"></i> Move</a></b> &nbsp;
+      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i style="color: red;" class="fa fa-times w3-large"></i> Cancel</a></b>
     </p>
     <p><i>Select folder:</i></p>
     <ul class="folders break-word">
@@ -822,20 +821,20 @@ if (isset($_GET['view'])) {
       ?>
     </p>
     <p>
-      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;dl=<?php echo urlencode($file) ?>"><i class="icon-download"></i> Download</a></b> &nbsp;
-      <b><a href="<?php echo fm_enc($file_url) ?>" target="_blank"><i class="icon-chain"></i> Open</a></b> &nbsp;
+      <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;dl=<?php echo urlencode($file) ?>"><i style="color: #f9c41c;" class="fa fa-download"></i> Download</a></b> &nbsp;
+      <b><a href="<?php echo fm_enc($file_url) ?>" target="_blank"><i style="color: #f9c41c;" class="fa fa-chain"></i> Open</a></b> &nbsp;
       <?php
       // ZIP actions
       if ($is_zip && $filenames !== false) {
         $zip_name = pathinfo($file_path, PATHINFO_FILENAME);
         ?>
-        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;unzip=<?php echo urlencode($file) ?>"><i class="icon-apply"></i> Unpack</a></b> &nbsp;
-        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;unzip=<?php echo urlencode($file) ?>&amp;tofolder=1" title="Unpack to <?php echo fm_enc($zip_name) ?>"><i class="icon-apply"></i>
+        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;unzip=<?php echo urlencode($file) ?>"><i style="color: green;" class="fa fa-check w3-large"></i> Unpack</a></b> &nbsp;
+        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>&amp;unzip=<?php echo urlencode($file) ?>&amp;tofolder=1" title="Unpack to <?php echo fm_enc($zip_name) ?>"><i style="color: green;" class="fa fa-check w3-large"></i>
           Unpack to folder</a></b> &nbsp;
           <?php
         }
         ?>
-        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i class="icon-goback"></i> Back</a></b>
+        <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i class="fa fa-arrow-left"></i> Back</a></b>
       </p>
       <?php
       if ($is_zip) {
@@ -950,8 +949,8 @@ if (isset($_GET['view'])) {
         </table>
 
         <p>
-          <button class="btn"><i class="icon-apply"></i> Change</button> &nbsp;
-          <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i class="icon-cancel"></i> Cancel</a></b>
+          <button class="btn"><i style="color: green;" class="fa fa-check w3-large"></i> Change</button> &nbsp;
+          <b><a href="?p=<?php echo urlencode(FM_PATH) ?>"><i style="color: red;" class="fa fa-times w3-large"></i> Cancel</a></b>
         </p>
 
       </form>
@@ -977,7 +976,7 @@ if (isset($_GET['view'])) {
     <input type="hidden" name="p" value="<?php echo fm_enc(FM_PATH) ?>">
     <input type="hidden" name="group" value="1">
     <table><tr>
-      <th style="width:3%"><label><input type="checkbox" title="Invert selection" onclick="checkbox_toggle()"></label></th>
+      <th style="width:3%"><label style="margin-top: -10px;" class="formCheckbox"><input type="checkbox" title="Invert selection" onclick="checkbox_toggle()"><span class="checkmark"></span></label></th>
       <th>Name</th><th style="width:10%">Size</th>
       <th style="width:12%">Modified</th>
       <?php if (!FM_IS_WIN): ?><th style="width:6%">Perms</th><th style="width:10%">Owner</th><?php endif; ?>
@@ -1003,7 +1002,7 @@ if (isset($_GET['view'])) {
         }
         ?>
         <tr>
-          <td><label><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"></label></td>
+          <td><label style="margin-top: -10px;" class="formCheckbox"><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"><span class="checkmark"></span></label></td>
           <td><div class="filename"><a href="?p=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i class="<?php echo $img ?>"></i> <?php echo fm_enc(fm_convert_win($f)) ?></a><?php echo ($is_link ? ' &rarr; <i>' . fm_enc(readlink($path . '/' . $f)) . '</i>' : '') ?></div></td>
           <td>Folder</td><td><?php echo $modif ?></td>
           <?php if (!FM_IS_WIN): ?>
@@ -1011,7 +1010,7 @@ if (isset($_GET['view'])) {
             <td><?php echo fm_enc($owner['name'] . ':' . $group['name']) ?></td>
           <?php endif; ?>
           <td>
-            <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete folder?');"><i class="icon-cross"></i></a>
+            <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete folder?');"><i style="color: red;" class="fa fa-times"></i></a>
             <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i class="icon-rename"></i></a>
             <a title="Copy to..." href="?p=&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i class="icon-copy"></i></a>
             <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f . '/') ?>" target="_blank"><i class="icon-chain"></i></a>
@@ -1038,7 +1037,7 @@ if (isset($_GET['view'])) {
           }
           ?>
           <tr>
-            <td><label><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"></label></td>
+            <td><label style="margin-top: -10px;" class="formCheckbox"><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"><span class="checkmark"></span></label></td>
             <td><div class="filename"><a href="<?php echo fm_enc($filelink) ?>" title="File info"><i class="<?php echo $img ?>"></i> <?php echo fm_enc(fm_convert_win($f)) ?></a><?php echo ($is_link ? ' &rarr; <i>' . fm_enc(readlink($path . '/' . $f)) . '</i>' : '') ?></div></td>
             <td><span class="gray" title="<?php printf('%s bytes', $filesize_raw) ?>"><?php echo $filesize ?></span></td>
             <td><?php echo $modif ?></td>
@@ -1047,11 +1046,11 @@ if (isset($_GET['view'])) {
               <td><?php echo fm_enc($owner['name'] . ':' . $group['name']) ?></td>
             <?php endif; ?>
             <td>
-              <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete file?');"><i class="icon-cross"></i></a>
-              <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i class="icon-rename"></i></a>
-              <a title="Copy to..." href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i class="icon-copy"></i></a>
-              <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f) ?>" target="_blank"><i class="icon-chain"></i></a>
-              <a title="Download" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;dl=<?php echo urlencode($f) ?>"><i class="icon-download"></i></a>
+              <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete file?');"><i style="color: #f9c41c;" class="fa fa-times w3-large"></i></a>
+              <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i style="color: #f9c41c;" class="fa fa-edit w3-large"></i></a>
+              <a title="Copy to..." href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i style="color: #f9c41c;" class="fa fa-copy w3-large"></i></a>
+              <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f) ?>" target="_blank"><i style="color: #f9c41c;" class="fa fa-chain w3-large"></i></a>
+              <a title="Download" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;dl=<?php echo urlencode($f) ?>"><i style="color: #f9c41c;" class="fa fa-download w3-large"></i></a>
             </td></tr>
             <?php
             flush();
@@ -1075,9 +1074,10 @@ if (isset($_GET['view'])) {
         <p class="path"><a href="#" onclick="select_all();return false;"><i class="icon-checkbox"></i> Select all</a> &nbsp;
           <a href="#" onclick="unselect_all();return false;"><i class="icon-checkbox_uncheck"></i> Unselect all</a> &nbsp;
           <a href="#" onclick="invert_all();return false;"><i class="icon-checkbox_invert"></i> Invert selection</a></p>
-          <p><input type="submit" name="delete" value="Delete" onclick="return confirm('Delete selected files and folders?')">
-            <input type="submit" name="zip" value="Pack" onclick="return confirm('Create archive?')">
-            <input type="submit" name="copy" value="Copy"></p>
+          <p>
+            <button style="margin-right: 10px;" class="w3-button w3-light-grey w3-padding-large" type="submit" name="delete" value="Delete" onclick="return confirm('Delete selected files and folders?')">DELETE</button>
+            <button style="margin-right: 10px;" class="w3-button w3-light-grey w3-padding-large" type="submit" name="zip" value="Pack" onclick="return confirm('Create archive?')">PACK</button>
+            <button class="w3-button w3-light-grey w3-padding-large" type="submit" name="copy" value="Copy">COPY</button>
           </form>
 
           <?php
@@ -1677,13 +1677,13 @@ if (isset($_GET['view'])) {
                   ?>
                   <div class="path">
                     <div class="float-right">
-                      <a title="Upload files" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;upload"><i class="fa fa-upload"></i></a>
-                      <a title="New folder" href="#" onclick="newfolder('<?php echo fm_enc(FM_PATH) ?>');return false;"><i class="fa fa-folder"></i></a>
-                      <a title="Logout" href="/index.php"><i class="fa fa-sign-out"></i></a>
+                      <a title="Upload files" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;upload"><i style="color: #f9c41c;" class="fa fa-upload w3-large"></i></a>
+                      <a title="New folder" href="#" onclick="newfolder('<?php echo fm_enc(FM_PATH) ?>');return false;"><i style="color: #f9c41c;" class="fa fa-folder w3-large"></i></a>
+                      <a title="Logout" href="/index.php"><i style="color: #f9c41c;" class="fa fa-sign-out w3-large"></i></a>
                     </div>
                     <?php
                     $path = fm_clean_path($path);
-                    $root_url = "<a href='?p='><i class='fa fa-home' title='" . FM_ROOT_PATH . "'></i></a>";
+                    $root_url = "<a href='?p='><i style='color: #f9c41c;' class='fa fa-home w3-large' title='" . FM_ROOT_PATH . "'></i></a>";
                     $sep = '<i class="icon-separator"></i>';
                     if ($path != '') {
                       $exploded = explode('/', $path);
@@ -1748,36 +1748,37 @@ if (isset($_GET['view'])) {
                     <meta name="theme-color" content="#ffffff">
                     <style>
                     html,body,div,span,p,pre,a,code,em,img,small,strong,ol,ul,li,form,label,table,tr,th,td{margin:0;padding:0;vertical-align:baseline;outline:none;font-size:100%;background:transparent;border:none;text-decoration:none}
-                    html{overflow-y:scroll}body{padding:0;font:13px/16px Tahoma,Arial,sans-serif;color:#222;background:#efefef}
+                    tr{height: 35px; font-size: 15px; color: white;}
+                    html{overflow-y:scroll}body{padding:0;font:13px/16px Tahoma,Arial,sans-serif;color:#222;background:#000000;}
                     input,select,textarea,button{font-size:inherit;font-family:inherit}
-                    a{color:#296ea3;text-decoration:none}a:hover{color:#b00}img{vertical-align:middle;border:none}
+                    a{color:#f9c41c;text-decoration:none}img{vertical-align:middle;border:none}
                     a img{border:none}span.gray{color:#777}small{font-size:11px;color:#999}p{margin-bottom:10px}
                     ul{margin-left:2em;margin-bottom:10px}ul{list-style-type:none;margin-left:0}ul li{padding:3px 0}
                     table{border-collapse:collapse;border-spacing:0;margin-bottom:10px;width:100%}
-                    th,td{padding:4px 7px;text-align:left;vertical-align:top;border:1px solid #ddd;background:#fff;white-space:nowrap}
-                    th,td.gray{background-color:#eee}td.gray span{color:#222}
-                    tr:hover td{background-color:#f5f5f5}tr:hover td.gray{background-color:#eee}
+                    th,td{padding:4px 7px;text-align:left;vertical-align:middle;background:#000000;white-space:nowrap}
+                    th,td.gray{background-color:#222222}td.gray span{color:#ffffff}
+                    tr:hover td{background-color:#333333}tr:hover td.gray{background-color:#333333}
                     code,pre{display:block;margin-bottom:10px;font:13px/16px Consolas,'Courier New',Courier,monospace;border:1px dashed #ccc;padding:5px;overflow:auto}
                     pre.with-hljs{padding:0}
                     pre.with-hljs code{margin:0;border:0;overflow:visible}
                     code.maxheight,pre.maxheight{max-height:512px}input[type="checkbox"]{margin:0;padding:0}
                     #wrapper{max-width:1000px;min-width:400px;margin:10px auto}
-                    .path{padding:4px 7px;border:1px solid #ddd;background-color:#fff;margin-bottom:10px}
-                    .right{text-align:right}.center{text-align:center}.float-right{float:right}
-                    .message{padding:4px 7px;border:1px solid #ddd;background-color:#fff}
+                    .path{padding:4px 7px;;background-color:#222222;margin-bottom:10px;color:#ffffff}
+                    .right{text-align:right}.center{text-align:center}.float-right{float:right}.float-right a {padding-left: 10px;}a[title="Delete"], a[title="Rename"], a[title="Copy to..."], a[title="Direct link"]{padding-right: 2px;}
+                    .message{padding:4px 7px;border:1px solid #ddd;background-color:#000000;}
                     .message.ok{border-color:green;color:green}
                     .message.error{border-color:red;color:red}
-                    .message.alert{border-color:orange;color:orange}
-                    .btn{border:0;background:none;padding:0;margin:0;font-weight:bold;color:#296ea3;cursor:pointer}.btn:hover{color:#b00}
+                    .message.alert{border-color:#f9c41c;color:#f9c41c}
+                    .btn{border:0;background:none;padding:0;margin:0;font-weight:bold;color:#f9c41c;cursor:pointer}
                     .preview-img{max-width:100%;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAKklEQVR42mL5//8/Azbw+PFjrOJMDCSCUQ3EABZc4S0rKzsaSvTTABBgAMyfCMsY4B9iAAAAAElFTkSuQmCC") repeat 0 0}
                     .preview-video{position:relative;max-width:100%;height:0;padding-bottom:62.5%;margin-bottom:10px}.preview-video video{position:absolute;width:100%;height:100%;left:0;top:0;background:#000}
                     [class*="icon-"]{display:inline-block;width:16px;height:16px;background:url("<?php echo FM_SELF_URL ?>?img=sprites&amp;t=<?php echo $sprites_ver ?>") no-repeat 0 0;vertical-align:bottom}
                     .icon-document{background-position:-16px 0}.icon-folder{background-position:-32px 0}
                     .icon-folder_add{background-position:-48px 0}.icon-upload{background-position:-64px 0}
                     .icon-arrow_up{background-position:-80px 0}.icon-home{background-position:-96px 0}
-                    .icon-separator{background-position:-112px 0}.icon-cross{background-position:-128px 0}
+                    .icon-separator{background-position:-112px 0}.fa-times{background-position:-128px 0}
                     .icon-copy{background-position:-144px 0}.icon-apply{background-position:-160px 0}
-                    .icon-cancel{background-position:-176px 0}.icon-rename{background-position:-192px 0}
+                    .icon-cancel{background-position:-176px 0}.fa-edit{background-position:-192px 0}
                     .icon-checkbox{background-position:-208px 0}.icon-checkbox_invert{background-position:-224px 0}
                     .icon-checkbox_uncheck{background-position:-240px 0}.icon-download{background-position:-256px 0}
                     .icon-goback{background-position:-272px 0}.icon-folder_open{background-position:-288px 0}
