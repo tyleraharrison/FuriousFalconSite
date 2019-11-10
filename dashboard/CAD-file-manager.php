@@ -146,6 +146,7 @@ if ($use_auth) {
     sleep(1);
     if (isset($auth_users[$_POST['fm_usr']]) && $_POST['fm_pwd'] === $auth_users[$_POST['fm_usr']]) {
       $_SESSION['logged'] = $_POST['fm_usr'];
+      $currentUser = $_POST['fm-usr'];
       fm_set_msg('You are logged in');
       fm_redirect(FM_SELF_URL . '?p=');
     } else {
@@ -1019,13 +1020,8 @@ if (isset($_GET['view'])) {
         $img = $is_link ? 'icon-link_folder' : 'icon-folder';
         $modif = date(FM_DATETIME_FORMAT, filemtime($path . '/' . $f));
         $perms = substr(decoct(fileperms($path . '/' . $f)), -4);
-        if (function_exists('posix_getpwuid') && function_exists('posix_getgrgid')) {
-          $owner = posix_getpwuid(fileowner($path . '/' . $f));
-          $group = posix_getgrgid(filegroup($path . '/' . $f));
-        } else {
-          $owner = array('name' => '?');
-          $group = array('name' => '?');
-        }
+        $owner = array("name" => $currentUser);
+        $group = array("name" => "CAD Team")
         ?>
         <tr>
           <td><label style="margin-top: -10px;" class="formCheckbox"><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"><span class="checkmark"></span></label></td>
@@ -1054,13 +1050,8 @@ if (isset($_GET['view'])) {
           $filelink = '?p=' . urlencode(FM_PATH) . '&view=' . urlencode($f);
           $all_files_size += $filesize_raw;
           $perms = substr(decoct(fileperms($path . '/' . $f)), -4);
-          if (function_exists('posix_getpwuid') && function_exists('posix_getgrgid')) {
-            $owner = posix_getpwuid(fileowner($path . '/' . $f));
-            $group = posix_getgrgid(filegroup($path . '/' . $f));
-          } else {
-            $owner = array('name' => '?');
-            $group = array('name' => '?');
-          }
+          $owner = array("name" => $currentUser);
+          $group = array("name" => "CAD Team");
           ?>
           <tr>
             <td><label style="margin-top: -10px;" class="formCheckbox"><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"><span class="checkmark"></span></label></td>
