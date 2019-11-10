@@ -14,7 +14,6 @@ if(isset($_SESSION["isLoggedIn"])) {
   header("Location: /dashboard/login.php");
   exit();
 }
-error_reporting(E_ERROR | E_PARSE);
 
 $DBservername = "sql223.main-hosting.eu";
 $DBusername = "u995699429_robot";
@@ -146,8 +145,7 @@ if ($use_auth) {
     sleep(1);
     if (isset($auth_users[$_POST['fm_usr']]) && $_POST['fm_pwd'] === $auth_users[$_POST['fm_usr']]) {
       $_SESSION['logged'] = $_POST['fm_usr'];
-      $currentUser = $_POST['fm-usr'];
-      fm_set_msg('You are logged in');
+      fm_set_msg('You are logged in:' . $_SESSION["logged"]);
       fm_redirect(FM_SELF_URL . '?p=');
     } else {
       unset($_SESSION['logged']);
@@ -422,8 +420,8 @@ if (isset($_POST['upl'])) {
     $tmp_name = $_FILES['upload']['tmp_name'][$i];
     if (empty($_FILES['upload']['error'][$i]) && !empty($tmp_name) && $tmp_name != 'none') {
       if (move_uploaded_file($tmp_name, $path . '/' . $_FILES['upload']['name'][$i])) {
-        $fp = fopen('/dashboard/CAD-file-manifest.txt', 'a');//opens file in append mode
-        fwrite($fp, $path . '/' . $_FILES['upload']['name'][$i] . " ? " . $currentUser . "\n");
+        $fp = fopen(str_replace('files/CAD', '', $path) . '/dashboard/CAD-file-manifest.txt', 'a') or die("Unable to open manifest");//opens file in append mode
+        fwrite($fp, $path . '/' . $_FILES['upload']['name'][$i] . " ? " . $_SESSION["logged"] . "\n");
         fclose($fp);
         $uploads++;
       } else {
@@ -1023,7 +1021,7 @@ if (isset($_GET['view'])) {
         $img = $is_link ? 'icon-link_folder' : 'icon-folder';
         $modif = date(FM_DATETIME_FORMAT, filemtime($path . '/' . $f));
         $perms = substr(decoct(fileperms($path . '/' . $f)), -4);
-        $owner = array("name" => $currentUser);
+        $owner = array("name" => $_SESSION["logged"]);
         $group = array("name" => "CAD Team")
         ?>
         <tr>
@@ -1054,8 +1052,9 @@ if (isset($_GET['view'])) {
           $all_files_size += $filesize_raw;
           $perms = substr(decoct(fileperms($path . '/' . $f)), -4);
 
-          $fileManifest = fopen(str_replace("files/CAD", "", $path) . "dashboard/CAD-file-manifest.txt", "r") or die("Unable to open Manifest");
-          $manifestString = fread($fileManifest, "/dashboard/CAD-file-manifest.txt");
+          $pathManifest = str_replace("files/CAD", "", $path) . "dashboard/CAD-file-manifest.txt";
+          $fileManifest = fopen($pathManifest, "r") or die("Unable to open Manifest");
+          $manifestString = fread($fileManifest, filesize($pathManifest)) or die("Unable to read Manifest");
           fclose($fileManifest);
           $manifestLines = explode("\n", $manifestString);
           $manifest = array();
@@ -1063,7 +1062,6 @@ if (isset($_GET['view'])) {
             $info = explode(" ? ", $line);
             $manifest[$info[0]] = $info[1];
           }
-
           $owner = array('name' => $manifest[$path . '/' . $f]);
           $group = array('name' => "CAD Team");
           ?>
