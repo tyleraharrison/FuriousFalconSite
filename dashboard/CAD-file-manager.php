@@ -1054,7 +1054,7 @@ if (isset($_GET['view'])) {
           $all_files_size += $filesize_raw;
           $perms = substr(decoct(fileperms($path . '/' . $f)), -4);
 
-          $fileManifest = fopen("/dashboard/CAD-file-manifest.txt", "r") or die("Unable to open Manifest");
+          $fileManifest = fopen(str_replace("files/CAD", "", $path) . "dashboard/CAD-file-manifest.txt", "r") or die("Unable to open Manifest");
           $manifestString = fread($fileManifest, "/dashboard/CAD-file-manifest.txt");
           fclose($fileManifest);
           $manifestLines = explode("\n", $manifestString);
