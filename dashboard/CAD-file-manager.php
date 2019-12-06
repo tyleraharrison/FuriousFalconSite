@@ -420,7 +420,7 @@ if (isset($_POST['upl'])) {
     $tmp_name = $_FILES['upload']['tmp_name'][$i];
     if (empty($_FILES['upload']['error'][$i]) && !empty($tmp_name) && $tmp_name != 'none') {
       if (move_uploaded_file($tmp_name, $path . '/' . $_FILES['upload']['name'][$i])) {
-        $fp = fopen(str_replace('files/CAD', '', $path) . '/dashboard/CAD-file-manifest.txt', 'a') or die("Unable to open manifest");//opens file in append mode
+        $fp = fopen(substr($path, strpos($path, "file/CAD")) . '/dashboard/CAD-file-manifest.txt', 'a') or die("Unable to open manifest");//opens file in append mode
         fwrite($fp, $path . '/' . $_FILES['upload']['name'][$i] . " ? " . $_SESSION["logged"] . "\n");
         fclose($fp);
         $uploads++;
