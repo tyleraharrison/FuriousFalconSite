@@ -420,7 +420,7 @@ if (isset($_POST['upl'])) {
     $tmp_name = $_FILES['upload']['tmp_name'][$i];
     if (empty($_FILES['upload']['error'][$i]) && !empty($tmp_name) && $tmp_name != 'none') {
       if (move_uploaded_file($tmp_name, $path . '/' . $_FILES['upload']['name'][$i])) {
-        $fp = fopen(substr($path, strpos($path, "file/CAD")) . '/dashboard/CAD-file-manifest.txt', 'a') or die("Unable to open manifest");//opens file in append mode
+        $fp = fopen("/home/u995699429/domains/furiousfalcons.org/public_html/dashboard/CAD-file-manifest.txt", 'a') or die("Unable to open manifest");//opens file in append mode
         fwrite($fp, $path . '/' . $_FILES['upload']['name'][$i] . " ? " . $_SESSION["logged"] . "\n");
         fclose($fp);
         $uploads++;
@@ -1052,10 +1052,10 @@ if (isset($_GET['view'])) {
           $all_files_size += $filesize_raw;
           $perms = substr(decoct(fileperms($path . '/' . $f)), -4);
 
-          $pathManifest = substr($path, strpos($path, "file/CAD")) . "/dashboard/CAD-file-manifest.txt";
+          $pathManifest = "/home/u995699429/domains/furiousfalcons.org/public_html/dashboard/CAD-file-manifest.txt";
           //$pathManifest = str_replace("files/CAD", "", $path) . "dashboard/CAD-file-manifest.txt";
           $fileManifest = fopen($pathManifest, "r") or die("Unable to open Manifest");
-          $manifestString = fread($fileManifest, filesize($pathManifest)) or die("Unable to read Manifest");
+          $manifestString = fread($fileManifest, filesize($pathManifest)) or die("Unable to read Manifest-> " . filesize($pathManifest));
           fclose($fileManifest);
           $manifestLines = explode("\n", $manifestString);
           $manifest = array();
