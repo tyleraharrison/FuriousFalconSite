@@ -58,6 +58,8 @@ if ($RSuserWebInfo->num_rows > 0) {
   }
 }
 
+$userInfo["team"] = substr($userInfo["roles"], 2, 1);
+
 if (isset($_GET["togTask"])) {
   $task = $_GET["togTask"];
   $index = array_search($task, $webInfo);
@@ -217,6 +219,41 @@ if (isset($_GET["togTask"])) {
           </ul>
         </div>
       </div>
+      <h2 style="text-decoration: underline; text-align: center;">Resources</h2>
+      <?php
+
+      if ($userInfo["team"] == "1") {
+        echo "<p>We see you're a member of the mechanical team! Congratulations! Any additional resources required for the mechanical team will appear below:</p>";
+        echo '<ul>
+                <li><a style=\"color: #f9c41c;\" href=\"https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system\">2020 FRC Infinite Recharge Resources</a></li>
+                <li><a style=\"color: #f9c41c;\" href=\"https://firstfrc.blob.core.windows.net/frc2020/Manual/TeamUpdates/TeamUpdates-combined.pdf\">2020 FRC Infinite Recharge Team Updates PDF</a> (This is where all alterations to the game manual are recorded)</li>
+              </ul>';
+      } else if ($userInfo["team"] == "2") {
+        echo "<p>We see you're a member of the electrical team! Congratulations! Any additional resources required for the electrical team will appear below:</p>";
+        echo '<ul>
+                <li><a style=\"color: #f9c41c;\" href=\"https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system\">2020 FRC Infinite Recharge Resources</a></li>
+                <li><a style=\"color: #f9c41c;\" href=\"https://firstfrc.blob.core.windows.net/frc2020/Manual/TeamUpdates/TeamUpdates-combined.pdf\">2020 FRC Infinite Recharge Team Updates PDF</a> (This is where all alterations to the game manual are recorded)</li>
+              </ul>';
+      }  else if ($userInfo["team"] == "3") {
+        echo "<p>We see you're a member of the programming team! Congratulations! Any additional resources required for the programming team will appear below:</p>";
+        echo "<ul>
+                <li><a style=\"color: #f9c41c;\" href=\"https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system\">2020 FRC Infinite Recharge Resources</a></li>
+                <li><a style=\"color: #f9c41c;\" href=\"https://firstfrc.blob.core.windows.net/frc2020/Manual/TeamUpdates/TeamUpdates-combined.pdf\">2020 FRC Infinite Recharge Team Updates PDF</a> (This is where all alterations to the game manual are recorded)</li>
+                <li><a style=\"color: #f9c41c;\" href=\"http://furiousfalcons.org/files/FF_Programming_Installer.exe\">Furious Falcons Programming Software Installer</a> (Windows only)</li>
+                <li><a style=\"color: #f9c41c;\" href=\"https://frc-pdr.readthedocs.io/en/latest\">FRC Programming Basics</a> (Simple / Not Official)</li>
+                <li><a style=\"color: #f9c41c;\" href=\"https://frcdocs.wpi.edu/en/latest\">FRC WPILib Programming Documentation</a> (Official)</li>
+                <li><a style=\"color: #f9c41c;\" href=\"https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages/blob/master/Java/DifferentialDrive/src/main/java/frc/robot/Robot.java\">Pheonix Libraries Examples</a> (For Victor SPX Motor Controllers)</li>
+              </ul>";
+      }  else if ($userInfo["team"] == "6") {
+        echo "<p>We see you're a member of the CAD team! Congratulations! Any additional resources required for the CAD team will appear below:</p>";
+        echo "<ul>
+                <li><a style=\"color: #f9c41c;\" href=\"https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system\">2020 FRC Infinite Recharge Resources</a></li>
+                <li><a style=\"color: #f9c41c;\" href=\"https://firstfrc.blob.core.windows.net/frc2020/Manual/TeamUpdates/TeamUpdates-combined.pdf\">2020 FRC Infinite Recharge Team Updates PDF</a> (This is where all alterations to the game manual are recorded)</li>
+                <li><a style=\"color: #f9c41c;\" href=\"/dashboard/CAD-file-manager.php\">Online CAD File Database</a></li>
+              </ul>";
+      }
+
+      ?>
     </div>
   </div>
   <script>
