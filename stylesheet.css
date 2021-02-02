@@ -112,11 +112,15 @@ nav a.active {
 }
 
 #loginButton {
-  float:left;
+  float: right;
 }
 
 #createAccountButton {
-  float: right;
+  float: left;
+}
+
+#forgotPassword {
+  margin-top: 75px;
 }
 
 .error {
@@ -252,7 +256,46 @@ nav a.active {
   display: inline-block;
 }
 
+.buttonCenter {
+  margin-left: 25%;
+}
+
 @media screen and (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .menuIconContainer {
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    padding-left: 20px;
+  }
+
+  .menuIconBar1, .menuIconBar2, .menuIconBar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .menuIconChange .menuIconBar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .menuIconChange .menuIconBar2 {opacity: 0;}
+
+  .menuIconChange .menuIconBar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .buttonCenter {
+    margin-left: auto;
+  }
+
   .halfAndCenter {
     width: 90%;
   }
@@ -323,6 +366,21 @@ nav a.active {
     display: block;
   }
 
+}
+
+@media screen and (max-width: 500px) {
+  #loginButton {
+    float: left;
+  }
+
+  .halfAndCenter {
+    float: left;
+    margin-left: 5%;
+  }
+
+  #forgotPassword {
+    margin-top: 0px;
+  }
 }
 
 * {
@@ -400,6 +458,7 @@ nav a.active {
 .column {
   float: left;
   width: 20%;
+  vertical-align: middle;
 }
 
 /* Add a transparency effect for thumnbail images */
@@ -445,4 +504,38 @@ nav a.active {
 
 .scene_element--exiting {
   animation-direction: alternate-reverse;
+}
+
+.ff-loadingScreen {
+  display: inline-block;
+  position: fixed;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+}
+.ff-loadingScreen:after {
+  content: " ";
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 6px;
+  background-image: url("/images/FalconsLogoOnly.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  animation: loadingScreenAnim 2s infinite;
+}
+@keyframes loadingScreenAnim {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
 }

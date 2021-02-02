@@ -1,31 +1,32 @@
 <?php
 
 session_start();
-
+header("Location: info.php");
+exit();
 ?>
 <html>
 <title>Furious Falcons - Camp Registration</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ffc200">
+<link rel="stylesheet" type="text/css" href="/stylesheet.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffc200">
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/ae92485cd8.js"></script>
 
 
 <body class="w3-black">
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
-    <img src="images/FalconsLogoOnly.png" style="width:100%">
+    <img src="/images/FalconsLogoOnly.png" style="width:100%">
     <a href="/index.php" data-scroll="homeSection" class="w3-bar-item w3-button w3-padding-large w3-hover-black navlink">
       <i class="fa fa-home w3-xxlarge"></i>
       <p>RETURN</p>
@@ -44,24 +45,23 @@ session_start();
     <!-- Sponsors -->
     <div id="Sponsors">
       <ul>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_Hampco.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SnapOn.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_SolidWorks.png"></li>
-        <li class="forDesktop"><img src="images/Sponsors/Sponsor_WebCentral.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_FIRST.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_GitHub.png"></li>
-        <li class="forMobile"><img src="images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_Gtech.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_Hampco.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_SnapOn.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_SolidWorks.png"></li>
+        <li class="forDesktop"><img src="/images/Sponsors/Sponsor_WebCentral.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_ChildhoodCenter.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_FIRST.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_GitHub.png"></li>
+        <li class="forMobile"><img src="/images/Sponsors/Sponsor_Gtech.png"></li>
       </ul>
     </div>
     <div class="w3-content ff-title">
       <h1>Furious Falcons Summer STEM Camp Registration</h1>
     </div>
-    <!--
     <p style="display: none;">Come and register for the Furious Falcons Summer STEM Camp!</p>
     <div class="w3-content" id="registerSuccessDiv" style="text-align: center; display: none;">
       <p>Thank you for registering for our camp! Now that you have registered, we will send you a confirmation email, please make sure you get this email. If the email appears in your spam folder, be sure to mark it as "Not Spam," that way we will be able to contact you in the future.</p>
@@ -158,8 +158,7 @@ session_start();
           <p style="height: 135px;"><textarea class="w3-input" type="paragraph" placeholder="Please specify all allergies, medications and/or limitations" name="med_spec" style="height: 100%;"></textarea></p>
         </div>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-wrench" style="padding-right: 10px;"></i> REGISTER</button>
-      </form>-->
-      <p class="w3-content">We apologize for this inconvenience, but our Summer STEM Camp Registration has been closed for this year. Maybe next year!</p>
+      </form>
     </div>
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
@@ -167,16 +166,15 @@ session_start();
       <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
       <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
 
-
-      <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fa fa-reddit w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"<i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fab fa-reddit w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fab fa-facebook"></i></a>
+      <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fab fa-youtube w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"><i class="fab fa-instagram"></i></a>
+      <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
       <!--<a style="padding: 5px;" href="https://www.pinterest.com/fosterrobotics/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>-->
-      <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+      <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fab fa-twitter w3-hover-opacity"></i></a>
       <!--<a style="padding: 5px;" href="https://www.linkedin.com/in/furious-falcons-936303187/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>-->
-
+      <a style="padding: 5px;" href="https://discord.gg/r7Zrs4A"><i class="fab fa-discord"></i></a>
       <!-- End footer -->
     </footer>
     <!-- END PAGE CONTENT -->
@@ -357,21 +355,21 @@ if (isset($_POST["pgname"])) {
 
     $message .= "<p>If any of the above information is incorrect, please contact us with the email address at the bottom, and we'll get it straightened out. If you are All Systems Go, then feel free to complete payment for the camp by using the button below. An initial payment of $100 is due by Saturday, July 20th, and the remaining amount must be paid before the first day of camp, Monday, August 5th.</p>\n<p style='text-align: center;'><a href='http://payment.furiousfalcons.org' style='border-radius: 5px;border: 2px solid #f9c41c;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:16px;line-height:44px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;'>Pay Here</a></p>\n";
 
-    $_SESSION["email_to"] = $email;
-    $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
-    $_SESSION["email_bcc"] = "fosterrobotics@gmail.com";
-    $_SESSION["email_sub"] = "Summer STEM Camp Registration";
-    $_SESSION["email_message"] = $message;
-    $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
-    $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
-    session_write_close();
-    echo '<script type="text/javascript">location.href = "/sendemail.php";</script>';
-    exit();
+      $_SESSION["email_to"] = $email;
+      $_SESSION["email_from"] = "Furious Falcons <camp@furiousfalcons.org>";
+      $_SESSION["email_bcc"] = "fosterrobotics@gmail.com";
+      $_SESSION["email_sub"] = "Summer STEM Camp Registration";
+      $_SESSION["email_message"] = $message;
+      $_SESSION["email_title"] = "2019 Summer STEM Camp Registration Confirmation";
+      $_SESSION["email_redir"] = "/campregistration.php?registerSuccess";
+      session_write_close();
+      echo '<script type="text/javascript">location.href = "/sendemail.php";</script>';
+      exit();
+    }
+
+
+  } else {
+    $_POST = array();
   }
 
-
-} else {
-  $_POST = array();
-}
-
-?>
+  ?>

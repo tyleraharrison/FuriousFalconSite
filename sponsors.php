@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -15,6 +14,7 @@
 <meta name="msapplication-TileColor" content="#181818">
 <meta name="theme-color" content="#ffffff">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/ae92485cd8.js"></script>
 
 
 <body class="w3-black">
@@ -127,42 +127,41 @@
         <hr style="width:200px" class="w3-opacity">
         <ol class="w3-justify">
           <li>Decide on a sponsorship amount, and find the corresponding tier.</li>
-          <li>Open the <a target="_blank" href="/files/Furious%20Falcons%20Sponsorship%20Form.pdf"><b>Sponsorship Form</b></a> and fill it out. You will need to print it afterwards, so that you can sign and date it. You will also need your student contact to sign the form as well (if applicable).</li>
+          <li>Open the <a style="color: #f9c41c;" target="_blank" href="/files/Furious%20Falcons%20Sponsorship%20Form.pdf"><b>Sponsorship Form</b></a> and fill it out. You will need to print it afterwards, so that you can sign and date it. You will also need your student contact to sign the form as well (if applicable).</li>
           <li>
-            After you have the completed and signed form, please give it to your student contact or you are welcome to mail it to:
+            After you have the completed and signed the form, please give it and your payment (if cash or check) to your student contact or you are welcome to mail them to:
             <b style="font-size: 20px;">
               <p>Mr. Willeby - FRC Team #4328<br />
-              4400 FM 723 Rd<br />
-              Richmond, TX 77406
-            </b>
-          </li>
-          <li>We can now contact you directly, using the information on the form. We will get back with you as soon as we can to take the next steps in the process.</li>
-        </ol>
-        <br />
-        <h3>Thank you for considering us as a sponsor!</h3>
+                4400 FM 723 Rd<br />
+                Richmond, TX 77406<br />
+              </b>
+            If you wish to pay by card, please click <b><a style="color: #f9c41c;" target="_blank" href="https://furious-falcons-booster-inc.square.site/product/donation-sponsorship-payment/9?cs=true">here</a></b>.</li>
+            <li>We can now contact you directly, using the information on the form. We will get back with you as soon as we can to take the next steps in the process.</li>
+          </ol>
+          <br />
+          <h3>Thank you for considering sponsoring our team!</h3>
+        </div>
+        <!-- END PAGE CONTENT -->
       </div>
-      <!-- END PAGE CONTENT -->
+      <!-- Footer -->
+      <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+
+        <h3>Useful Links</h3>
+        <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
+        <p style="font-size: 16px;"><a href="/camp/info.php">Look at our Summer Camp</a></p>
+
+        <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fab fa-reddit w3-hover-opacity"></i></a>
+        <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fab fa-facebook"></i></a>
+        <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fab fa-youtube w3-hover-opacity"></i></a>
+        <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"><i class="fab fa-instagram"></i></a>
+        <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fab fa-snapchat w3-hover-opacity"></i></a>
+        <!--<a style="padding: 5px;" href="https://www.pinterest.com/fosterrobotics/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>-->
+        <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fab fa-twitter w3-hover-opacity"></i></a>
+        <!--<a style="padding: 5px;" href="https://www.linkedin.com/in/furious-falcons-936303187/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>-->
+        <a style="padding: 5px;" href="https://discord.gg/r7Zrs4A"><i class="fab fa-discord"></i></a>
+        <!-- End footer -->
+      </footer>
     </div>
-    <!-- Footer -->
-    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-
-      <h3>Useful Links</h3>
-      <p style="font-size: 16px;"><a href="https://www.firstinspires.org/robotics/frc">Visit the FIRST Robotics Website</a></p>
-      <p style="font-size: 16px;"><a href="/camp.php">Look at our Summer Camp</a></p>
-
-
-      <a style="padding: 5px;" href="https://www.reddit.com/r/FuriousFalcons"><i class="fa fa-reddit w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://fb.me/furiousfalcons4328"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.youtube.com/channel/UCKGAG7kHLdjRE5BgjCmybWg"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.instagram.com/foster_robotics/"<i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a style="padding: 5px;" href="https://www.snapchat.com/add/fosterrobotics"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
-      <!--<a style="padding: 5px;" href="https://www.pinterest.com/fosterrobotics/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>-->
-      <a style="padding: 5px;" href="https://twitter.com/FosterRobotics"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-      <!--<a style="padding: 5px;" href="https://www.linkedin.com/in/furious-falcons-936303187/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>-->
-
-      <!-- End footer -->
-    </footer>
-  </div>
-  <script src="SmoothUI.js" type="text/javascript"></script>
-</body>
-</html>
+    <script src="SmoothUI.js" type="text/javascript"></script>
+  </body>
+  </html>
